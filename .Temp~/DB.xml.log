@@ -1,0 +1,14 @@
+[07 Oct 2016 14:41:34] Building database metadata model
+[07 Oct 2016 14:41:34] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@367ba4f9, includeTables=true, username=ifml, outputLogPath=C:\Users\Azqa\Documents\WebratioWorkspace\WebSecience_group27\.Temp~\DB.xml.log, readIndexes=null, driverClass=com.mysql.jdbc.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.MySQLMetaDataProvider, outputPath=C:\Users\Azqa\Documents\WebratioWorkspace\WebSecience_group27\.Temp~\DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=C:\Users\Azqa\Documents\WebratioWorkspace\.metadata\.plugins\com.webratio.commons.db\derby, url=jdbc:mysql://95.85.28.158:5656/ifml, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=64191}
+[07 Oct 2016 14:41:34] URL: jdbc:mysql://95.85.28.158:5656/ifml
+[07 Oct 2016 14:41:34] Product name: MySQL
+[07 Oct 2016 14:41:34] Product version: 5.7.15-0ubuntu0.16.04.1
+[07 Oct 2016 14:41:34] Driver name: MySQL Connector Java
+[07 Oct 2016 14:41:34] Driver version: mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )
+[07 Oct 2016 14:41:34] Driver major version: 5
+[07 Oct 2016 14:41:34] Driver minor version: 1
+[07 Oct 2016 14:41:34] Identifier quote string: 1
+[07 Oct 2016 14:41:34] Retrieving schemas
+[07 Oct 2016 14:41:34] Retrieving [TABLE, VIEW, SYNONYM] for schema ''
+[07 Oct 2016 14:41:34] Database metadata retrieved (36 ms)
+[07 Oct 2016 14:41:34] Database connection closed
