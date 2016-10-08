@@ -32,9 +32,10 @@
     <RelationshipRole1 id="Group2Module" name="modules" maxCard="N"/>
     <RelationshipRole2 id="Module2Group" name="groups" maxCard="N"/>
   </Relationship>
-  <Entity gr:x="5" gr:y="640" id="ent1" name="PaymentInfo" duration="persistent" attributeOrder="ent1#att3 ent1#att5">
-    <Attribute id="ent1#att3" key="true" name="paymentInfoId" type="integer"/>
+  <Entity gr:x="5" gr:y="640" id="ent1" name="PaymentInfo" duration="persistent" attributeOrder="ent1#att3 ent1#att4 ent1#att5">
+    <Attribute id="ent1#att3" key="true" name="methodId" type="integer"/>
     <Attribute id="ent1#att5" name="accountNumber" type="string" key="false"/>
+    <Attribute id="ent1#att4" name="userId" key="true" type="integer"/>
   </Entity>
   <Entity gr:x="15" gr:y="805" id="ent2" name="PaymentMethods" duration="persistent" attributeOrder="ent2#att6 ent2#att7">
     <Attribute id="ent2#att6" key="true" name="methodId" type="integer"/>
@@ -45,7 +46,7 @@
     <RelationshipRole2 id="rel1#role2" name="PaymentMethodsToPaymentInfo" maxCard="N"/>
   </Relationship>
   <Relationship id="rel2" name="User_PaymentInfo" sourceEntity="User" targetEntity="ent1">
-    <RelationshipRole1 id="rel2#role3" name="UserToPaymentInfo" maxCard="1"/>
+    <RelationshipRole1 id="rel2#role3" name="UserToPaymentInfo" maxCard="N"/>
     <RelationshipRole2 id="rel2#role4" name="PaymentInfoToUser" maxCard="1"/>
   </Relationship>
   <Entity gr:x="615" gr:y="530" id="ent3" name="Campaign" duration="persistent" attributeOrder="ent3#att8 ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14">
