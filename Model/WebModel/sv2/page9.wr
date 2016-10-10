@@ -1,0 +1,123 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="715" gr:y="75" id="sv2#page9" name="Campaign Detail">
+  <ContentUnits>
+    <GetUnit id="sv2#page9#gtu3" name="GetCurrentUser" gr:x="195" gr:y="130" contextParameters="UserCtxParam">
+      <Link id="sv2#page9#gtu3#ln13" name="Flow13" to="sv2#page9#enu6" type="transport" validate="true">
+        <LinkParameter id="sv2#page9#gtu3#ln13#par60" name="UserCtxParam.userId_PASSING" source="sv2#page9#gtu3.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit gr:x="0" gr:y="130" id="sv2#page9#enu6" name="Create Contribution" entity="ent4" linkOrder="sv2#page9#enu6#ln14">
+      <Field id="sv2#page9#enu6#fld25" name="Description" type="string" modifiable="true" attribute="ent4#att17"/>
+      <Field id="sv2#page9#enu6#fld26" name="Title" type="string" modifiable="true" attribute="ent4#att16"/>
+      <Field id="sv2#page9#enu6#fld27" name="Minimum Amount" type="float" modifiable="true" attribute="ent4#att18"/>
+      <Link id="sv2#page9#enu6#ln14" name="Flow14" to="sv2#cru3" type="normal" validate="true">
+        <LinkParameter id="sv2#page9#enu6#ln14#par63" name="campaignId_PASSING_Campaign.campaignId(ContributionProfileToCampaign)" sourceLinkParameter="sv2#page9#dau3#ln16#par62" target="sv2#cru3.rel7#role14.ent3#att8"/>
+        <LinkParameter id="sv2#page9#enu6#ln14#par64" name="ContributionProfile Object_ContributionProfile Object" source="entityBean" target="sv2#cru3.entityBeans"/>
+        <LinkParameter id="sv2#page9#enu6#ln14#par65" name="Description_contributionDescription" source="sv2#page9#enu6#fld25" target="sv2#cru3.ent4#att17"/>
+        <LinkParameter id="sv2#page9#enu6#ln14#par66" name="Key [contributionId]_contributionId" source="key.ent4#att15" target="sv2#cru3.ent4#att15"/>
+        <LinkParameter id="sv2#page9#enu6#ln14#par67" name="Title_contributionTitle" source="sv2#page9#enu6#fld26" target="sv2#cru3.ent4#att16"/>
+        <LinkParameter id="sv2#page9#enu6#ln14#par68" name="Minimum Amount_minimumAmount" source="sv2#page9#enu6#fld27" target="sv2#cru3.ent4#att18"/>
+      </Link>
+    </EntryUnit>
+    <DataUnit gr:x="5" gr:y="0" id="sv2#page9#dau3" name="Campaign Detail" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14 ent3#att20">
+      <Selector id="sv2#page9#dau3#su4" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page9#dau3#su4#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page9#dau3#ln16" name="Flow16" to="sv2#page9#enu6" type="transport" validate="true">
+        <LinkParameter id="sv2#page9#dau3#ln16#par62" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
+      </Link>
+      <Link id="sv2#page9#dau3#ln22" name="Flow22" to="sv2#page9#seu6" type="transport" validate="true">
+        <LinkParameter id="sv2#page9#dau3#ln22#par83" name="campaignId_PASSING" sourceLinkParameter="sv2#page7#inu2#ln17#par70" passing="true"/>
+      </Link>
+    </DataUnit>
+    <IndexUnit gr:x="345" gr:y="0" id="sv2#page9#inu3" name="Contribution Profile" entity="ent4" displayAttributes="ent4#att16 ent4#att17 ent4#att18">
+      <Selector id="sv2#page9#inu3#su6" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page9#inu3#su6#rcond2" name="CampaignToContribution" predicate="in" implied="false" role="rel7#role13"/>
+      </Selector>
+    </IndexUnit>
+    <SelectorUnit gr:x="170" gr:y="0" id="sv2#page9#seu6" name="Select Contribution" entity="ent4">
+      <Link id="sv2#page9#seu6#ln23" name="Flow23" to="sv2#page9#inu3" type="transport" validate="true">
+        <LinkParameter id="sv2#page9#seu6#ln23#par93" name="campaignId_PASSING_CampaignToContribution [campaignId]" sourceLinkParameter="sv2#page9#dau3#ln22#par83" target="sv2#page9#inu3#su6#rcond2.ent3#att8"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page9#enu6">
+          <layout:Field field="sv2#page9#enu6#fld25"/>
+          <layout:Field field="sv2#page9#enu6#fld26"/>
+          <layout:Field field="sv2#page9#enu6#fld27"/>
+          <layout:Link link="sv2#page9#enu6#ln14"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page9#dau3">
+          <layout:Attribute attribute="ent3#att9"/>
+          <layout:Attribute attribute="ent3#att10"/>
+          <layout:Attribute attribute="ent3#att12"/>
+          <layout:Attribute attribute="ent3#att13"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page9#inu3">
+          <layout:Attribute attribute="ent4#att16"/>
+          <layout:Attribute attribute="ent4#att17"/>
+          <layout:Attribute attribute="ent4#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

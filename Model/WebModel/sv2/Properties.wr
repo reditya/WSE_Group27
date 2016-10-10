@@ -1,0 +1,11 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Private Page" protected="true" homePage="sv2#page7">
+  <OperationUnits>
+    <CreateUnit gr:x="400" gr:y="355" id="sv2#cru2" name="Create Campaign " entity="ent3" linkOrder="sv2#cru2#ln15">
+      <OKLink id="sv2#cru2#oln9" name="OKFlow9" to="sv2#page9#enu6" automaticCoupling="true"/>
+      <Link id="sv2#cru2#ln15" name="Flow15" to="sv2#page9#dau3" automaticCoupling="true" type="transport" validate="true"/>
+    </CreateUnit>
+    <CreateUnit gr:x="645" gr:y="395" id="sv2#cru3" name="Create Contribution" entity="ent4">
+      <OKLink id="sv2#cru3#oln10" name="OKFlow10" to="sv2#page9#enu6" gr:bendpoints="-55,-75,-45,70"/>
+    </CreateUnit>
+  </OperationUnits>
+</SiteView>

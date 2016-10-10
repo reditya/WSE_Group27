@@ -1,0 +1,103 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="200" gr:y="115" id="sv1#page1" name="Homepage">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#page1#enu1" name="LoginForm" entity="User" linkOrder="sv1#page1#enu1#ln5">
+      <Field id="sv1#page1#enu1#fld1" name="Username" type="string" modifiable="true" attribute="userName"/>
+      <Field id="sv1#page1#enu1#fld2" name="Password" type="password" modifiable="true" attribute="password"/>
+      <Link id="sv1#page1#enu1#ln5" name="Flow5" to="sv1#miu13" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu1#ln5#par25" name="Username_Password" source="sv1#page1#enu1#fld2" target="sv1#miu13.mov1#opm4#icu4#icp12"/>
+        <LinkParameter id="sv1#page1#enu1#ln5#par26" name="Password_Username" source="sv1#page1#enu1#fld1" target="sv1#miu13.mov1#opm4#icu4#icp11"/>
+        <LinkParameter id="sv1#page1#enu1#ln5#par35" name="Key [userId]_PASSING" source="key.userOID" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <EntryUnit gr:x="140" gr:y="0" id="sv1#page1#enu2" name="Register" entity="User" linkOrder="sv1#page1#enu2#ln3">
+      <Field id="sv1#page1#enu2#fld3" name="Username" type="string" modifiable="true" attribute="userName"/>
+      <Field id="sv1#page1#enu2#fld4" name="Password" type="password" modifiable="true" attribute="password"/>
+      <Field id="sv1#page1#enu2#fld5" name="Fullname" type="string" modifiable="true" attribute="User#att2"/>
+      <Field id="sv1#page1#enu2#fld6" name="Email" type="string" modifiable="true" attribute="email"/>
+      <Field id="sv1#page1#enu2#fld7" name="Birthdate" type="date" modifiable="true" attribute="User#att1"/>
+      <MultiSelectionField id="sv1#page1#enu2#msfld1" name="Tags Preference" type="string" role="rel15#role29"/>
+      <Link id="sv1#page1#enu2#ln3" name="Submit" to="sv1#miu3" type="normal" validate="true">
+        <LinkParameter id="sv1#page1#enu2#ln3#par7" name="tagId_PASSING" sourceLinkParameter="sv1#page1#seu2#ln1#par6" passing="true"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par8" name="keywords_PASSING" sourceLinkParameter="sv1#page1#seu2#ln1#par5" passing="true"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par27" name="Birthdate_dateofbirth" source="sv1#page1#enu2#fld7" target="sv1#miu3.mov1#opm1#icu1#icp5"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par28" name="Email_email" source="sv1#page1#enu2#fld6" target="sv1#miu3.mov1#opm1#icu1#icp1"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par29" name="Fullname_fullname" source="sv1#page1#enu2#fld5" target="sv1#miu3.mov1#opm1#icu1#icp7"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par30" name="Key [userId]_oid" source="key.userOID" target="sv1#miu3.mov1#opm1#icu1#icp9"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par31" name="Password_password" source="sv1#page1#enu2#fld4" target="sv1#miu3.mov1#opm1#icu1#icp3"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par32" name="tagId_PASSING_Tags.oid(UserToUserPrefence)" target="sv1#miu3.mov1#opm1#icu1#icp4" source="sv1#page1#enu2#msfld1"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par33" name="User Object_User Object" source="entityBean" target="sv1#miu3.mov1#opm1#icu1#icp8"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par34" name="Username_username" source="sv1#page1#enu2#fld3" target="sv1#miu3.mov1#opm1#icu1#icp6"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par47" name="2_Groups.oid(defaultGroups)" sourceValue="2" target="sv1#miu3.mov1#opm1#icu1#icp13"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par49" name="2_Groups.oid(UserToGroup)" sourceValue="2" target="sv1#miu3.mov1#opm1#icu1#icp14"/>
+      </Link>
+    </EntryUnit>
+    <SelectorUnit gr:x="215" gr:y="140" id="sv1#page1#seu2" name="TagPreference" entity="ent6">
+      <Link id="sv1#page1#seu2#ln1" name="Flow1" to="sv1#page1#enu2" type="transport" validate="true">
+        <LinkParameter id="sv1#page1#seu2#ln1#par3" name="keywords_Tags Preference [label]" source="ent6#att23Array" target="sv1#page1#enu2#msfld1_label"/>
+        <LinkParameter id="sv1#page1#seu2#ln1#par4" name="tagId_Tags Preference [output]" source="ent6#att22Array" target="sv1#page1#enu2#msfld1_output"/>
+        <LinkParameter id="sv1#page1#seu2#ln1#par5" name="keywords_PASSING" source="ent6#att23Array" passing="true"/>
+        <LinkParameter id="sv1#page1#seu2#ln1#par6" name="tagId_PASSING" source="ent6#att22Array" passing="true"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu1">
+          <layout:Field field="sv1#page1#enu1#fld1"/>
+          <layout:Field field="sv1#page1#enu1#fld2"/>
+          <layout:Link link="sv1#page1#enu1#ln5"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page1#enu2">
+          <layout:Link link="sv1#page1#enu2#ln3"/>
+          <layout:Field field="sv1#page1#enu2#fld3"/>
+          <layout:Field field="sv1#page1#enu2#fld4"/>
+          <layout:Field field="sv1#page1#enu2#fld5"/>
+          <layout:Field field="sv1#page1#enu2#fld6"/>
+          <layout:Field field="sv1#page1#enu2#fld7"/>
+          <layout:Field field="sv1#page1#enu2#msfld1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
