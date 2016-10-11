@@ -48,38 +48,17 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="5" gr:y="640" id="ent1" name="PaymentInfo" duration="persistent" attributeOrder="ent1#att3 ent1#att5" db:database="db1" db:table="paymentinfo">
-    <Attribute id="ent1#att3" key="true" name="paymentInfoId" type="integer" db:column="paymentinfoid"/>
-    <Attribute id="ent1#att5" name="accountNumber" type="string" key="false" db:column="accountnumber"/>
-  </Entity>
-  <Entity gr:x="15" gr:y="805" id="ent2" name="PaymentMethods" duration="persistent" attributeOrder="ent2#att6 ent2#att7" db:database="db1" db:table="paymentmethods">
+  <Entity gr:x="5" gr:y="720" id="ent2" name="PaymentMethods" duration="persistent" attributeOrder="ent2#att6 ent2#att7" db:database="db1" db:table="paymentmethods">
     <Attribute id="ent2#att6" key="true" name="methodId" type="integer" db:column="methodid"/>
     <Attribute id="ent2#att7" name="methodName" type="string" db:column="methodname"/>
   </Entity>
-  <Relationship id="rel1" name="PaymentInfo_PaymentMethods" sourceEntity="ent1" targetEntity="ent2" db:database="db1" db:table="paymentinfo">
-    <RelationshipRole1 id="rel1#role1" name="PaymentInfoToPaymentMethods" maxCard="1">
-      <db:JoinColumn attribute="ent1#att3" name="paymentinfoid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel1#role2" name="PaymentMethodsToPaymentInfo" maxCard="N">
-      <db:JoinColumn attribute="ent2#att6" name="paymentmethods_methodid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Relationship id="rel2" name="User_PaymentInfo" sourceEntity="User" targetEntity="ent1" db:database="db1" db:table="paymentinfo">
-    <RelationshipRole1 id="rel2#role3" name="UserToPaymentInfo" maxCard="1">
-      <db:JoinColumn attribute="userOID" name="user_userid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel2#role4" name="PaymentInfoToUser" maxCard="1">
-      <db:JoinColumn attribute="ent1#att3" name="paymentinfoid"/>
-    </RelationshipRole2>
-  </Relationship>
-  <Entity gr:x="615" gr:y="530" id="ent3" name="Campaign" duration="persistent" attributeOrder="ent3#att8 ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14 ent3#att20" db:database="db1" db:table="campaign">
+  <Entity gr:x="615" gr:y="530" id="ent3" name="Campaign" duration="persistent" attributeOrder="ent3#att8 ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14" db:database="db1" db:table="campaign">
     <Attribute id="ent3#att8" key="true" name="campaignId" type="integer" db:column="campaignid"/>
     <Attribute id="ent3#att14" name="maxBackingLimit" type="float" db:column="maxbackinglimit"/>
     <Attribute id="ent3#att13" name="campaignExpirationDate" type="date" db:column="campaignexpirationdate"/>
     <Attribute id="ent3#att12" name="campaignGoal" type="float" db:column="campaigngoal"/>
     <Attribute id="ent3#att10" name="campaignDescription" type="string" db:column="campaigndescription"/>
     <Attribute id="ent3#att9" name="campaignTitle" type="string" db:column="campaigntitle"/>
-    <Attribute id="ent3#att20" name="isPublished" type="boolean" db:column="ispublished"/>
   </Entity>
   <Entity gr:x="720" gr:y="850" id="ent4" name="ContributionProfile" duration="persistent" attributeOrder="ent4#att15 ent4#att16 ent4#att17 ent4#att18" db:database="db1" db:table="contributionprofile">
     <Attribute id="ent4#att15" key="true" name="contributionId" type="integer" db:column="contributionid"/>
@@ -197,6 +176,14 @@
     </RelationshipRole1>
     <RelationshipRole2 id="rel3#role6" name="CampaignToUser" maxCard="1">
       <db:JoinColumn attribute="ent3#att8" name="campaignid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel4" name="User_PaymentMethods" sourceEntity="User" targetEntity="ent2" db:database="db1" db:table="user_paymentmethods">
+    <RelationshipRole1 id="rel4#role7" name="UserToPaymentMethods" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="user_userid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel4#role8" name="PaymentMethodsToUser" maxCard="N">
+      <db:JoinColumn attribute="ent2#att6" name="paymentmethods_methodid"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>

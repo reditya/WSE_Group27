@@ -1,11 +1,11 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="715" gr:y="75" id="sv2#page9" name="Campaign Detail">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="705" gr:y="5" id="sv2#page9" name="Campaign Detail">
   <ContentUnits>
-    <GetUnit id="sv2#page9#gtu3" name="GetCurrentUser" gr:x="195" gr:y="130" contextParameters="UserCtxParam">
+    <GetUnit id="sv2#page9#gtu3" name="GetCurrentUser" gr:x="205" gr:y="295" contextParameters="UserCtxParam">
       <Link id="sv2#page9#gtu3#ln13" name="Flow13" to="sv2#page9#enu6" type="transport" validate="true">
         <LinkParameter id="sv2#page9#gtu3#ln13#par60" name="UserCtxParam.userId_PASSING" source="sv2#page9#gtu3.UserCtxParam" passing="true"/>
       </Link>
     </GetUnit>
-    <EntryUnit gr:x="0" gr:y="130" id="sv2#page9#enu6" name="Create Contribution" entity="ent4" linkOrder="sv2#page9#enu6#ln14">
+    <EntryUnit gr:x="0" gr:y="290" id="sv2#page9#enu6" name="Create Contribution" entity="ent4" linkOrder="sv2#page9#enu6#ln14">
       <Field id="sv2#page9#enu6#fld25" name="Description" type="string" modifiable="true" attribute="ent4#att17"/>
       <Field id="sv2#page9#enu6#fld26" name="Title" type="string" modifiable="true" attribute="ent4#att16"/>
       <Field id="sv2#page9#enu6#fld27" name="Minimum Amount" type="float" modifiable="true" attribute="ent4#att18"/>
@@ -18,7 +18,7 @@
         <LinkParameter id="sv2#page9#enu6#ln14#par68" name="Minimum Amount_minimumAmount" source="sv2#page9#enu6#fld27" target="sv2#cru3.ent4#att18"/>
       </Link>
     </EntryUnit>
-    <DataUnit gr:x="5" gr:y="0" id="sv2#page9#dau3" name="Campaign Detail" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14 ent3#att20">
+    <DataUnit gr:x="10" gr:y="0" id="sv2#page9#dau3" name="Campaign Detail" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14">
       <Selector id="sv2#page9#dau3#su4" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page9#dau3#su4#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
       </Selector>
@@ -28,15 +28,30 @@
       <Link id="sv2#page9#dau3#ln22" name="Flow22" to="sv2#page9#seu6" type="transport" validate="true">
         <LinkParameter id="sv2#page9#dau3#ln22#par83" name="campaignId_PASSING" sourceLinkParameter="sv2#page7#inu2#ln17#par70" passing="true"/>
       </Link>
+      <Link id="sv2#page9#dau3#ln21" name="Flow21" to="sv2#page9#seu7" type="transport" validate="true">
+        <LinkParameter id="sv2#page9#dau3#ln21#par89" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
+        <LinkParameter id="sv2#page9#dau3#ln21#par91" name="campaignId_PASSING" sourceLinkParameter="sv2#page7#inu2#ln17#par70" passing="true"/>
+      </Link>
     </DataUnit>
-    <IndexUnit gr:x="345" gr:y="0" id="sv2#page9#inu3" name="Contribution Profile" entity="ent4" displayAttributes="ent4#att16 ent4#att17 ent4#att18">
+    <IndexUnit gr:x="350" gr:y="0" id="sv2#page9#inu3" name="Contribution Profile" entity="ent4" displayAttributes="ent4#att16 ent4#att17 ent4#att18">
       <Selector id="sv2#page9#inu3#su6" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page9#inu3#su6#rcond2" name="CampaignToContribution" predicate="in" implied="false" role="rel7#role13"/>
       </Selector>
     </IndexUnit>
-    <SelectorUnit gr:x="170" gr:y="0" id="sv2#page9#seu6" name="Select Contribution" entity="ent4">
+    <SelectorUnit gr:x="175" gr:y="0" id="sv2#page9#seu6" name="Select Contribution" entity="ent4">
       <Link id="sv2#page9#seu6#ln23" name="Flow23" to="sv2#page9#inu3" type="transport" validate="true">
         <LinkParameter id="sv2#page9#seu6#ln23#par93" name="campaignId_PASSING_CampaignToContribution [campaignId]" sourceLinkParameter="sv2#page9#dau3#ln22#par83" target="sv2#page9#inu3#su6#rcond2.ent3#att8"/>
+      </Link>
+    </SelectorUnit>
+    <PowerIndexUnit gr:x="375" gr:y="135" id="sv2#page9#pwu1" name="Tags" sortable="true" checkable="false" useCountQuery="false" entity="ent6" displayAttributes="ent6#att23">
+      <Selector id="sv2#page9#pwu1#su2" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page9#pwu1#su2#rcond3" name="CampaignToTags" predicate="in" implied="false" role="rel8#role16"/>
+      </Selector>
+    </PowerIndexUnit>
+    <SelectorUnit gr:x="170" gr:y="140" id="sv2#page9#seu7" name="Select Tags" entity="ent6">
+      <Link id="sv2#page9#seu7#ln24" name="Flow24" to="sv2#page9#pwu1" type="transport" validate="true">
+        <LinkParameter id="sv2#page9#seu7#ln24#par95" name="campaignId_PASSING" sourceLinkParameter="sv2#page9#dau3#ln21#par91" passing="true"/>
+        <LinkParameter id="sv2#page9#seu7#ln24#par96" name="campaignId_PASSING_CampaignToTags [campaignId]" sourceLinkParameter="sv2#page9#dau3#ln21#par89" target="sv2#page9#pwu1#su2#rcond3.ent3#att8"/>
       </Link>
     </SelectorUnit>
   </ContentUnits>
@@ -70,7 +85,6 @@
           <layout:Attribute attribute="ent3#att12"/>
           <layout:Attribute attribute="ent3#att13"/>
           <layout:Attribute attribute="ent3#att14"/>
-          <layout:Attribute attribute="ent3#att20"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -91,6 +105,24 @@
           <layout:Attribute attribute="ent4#att16"/>
           <layout:Attribute attribute="ent4#att17"/>
           <layout:Attribute attribute="ent4#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page9#pwu1">
+          <layout:Attribute attribute="ent6#att23"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
