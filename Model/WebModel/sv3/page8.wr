@@ -1,0 +1,85 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1075" gr:y="320" id="sv3#page8" name="Page 8">
+  <ContentUnits>
+    <SelectorUnit id="sv3#page8#seu14" name="Select Profile" gr:x="225" gr:y="0" entity="ent11">
+      <Link id="sv3#page8#seu14#ln37" name="Flow34" to="sv3#page8#enu4" type="transport" validate="true">
+        <LinkParameter id="sv3#page8#seu14#ln37#par118" name="ReceivedContributionToCampaign.campaignId_Key Condition [campaignId]" target="sv3#page8#enu4.ent11#att40" sourceLinkParameter="sv3#page6#inu5#ln40#par133"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par119" name="ReceivedContributionToContributionProfile.contributionId_Key Condition [contributionid]" target="sv3#page8#enu4.ent11#att42" sourceLinkParameter="sv3#page6#inu5#ln40#par132"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par199" name="contributionId_PASSING" sourceLinkParameter="sv3#page6#inu5#ln40#par132" passing="true"/>
+      </Link>
+    </SelectorUnit>
+    <GetUnit id="sv3#page8#gtu5" name="GetCurrentUser" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv3#page8#gtu5#ln38" name="Flow36" to="sv3#page8#enu4" type="transport" validate="true">
+        <LinkParameter id="sv3#page8#gtu5#ln38#par121" name="UserCtxParam.userId_PASSING" source="sv3#page8#gtu5.UserCtxParam" passing="true"/>
+        <LinkParameter id="sv3#page8#gtu5#ln38#par122" name="UserCtxParam.userId_Key Condition [userid]" source="sv3#page8#gtu5.UserCtxParam" target="sv3#page8#enu4.ent11#att43"/>
+      </Link>
+      <Link id="sv3#page8#gtu5#ln41" name="Flow41" to="sv3#page8#seu15" type="transport" validate="true">
+        <LinkParameter id="sv3#page8#gtu5#ln41#par134" name="UserCtxParam.userId_PASSING" source="sv3#page8#gtu5.UserCtxParam" passing="true"/>
+        <LinkParameter id="sv3#page8#gtu5#ln41#par99" name="UserCtxParam.userId_RoleCondition5 [userId]" source="sv3#page8#gtu5.UserCtxParam" target="sv3#page8#seu15#su8#rcond5.userOID"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit id="sv3#page8#enu4" name="Create Contribution" linkOrder="sv3#page8#enu4#ln39" gr:x="200" gr:y="130" entity="ent11">
+      <Field id="sv3#page8#enu4#fld9" name="Amount" type="float" modifiable="true" attribute="ent11#att41">
+        <VRules/>
+      </Field>
+      <Link id="sv3#page8#enu4#ln39" name="Flow35" to="sv3#cru4" type="normal" validate="true">
+        <LinkParameter id="sv3#page8#enu4#ln39#par123" name="Amount_PASSING" source="sv3#page8#enu4#fld9" passing="true"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par124" name="Key [campaignId]_PASSING" source="key.ent11#att40" passing="true"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par125" name="Key [contributionid]_PASSING" source="key.ent11#att42" passing="true"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par126" name="Key [userid]_PASSING" source="key.ent11#att43" passing="true"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par127" name="Amount_amount" source="sv3#page8#enu4#fld9" target="sv3#cru4.ent11#att41"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par128" name="Key [campaignId]_campaignId" source="key.ent11#att40" target="sv3#cru4.ent11#att40"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par129" name="Key [contributionid]_contributionid" source="key.ent11#att42" target="sv3#cru4.ent11#att42"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par130" name="Key [userid]_userid" source="key.ent11#att43" target="sv3#cru4.ent11#att43"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par139" name="methodId_PASSING_PaymentMethods.methodId(ReceivedContributionToPaymentMethods)" sourceLinkParameter="sv3#page8#seu15#ln42#par135" target="sv3#cru4.rel16#role32.ent2#att6"/>
+      </Link>
+      <SelectionField id="sv3#page8#enu4#sfld2" name="Payment Method" type="string"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="10" gr:y="130" id="sv3#page8#seu15" name="Select Payment" entity="ent2">
+      <Link id="sv3#page8#seu15#ln42" name="Flow42" to="sv3#page8#enu4" type="transport" validate="true">
+        <LinkParameter id="sv3#page8#seu15#ln42#par135" name="methodId_PASSING" source="ent2#att6Array" passing="true"/>
+        <LinkParameter id="sv3#page8#seu15#ln42#par136" name="methodName_PASSING" source="ent2#att7Array" passing="true"/>
+        <LinkParameter id="sv3#page8#seu15#ln42#par137" name="methodName_Payment Method [label]" source="ent2#att7Array" target="sv3#page8#enu4#sfld2_label"/>
+        <LinkParameter id="sv3#page8#seu15#ln42#par138" name="methodId_Payment Method [output]" source="ent2#att6Array" target="sv3#page8#enu4#sfld2_output"/>
+      </Link>
+      <Selector id="sv3#page8#seu15#su8" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page8#seu15#su8#rcond5" name="RoleCondition5" predicate="in" implied="false" role="rel4#role7"/>
+      </Selector>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page8#enu4">
+          <layout:Link link="sv3#page8#enu4#ln39"/>
+          <layout:Field field="sv3#page8#enu4#fld9"/>
+          <layout:Field field="sv3#page8#enu4#sfld2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

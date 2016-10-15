@@ -1,0 +1,60 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="310" gr:y="885" id="sv3#page4" name="Inbox" landmark="true">
+  <ContentUnits>
+    <IndexUnit gr:x="300" gr:y="0" id="sv3#page4#inu4" name="Simple List4" entity="ent9" displayAttributes="ent9#att29 ent9#att30 rel12#role23.ent3#att9 rel12#role23.rel3#role6.User#att2">
+      <Selector id="sv3#page4#inu4#su17" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page4#inu4#su17#rcond14" name="RoleCondition14" predicate="in" implied="false" role="rel11#role21"/>
+      </Selector>
+    </IndexUnit>
+    <GetUnit id="sv3#page4#gtu1" name="GetCurrentUser" gr:x="0" gr:y="5" contextParameters="UserCtxParam">
+      <Link id="sv3#page4#gtu1#ln48" name="Flow48" to="sv3#page4#seu12" type="transport" validate="true">
+        <LinkParameter id="sv3#page4#gtu1#ln48#par158" name="UserCtxParam.userId_PASSING" source="sv3#page4#gtu1.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="165" gr:y="0" id="sv3#page4#seu12" name="Selector12" entity="ent9">
+      <Link id="sv3#page4#seu12#ln49" name="Flow49" to="sv3#page4#inu4" type="transport" validate="true">
+        <LinkParameter id="sv3#page4#seu12#ln49#par159" name="questionId_current questionId" source="ent9#att28Array" target="sv3#page4#inu4.current.ent9#att28"/>
+        <LinkParameter id="sv3#page4#seu12#ln49#par160" name="QuestionsToCampaign.campaignId_PASSING" source="rel12#role23_ent3#att8Array" passing="true"/>
+        <LinkParameter id="sv3#page4#seu12#ln49#par161" name="QuestionsToUser.userId_PASSING" source="rel11#role22_userOIDArray" passing="true"/>
+        <LinkParameter id="sv3#page4#seu12#ln49#par162" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv3#page4#gtu1#ln48#par158" passing="true"/>
+        <LinkParameter id="sv3#page4#seu12#ln49#par163" name="UserCtxParam.userId_PASSING_RoleCondition14 [userId]" sourceLinkParameter="sv3#page4#gtu1#ln48#par158" target="sv3#page4#inu4#su17#rcond14.userOID"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page4#inu4">
+          <layout:Attribute attribute="ent9#att29"/>
+          <layout:Attribute attribute="ent9#att30"/>
+          <layout:Attribute attribute="rel12#role23.ent3#att9"/>
+          <layout:Attribute attribute="rel12#role23.rel3#role6.User#att2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

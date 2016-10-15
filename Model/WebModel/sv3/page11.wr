@@ -1,0 +1,214 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page11" name="Campaign Detail View" linkOrder="sv3#page11#ln70" gr:x="-15" gr:y="275">
+  <ContentUnits>
+    <DataUnit id="sv3#page11#dau4" name="Campaign Detail" gr:x="175" gr:y="0" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att5">
+      <Selector id="sv3#page11#dau4#su13" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#page11#dau4#su13#kcond6" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv3#page11#dau4#ln67" name="Flow22" to="sv3#page11#seu21" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#dau4#ln67#par254" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
+      </Link>
+      <Link id="sv3#page11#dau4#ln73" name="Flow73" to="sv3#page11#seu22" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#dau4#ln73#par255" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
+      </Link>
+      <Link id="sv3#page11#dau4#ln31" name="Flow31" to="sv3#page11#enu3" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#dau4#ln31#par100" name="campaignId_Key Condition [vote_campaignid]" target="sv3#page11#enu3.ent10#att31" source="data.ent3#att8"/>
+      </Link>
+      <Link id="sv3#page11#dau4#ln34" name="Flow34" to="sv3#page11#enu8" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#dau4#ln34#par146" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
+      </Link>
+    </DataUnit>
+    <SelectorUnit id="sv3#page11#seu21" name="Select Contribution" gr:x="475" gr:y="245" entity="ent4">
+      <Link id="sv3#page11#seu21#ln68" name="Flow23" to="sv3#page11#inu7" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#seu21#ln68#par211" name="ContributionProfileToCampaign.campaignId_PASSING" source="rel7#role14_ent3#att8Array" passing="true"/>
+        <LinkParameter id="sv3#page11#seu21#ln68#par250" name="ContributionProfileToCampaign.campaignId_CampaignToContribution [campaignId]" target="sv3#page11#inu7#su14#rcond10.ent3#att8" sourceLinkParameter="sv3#page11#dau4#ln67#par254"/>
+      </Link>
+      <Link id="sv3#page11#seu21#ln81" name="Flow81" to="sv3#page11#seu22" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#seu21#ln81#par257" name="contributionId_PASSING" source="ent4#att15Array" passing="true"/>
+      </Link>
+    </SelectorUnit>
+    <IndexUnit id="sv3#page11#inu7" name="Contribution Profile" gr:x="490" gr:y="375" entity="ent4" displayAttributes="ent4#att16 ent4#att17 ent4#att18">
+      <Selector id="sv3#page11#inu7#su14" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page11#inu7#su14#rcond10" name="CampaignToContribution" predicate="in" implied="false" role="rel7#role13"/>
+      </Selector>
+    </IndexUnit>
+    <SelectorUnit gr:x="315" gr:y="245" id="sv3#page11#seu22" name="Select Received" entity="ent11">
+      <Link id="sv3#page11#seu22#ln74" name="Flow74" to="sv3#page11#dau5" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#seu22#ln74#par244" name="ReceivedContributionToCampaign.campaignId_PASSING" source="rel6#role11_ent3#att8Array" passing="true"/>
+        <LinkParameter id="sv3#page11#seu22#ln74#par245" name="ReceivedContributionToContributionProfile.contributionId_PASSING" source="rel10#role20_ent4#att15Array" passing="true"/>
+        <LinkParameter id="sv3#page11#seu22#ln74#par246" name="ReceivedContributionToUser.userId_PASSING" source="rel9#role18_userOIDArray" passing="true"/>
+        <LinkParameter id="sv3#page11#seu22#ln74#par249" name="UserCtxParam.userId_PASSING_RoleCondition13 [userId]" sourceLinkParameter="sv3#page11#gtu9#ln77#par230" target="sv3#page11#dau5#su15#rcond13.userOID"/>
+        <LinkParameter id="sv3#page11#seu22#ln74#par256" name="campaignId_PASSING_RoleCondition12 [campaignId]" sourceLinkParameter="sv3#page11#dau4#ln73#par255" target="sv3#page11#dau5#su15#rcond12.ent3#att8"/>
+        <LinkParameter id="sv3#page11#seu22#ln74#par258" name="contributionId_PASSING_RoleCondition11 [contributionId]" sourceLinkParameter="sv3#page11#seu21#ln81#par257" target="sv3#page11#dau5#su15#rcond11.ent4#att15"/>
+      </Link>
+    </SelectorUnit>
+    <DataUnit gr:x="300" gr:y="355" id="sv3#page11#dau5" name="Your Contribution" entity="ent11" displayAttributes="ent11#att41 rel16#role32.ent2#att7 rel10#role20.ent4#att16">
+      <Selector id="sv3#page11#dau5#su15" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page11#dau5#su15#rcond11" name="RoleCondition11" predicate="in" implied="false" role="rel10#role19"/>
+        <RelationshipRoleCondition id="sv3#page11#dau5#su15#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel6#role12"/>
+        <RelationshipRoleCondition id="sv3#page11#dau5#su15#rcond13" name="RoleCondition13" predicate="in" implied="false" role="rel9#role17"/>
+      </Selector>
+    </DataUnit>
+    <GetUnit id="sv3#page11#gtu9" name="GetCurrentUser" gr:x="85" gr:y="150" contextParameters="UserCtxParam">
+      <Link id="sv3#page11#gtu9#ln77" name="Flow77" to="sv3#page11#seu22" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#gtu9#ln77#par230" name="UserCtxParam.userId_PASSING" source="sv3#page11#gtu9.UserCtxParam" passing="true"/>
+      </Link>
+      <Link id="sv3#page11#gtu9#ln6" name="Flow6" to="sv3#page11#enu3" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#gtu9#ln6#par39" name="UserCtxParam.userId_Key Condition [vote_userid]" source="sv3#page11#gtu9.UserCtxParam" target="sv3#page11#enu3.ent10#att27"/>
+        <LinkParameter id="sv3#page11#gtu9#ln6#par40" name="UserCtxParam.userId_PASSING" source="sv3#page11#gtu9.UserCtxParam" passing="true"/>
+      </Link>
+      <Link id="sv3#page11#gtu9#ln35" name="Flow35" to="sv3#page11#enu8" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#gtu9#ln35#par147" name="UserCtxParam.userId_PASSING" source="sv3#page11#gtu9.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit gr:x="220" gr:y="270" id="sv3#page11#enu3" name="Give Vote" entity="ent10" linkOrder="sv3#page11#enu3#ln12">
+      <Link id="sv3#page11#enu3#ln12" name="Flow12" to="sv3#cru5" type="normal" validate="true">
+        <LinkParameter id="sv3#page11#enu3#ln12#par47" name="Vote Object_Vote Object" source="entityBean" target="sv3#cru5.entityBeans"/>
+        <LinkParameter id="sv3#page11#enu3#ln12#par48" name="Key [vote_campaignid]_vote_campaignid" source="key.ent10#att31" target="sv3#cru5.ent10#att31"/>
+        <LinkParameter id="sv3#page11#enu3#ln12#par72" name="Key [vote_userid]_vote_userid" source="key.ent10#att27" target="sv3#cru5.ent10#att27"/>
+        <LinkParameter id="sv3#page11#enu3#ln12#par101" name="Key [vote_campaignid]_PASSING" source="key.ent10#att31" passing="true"/>
+        <LinkParameter id="sv3#page11#enu3#ln12#par102" name="Key [vote_userid]_PASSING" source="key.ent10#att27" passing="true"/>
+        <LinkParameter id="sv3#page11#enu3#ln12#par104" name="Vote Score_PASSING" source="sv3#page11#enu3#sfld3" passing="true"/>
+        <LinkParameter id="sv3#page11#enu3#ln12#par111" name="Vote Score_VoteRange.oid(VoteToVoteRange)" source="sv3#page11#enu3#sfld3" target="sv3#cru5.rel18#role36.ent8#att24"/>
+      </Link>
+      <SelectionField id="sv3#page11#enu3#sfld3" type="integer" name="Vote Score"/>
+    </EntryUnit>
+    <SelectorUnit gr:x="70" gr:y="250" id="sv3#page11#seu9" name="Vote Select" entity="ent8">
+      <Selector id="sv3#page11#seu9#su16" defaultPolicy="fill" booleanOperator="and"/>
+      <Link id="sv3#page11#seu9#ln18" name="Flow18" to="sv3#page11#enu3" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#seu9#ln18#par105" name="oid_Vote Score [label]" source="ent8#att25Array" target="sv3#page11#enu3#sfld3_label"/>
+        <LinkParameter id="sv3#page11#seu9#ln18#par106" name="value_Vote Score [output]" source="ent8#att24Array" target="sv3#page11#enu3#sfld3_output"/>
+        <LinkParameter id="sv3#page11#seu9#ln18#par109" name="oid_PASSING" source="ent8#att24Array" passing="true"/>
+        <LinkParameter id="sv3#page11#seu9#ln18#par110" name="value_PASSING" source="ent8#att25Array" passing="true"/>
+      </Link>
+    </SelectorUnit>
+    <EntryUnit gr:x="0" gr:y="15" id="sv3#page11#enu8" name="Ask Question" entity="ent9" linkOrder="sv3#page11#enu8#ln36">
+      <Field id="sv3#page11#enu8#fld10" name="Question" type="string" modifiable="true" attribute="ent9#att29"/>
+      <Field id="sv3#page11#enu8#fld11" name="Private?" type="boolean" modifiable="true" attribute="ent9#att39"/>
+      <Link id="sv3#page11#enu8#ln36" name="Flow36" to="sv3#cru6" type="normal" validate="true">
+        <LinkParameter id="sv3#page11#enu8#ln36#par148" name="campaignId_PASSING_Campaign.campaignId(QuestionsToCampaign)" sourceLinkParameter="sv3#page11#dau4#ln34#par146" target="sv3#cru6.rel12#role23.ent3#att8"/>
+        <LinkParameter id="sv3#page11#enu8#ln36#par149" name="Key [questionId]_questionId" source="key.ent9#att28" target="sv3#cru6.ent9#att28"/>
+        <LinkParameter id="sv3#page11#enu8#ln36#par150" name="Questions Object_Questions Object" source="entityBean" target="sv3#cru6.entityBeans"/>
+        <LinkParameter id="sv3#page11#enu8#ln36#par151" name="Question_questionString" source="sv3#page11#enu8#fld10" target="sv3#cru6.ent9#att29"/>
+        <LinkParameter id="sv3#page11#enu8#ln36#par152" name="UserCtxParam.userId_PASSING_User.userId(QuestionsToUser)" sourceLinkParameter="sv3#page11#gtu9#ln35#par147" target="sv3#cru6.rel11#role22.userOID"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page11#dau4">
+          <layout:Attribute attribute="ent3#att9"/>
+          <layout:Attribute attribute="ent3#att10"/>
+          <layout:Attribute attribute="ent3#att12"/>
+          <layout:Attribute attribute="ent3#att13"/>
+          <layout:Attribute attribute="ent3#att5"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page11#inu7">
+          <layout:Attribute attribute="ent4#att16"/>
+          <layout:Attribute attribute="ent4#att17"/>
+          <layout:Attribute attribute="ent4#att18"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page11#dau5">
+          <layout:Attribute attribute="ent11#att41"/>
+          <layout:Attribute attribute="rel16#role32.ent2#att7"/>
+          <layout:Attribute attribute="rel10#role20.ent4#att16"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page11#enu3">
+          <layout:Link link="sv3#page11#enu3#ln12"/>
+          <layout:Field field="sv3#page11#enu3#sfld3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page11#enu8">
+          <layout:Field field="sv3#page11#enu8#fld10"/>
+          <layout:Field field="sv3#page11#enu8#fld11"/>
+          <layout:Link link="sv3#page11#enu8#ln36"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+  <Link id="sv3#page11#ln70" name="Flow29" to="sv3#miu5" type="normal" automaticCoupling="true" validate="true"/>
+</Page>

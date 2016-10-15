@@ -93,9 +93,9 @@
           <layout:Field field="sv1#page1#enu2#fld5"/>
           <layout:Field field="sv1#page1#enu2#fld6"/>
           <layout:Field field="sv1#page1#enu2#fld7"/>
+          <layout:Field field="sv1#page1#enu2#sfld1"/>
           <layout:Field field="sv1#page1#enu2#msfld1"/>
           <layout:Field field="sv1#page1#enu2#msfld2"/>
-          <layout:Field field="sv1#page1#enu2#sfld1"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

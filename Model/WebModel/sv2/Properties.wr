@@ -7,6 +7,6 @@
     <CreateUnit gr:x="730" gr:y="490" id="sv2#cru3" name="Create Contribution" entity="ent4">
       <OKLink id="sv2#cru3#oln10" name="OKFlow10" to="sv2#page9#enu6" gr:bendpoints="-55,-75,-45,70"/>
     </CreateUnit>
-    <ModuleInstanceUnit gr:x="130" gr:y="505" id="sv2#miu2" moduleId="mov1#opm2" landmark="true" name="Logout"/>
+    <ModuleInstanceUnit gr:x="165" gr:y="360" id="sv2#miu2" moduleId="mov1#opm2" landmark="true" name="Logout"/>
   </OperationUnits>
 </SiteView>

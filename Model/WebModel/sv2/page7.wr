@@ -5,7 +5,6 @@
       <Field id="sv2#page7#enu5#fld19" name="Description" type="string" modifiable="true" attribute="ent3#att10"/>
       <Field id="sv2#page7#enu5#fld20" name="Goal" type="float" modifiable="true" attribute="ent3#att12"/>
       <Field id="sv2#page7#enu5#fld21" name="Expiration Date" type="date" modifiable="true" attribute="ent3#att13"/>
-      <Field id="sv2#page7#enu5#fld22" name="Maximum Backing" type="float" modifiable="true" attribute="ent3#att14"/>
       <Link id="sv2#page7#enu5#ln11" name="Flow11" to="sv2#cru2" type="normal" validate="true">
         <LinkParameter id="sv2#page7#enu5#ln11#par53" name="Description_campaignDescription" source="sv2#page7#enu5#fld19" target="sv2#cru2.ent3#att10"/>
         <LinkParameter id="sv2#page7#enu5#ln11#par54" name="Expiration Date_campaignExpirationDate" source="sv2#page7#enu5#fld21" target="sv2#cru2.ent3#att13"/>
@@ -15,7 +14,6 @@
         <LinkParameter id="sv2#page7#enu5#ln11#par61" name="Key [campaignId]_PASSING" source="key.ent3#att8" passing="true"/>
         <LinkParameter id="sv2#page7#enu5#ln11#par75" name="UserCtxParam.userId_PASSING_User.userId(CampaignToUser)" sourceLinkParameter="sv2#page7#gtu2#ln10#par52" target="sv2#cru2.rel3#role6.userOID"/>
         <LinkParameter id="sv2#page7#enu5#ln11#par76" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv2#page7#gtu2#ln10#par52" passing="true"/>
-        <LinkParameter id="sv2#page7#enu5#ln11#par78" name="Maximum Backing_maxBackingLimit" source="sv2#page7#enu5#fld22" target="sv2#cru2.ent3#att14"/>
         <LinkParameter id="sv2#page7#enu5#ln11#par87" name="tagId_PASSING_Tags.tagId(CampaignToTags)" target="sv2#cru2.rel8#role16.ent6#att22" source="sv2#page7#enu5#msfld3"/>
       </Link>
       <MultiSelectionField id="sv2#page7#enu5#msfld3" role="rel8#role16" type="string" name="Tag"/>
@@ -55,13 +53,12 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv2#page7#enu5">
+          <layout:Link link="sv2#page7#enu5#ln11"/>
           <layout:Field field="sv2#page7#enu5#fld18"/>
           <layout:Field field="sv2#page7#enu5#fld19"/>
           <layout:Field field="sv2#page7#enu5#fld20"/>
           <layout:Field field="sv2#page7#enu5#fld21"/>
-          <layout:Field field="sv2#page7#enu5#fld22"/>
           <layout:Field field="sv2#page7#enu5#msfld3"/>
-          <layout:Link link="sv2#page7#enu5#ln11"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

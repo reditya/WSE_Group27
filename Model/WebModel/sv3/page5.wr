@@ -1,8 +1,76 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="315" gr:y="175" id="sv3#page5" name="Page 5" linkOrder="sv3#page5#ln19">
-  <ContentUnits/>
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="160" gr:y="-30" id="sv3#page5" name="Support General View" linkOrder="sv3#page5#ln19" landmark="true">
+  <ContentUnits>
+    <IndexUnit gr:x="470" gr:y="0" id="sv3#page5#inu1" name="Support a Campaign!" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu1#ln51">
+      <Link id="sv3#page5#inu1#ln51" name="Flow51" to="sv3#page6#dau2" type="normal" validate="true">
+        <LinkParameter id="sv3#page5#inu1#ln51#par156" name="campaignId_KeyCondition2 [campaignId]" target="sv3#page6#dau2#su3#kcond2.ent3#att8" source="data[].ent3#att8"/>
+        <LinkParameter id="sv3#page5#inu1#ln51#par195" name="campaignId_PASSING" source="data[].ent3#att8" passing="true"/>
+      </Link>
+      <Selector id="sv3#page5#inu1#su10" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page5#inu1#su10#rcond7" name="RoleCondition7" predicate="notIn" implied="false" role="rel6#role11"/>
+      </Selector>
+    </IndexUnit>
+    <GetUnit id="sv3#page5#gtu8" name="GetCurrentUser" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+      <Link id="sv3#page5#gtu8#ln63" name="Flow63" to="sv3#page5#seu20" type="transport" validate="true">
+        <LinkParameter id="sv3#page5#gtu8#ln63#par178" name="UserCtxParam.userId_PASSING" source="sv3#page5#gtu8.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="210" gr:y="0" id="sv3#page5#seu20" name="Selector20" entity="ent11">
+      <Link id="sv3#page5#seu20#ln64" name="Flow64" to="sv3#page5#inu1" type="transport" validate="true">
+        <LinkParameter id="sv3#page5#seu20#ln64#par186" name="campaignId_RoleCondition7 [campaignId]" source="rel6#role11_ent3#att8Array" target="sv3#page5#inu1#su10#rcond7.ent11#att40"/>
+        <LinkParameter id="sv3#page5#seu20#ln64#par201" name="campaignId_PASSING" source="ent11#att40Array" passing="true"/>
+        <LinkParameter id="sv3#page5#seu20#ln64#par202" name="ReceivedContributionToContributionProfile.contributionId_RoleCondition7 [contributionid]" source="rel10#role20_ent4#att15Array" target="sv3#page5#inu1#su10#rcond7.ent11#att42"/>
+        <LinkParameter id="sv3#page5#seu20#ln64#par203" name="ReceivedContributionToUser.userId_RoleCondition7 [userid]" target="sv3#page5#inu1#su10#rcond7.ent11#att43" source="rel9#role18_userOIDArray"/>
+      </Link>
+      <Selector id="sv3#page5#seu20#su11" defaultPolicy="fill" booleanOperator="and"/>
+      <Link id="sv3#page5#seu20#ln66" name="Flow64" to="sv3#page5#inu6" type="transport" validate="true">
+        <LinkParameter id="sv3#page5#seu20#ln66#par206" name="campaignId_RoleCondition7 [campaignId]" source="rel6#role11_ent3#att8Array" target="sv3#page5#inu6#su12#rcond9.ent11#att40"/>
+        <LinkParameter id="sv3#page5#seu20#ln66#par207" name="campaignId_PASSING" source="ent11#att40Array" passing="true"/>
+        <LinkParameter id="sv3#page5#seu20#ln66#par208" name="ReceivedContributionToContributionProfile.contributionId_RoleCondition7 [contributionid]" source="rel10#role20_ent4#att15Array" target="sv3#page5#inu6#su12#rcond9.ent11#att42"/>
+        <LinkParameter id="sv3#page5#seu20#ln66#par167" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv3#page5#gtu8#ln63#par178" passing="true"/>
+        <LinkParameter id="sv3#page5#seu20#ln66#par168" name="ReceivedContributionToUser.userId_RoleCondition7 [userid]" source="rel9#role18_userOIDArray" target="sv3#page5#inu6#su12#rcond9.ent11#att43"/>
+      </Link>
+    </SelectorUnit>
+    <IndexUnit id="sv3#page5#inu6" name="Your Supported Campaign" gr:x="220" gr:y="145" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu6#ln72">
+      <Selector id="sv3#page5#inu6#su12" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page5#inu6#su12#rcond9" name="RoleCondition7" predicate="in" implied="false" role="rel6#role11"/>
+      </Selector>
+      <Link id="sv3#page5#inu6#ln72" name="Flow72" to="sv3#page11#dau4" type="normal" validate="true">
+        <LinkParameter id="sv3#page5#inu6#ln72#par217" name="campaignId_KeyCondition2 [campaignId]" source="data[].ent3#att8" target="sv3#page11#dau4#su13#kcond6.ent3#att8"/>
+        <LinkParameter id="sv3#page5#inu6#ln72#par218" name="campaignId_PASSING" sourceLinkParameter="sv3#page5#seu20#ln66#par207" passing="true"/>
+      </Link>
+    </IndexUnit>
+  </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page5#inu1">
+          <layout:Attribute attribute="ent3#att9"/>
+          <layout:Attribute attribute="ent3#att10"/>
+          <layout:Attribute attribute="ent3#att13"/>
+          <layout:Link link="sv3#page5#inu1#ln51"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page5#inu6">
+          <layout:Attribute attribute="ent3#att9"/>
+          <layout:Attribute attribute="ent3#att10"/>
+          <layout:Attribute attribute="ent3#att13"/>
+          <layout:Link link="sv3#page5#inu6#ln72"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -17,4 +85,8 @@
     </layout:Row>
   </layout:Grid>
   <Link id="sv3#page5#ln19" name="Logout" to="sv3#miu5" automaticCoupling="true" type="normal" validate="true"/>
+  <ConditionExpression id="sv3#page5#cexpr1" name="showContribute">
+    <TextValue xml:space="preserve">isContributed</TextValue>
+  </ConditionExpression>
+  <Variable id="sv3#page5#var3" name="isContributed" type="integer" value="0"/>
 </Page>
