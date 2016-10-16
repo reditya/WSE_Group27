@@ -1,6 +1,6 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Supporter View" protected="true" homePage="sv3#page5" landmarks="sv3#miu5 sv3#page5 sv3#page4">
   <OperationUnits>
-    <ModuleInstanceUnit id="sv3#miu5" name="Logout" landmark="true" gr:x="900" gr:y="420" moduleId="mov1#opm2"/>
+    <ModuleInstanceUnit id="sv3#miu5" name="Logout" landmark="true" gr:x="1010" gr:y="415" moduleId="mov1#opm2"/>
     <CreateUnit gr:x="1070" gr:y="715" id="sv3#cru4" name="Save Received Contribution" entity="ent11">
       <OKLink id="sv3#cru4#oln7" name="OKFlow7" to="sv3#page10" automaticCoupling="true"/>
     </CreateUnit>

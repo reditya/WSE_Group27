@@ -1,0 +1,63 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page19" name="Inbox" landmark="true" gr:x="860" gr:y="-160">
+  <ContentUnits>
+    <IndexUnit id="sv2#page19#inu19" name="Private questions" gr:x="330" gr:y="0" entity="ent9" displayAttributes="ent9#att29 ent9#att30 rel12#role23.ent3#att9 rel12#role23.ent3#att10" linkOrder="sv2#page19#inu19#ln43">
+      <Selector id="sv2#page19#inu19#su23" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page19#inu19#su23#rcond22" name="RoleCondition14" predicate="in" implied="false" role="rel12#role24"/>
+        <RelationshipRoleCondition id="sv2#page19#inu19#su23#rcond16" name="RoleCondition16" predicate="in" implied="false" role="rel3#role5.rel12#role24"/>
+        <AttributesCondition id="sv2#page19#inu19#su23#acond7" name="Private" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att39" value="true"/>
+      </Selector>
+      <Link id="sv2#page19#inu19#ln43" name="Answer" to="sv2#page14#dau9" automaticCoupling="true" type="normal" validate="true"/>
+    </IndexUnit>
+    <GetUnit id="sv2#page19#gtu4" name="GetCurrentUser" gr:x="0" gr:y="5" contextParameters="UserCtxParam">
+      <Link id="sv2#page19#gtu4#ln18" name="Flow18" to="sv2#page19#seu16" type="transport" validate="true">
+        <LinkParameter id="sv2#page19#gtu4#ln18#par66" name="UserCtxParam.userId_PASSING" source="sv2#page19#gtu4.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+    <SelectorUnit gr:x="150" gr:y="5" id="sv2#page19#seu16" name="Select campaign" entity="ent3">
+      <Link id="sv2#page19#seu16#ln33" name="Flow33" to="sv2#page19#inu19" type="transport" validate="true">
+        <LinkParameter id="sv2#page19#seu16#ln33#par77" name="campaignId_RoleCondition14 [campaignId]" source="ent3#att8Array" target="sv2#page19#inu19#su23#rcond22.ent3#att8"/>
+        <LinkParameter id="sv2#page19#seu16#ln33#par91" name="UserCtxParam.userId_PASSING_RoleCondition16 [userId]" sourceLinkParameter="sv2#page19#gtu4#ln18#par66" target="sv2#page19#inu19#su23#rcond16.userOID"/>
+        <LinkParameter id="sv2#page19#seu16#ln33#par92" name="campaignId_PASSING" source="ent3#att8Array" passing="true"/>
+        <LinkParameter id="sv2#page19#seu16#ln33#par95" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv2#page19#gtu4#ln18#par66" passing="true"/>
+      </Link>
+    </SelectorUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page19#inu19">
+          <layout:Attribute attribute="ent9#att29"/>
+          <layout:Attribute attribute="ent9#att30"/>
+          <layout:Attribute attribute="rel12#role23.ent3#att9"/>
+          <layout:Attribute attribute="rel12#role23.ent3#att10"/>
+          <layout:Link link="sv2#page19#inu19#ln43"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

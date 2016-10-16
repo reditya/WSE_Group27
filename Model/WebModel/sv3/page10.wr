@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="860" gr:y="770" id="sv3#page10" name="Thank you Page" linkOrder="sv3#page10#ln43">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="860" gr:y="770" id="sv3#page10" name="Thank you Page">
   <ContentUnits>
     <MultiMessageUnit gr:x="0" gr:y="0" id="sv3#page10#mssu2" name="Message2">
       <Message xml:space="preserve">Thank you for contributing to this campaign!</Message>
@@ -22,5 +22,4 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Link id="sv3#page10#ln43" name="Logout" to="sv3#miu5" automaticCoupling="true" type="normal" validate="true"/>
 </Page>

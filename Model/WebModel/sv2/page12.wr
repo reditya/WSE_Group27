@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1510" gr:y="-10" id="sv2#page12" name="Create Advert">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1655" gr:y="-10" id="sv2#page12" name="Create Advert">
   <ContentUnits>
     <EntryUnit id="sv2#page12#enu9" name="Create Advert" linkOrder="sv2#page12#enu9#ln27" gr:x="0" gr:y="0" entity="ent5" fieldOrder="sv2#page12#enu9#fld12">
       <Field id="sv2#page12#enu9#fld12" name="Description" type="string" modifiable="true" contentType="text/plain" attribute="ent5#att21"/>

@@ -1,0 +1,65 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1065" gr:y="85" id="sv3#page17" name="Search results">
+  <ContentUnits>
+    <IndexUnit gr:x="0" gr:y="0" id="sv3#page17#inu12" name="Campaign search results" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14 ent3#att5 ent3#att25">
+      <SortAttribute attribute="ent3#att9" order="ascending"/>
+      <Selector id="sv3#page17#inu12#su21" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv3#page17#inu12#su21#acond3" name="Search" predicate="contains" booleanOperator="or" implied="false" attributes="ent3#att10 ent3#att9" ignoreCase="true"/>
+      </Selector>
+      <Link id="sv3#page17#inu12#ln44" name="Flow44" to="sv3#page17#enu10" type="transport" validate="true" gr:bendpoints="-15,69,-15,-56">
+        <LinkParameter id="sv3#page17#inu12#ln44#par83" name="Search_PASSING_Search" sourceLinkParameter="sv3#page5#enu6#ln20#par74" target="sv3#page17#enu10#fld15_slot"/>
+        <LinkParameter id="sv3#page17#inu12#ln44#par90" name="Search_PASSING" sourceLinkParameter="sv3#page5#enu6#ln20#par74" passing="true"/>
+      </Link>
+    </IndexUnit>
+    <EntryUnit id="sv3#page17#enu10" name="Search" gr:x="90" gr:y="140" linkOrder="sv3#page17#enu10#ln29">
+      <Field id="sv3#page17#enu10#fld15" name="Search" type="string" modifiable="true" preloaded="true"/>
+      <Link id="sv3#page17#enu10#ln29" name="Search" to="sv3#page17#inu12" type="normal" validate="true">
+        <LinkParameter id="sv3#page17#enu10#ln29#par67" name="Search_DescriptionSearch" source="sv3#page17#enu10#fld15" target="sv3#page17#inu12#su21#acond3"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page17#inu12">
+          <layout:Attribute attribute="ent3#att9"/>
+          <layout:Attribute attribute="ent3#att10"/>
+          <layout:Attribute attribute="ent3#att12"/>
+          <layout:Attribute attribute="ent3#att13"/>
+          <layout:Attribute attribute="ent3#att14"/>
+          <layout:Attribute attribute="ent3#att5"/>
+          <layout:Attribute attribute="ent3#att25"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page17#enu10">
+          <layout:Field field="sv3#page17#enu10#fld15"/>
+          <layout:Link link="sv3#page17#enu10#ln29"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

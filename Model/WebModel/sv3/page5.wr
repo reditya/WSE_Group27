@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="65" gr:y="-65" id="sv3#page5" name="Support General View" linkOrder="sv3#page5#ln19" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="65" gr:y="-65" id="sv3#page5" name="Support General View" landmark="true">
   <ContentUnits>
     <IndexUnit gr:x="470" gr:y="0" id="sv3#page5#inu1" name="Support a Campaign!" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu1#ln51">
       <Link id="sv3#page5#inu1#ln51" name="Flow51" to="sv3#page6#dau2" type="normal" validate="true">
@@ -39,6 +39,13 @@
         <LinkParameter id="sv3#page5#inu6#ln72#par218" name="campaignId_PASSING" sourceLinkParameter="sv3#page5#seu20#ln66#par207" passing="true"/>
       </Link>
     </IndexUnit>
+    <EntryUnit gr:x="550" gr:y="145" id="sv3#page5#enu6" name="Search" linkOrder="sv3#page5#enu6#ln20">
+      <Field id="sv3#page5#enu6#fld13" name="Search" type="string" modifiable="true"/>
+      <Link id="sv3#page5#enu6#ln20" name="Search" to="sv3#page17#inu12" type="normal" validate="true">
+        <LinkParameter id="sv3#page5#enu6#ln20#par73" name="Search_DescriptionSearch" source="sv3#page5#enu6#fld13" target="sv3#page17#inu12#su21#acond3"/>
+        <LinkParameter id="sv3#page5#enu6#ln20#par74" name="Search_PASSING" source="sv3#page5#enu6#fld13" passing="true"/>
+      </Link>
+    </EntryUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -83,8 +90,26 @@
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page5#enu6">
+          <layout:Field field="sv3#page5#enu6#fld13"/>
+          <layout:Link link="sv3#page5#enu6#ln20"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
   </layout:Grid>
-  <Link id="sv3#page5#ln19" name="Logout" to="sv3#miu5" automaticCoupling="true" type="normal" validate="true"/>
   <ConditionExpression id="sv3#page5#cexpr1" name="showContribute">
     <TextValue xml:space="preserve">isContributed</TextValue>
   </ConditionExpression>

@@ -82,6 +82,7 @@
       <Selector id="sv2#page9#inu13#su26" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv2#page9#inu13#su26#rcond18" name="CampaignToQuestion" predicate="in" implied="false" role="rel12#role24"/>
         <AttributesCondition id="sv2#page9#inu13#su26#acond1" name="UnansweredQuestions" predicate="empty" booleanOperator="and" implied="false" attributes="ent9#att30"/>
+        <AttributesCondition id="sv2#page9#inu13#su26#acond4" name="publicQuestions" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att39" value="false"/>
       </Selector>
       <Link id="sv2#page9#inu13#ln92" name="Answer" to="sv2#page14#dau9" type="normal" validate="true">
         <LinkParameter id="sv2#page9#inu13#ln92#par242" name="questionId_KeyCondition9 [questionId]" source="data[].ent9#att28" target="sv2#page14#dau9#su27#kcond9.ent9#att28"/>
