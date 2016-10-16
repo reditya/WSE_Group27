@@ -1,0 +1,28 @@
+[16 Oct 2016 00:27:22] DEBUG Executing SQL script
+[16 Oct 2016 00:27:22] INFO ================================================================================
+[16 Oct 2016 00:27:22] INFO onError= 'stop'
+[16 Oct 2016 00:27:22] INFO autoCommit= 'false'
+[16 Oct 2016 00:27:22] INFO username= 'ifml'
+[16 Oct 2016 00:27:22] INFO outputPath= 'C:\Users\Azqa\Documents\WebratioWorkspace\WSE_Group27-reza\WSE_Group27-reza\.Temp~\RollbackSQL.xml'
+[16 Oct 2016 00:27:22] INFO outputLogPath= 'C:\Users\Azqa\Documents\WebratioWorkspace\WSE_Group27-reza\WSE_Group27-reza\.Temp~\RollbackSQL.xml.log'
+[16 Oct 2016 00:27:22] INFO encoding= ''
+[16 Oct 2016 00:27:22] INFO driverClass= 'com.mysql.jdbc.Driver'
+[16 Oct 2016 00:27:22] INFO sqlScript= 'C:\Users\Azqa\Documents\WebratioWorkspace\WSE_Group27-reza\WSE_Group27-reza\.Temp~\RollbackSQL.sql'
+[16 Oct 2016 00:27:22] INFO eventSocketPort= '56708'
+[16 Oct 2016 00:27:22] INFO statementSeparator= ';'
+[16 Oct 2016 00:27:22] INFO derby.system.home= 'C:\Users\Azqa\Documents\WebratioWorkspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[16 Oct 2016 00:27:22] INFO password= 'GoForWeb2016!'
+[16 Oct 2016 00:27:22] INFO url= 'jdbc:mysql://95.85.28.158:5656/ifml_reza'
+[16 Oct 2016 00:27:22] INFO ================================================================================
+[16 Oct 2016 00:27:22] INFO Connecting to the Database...
+[16 Oct 2016 00:27:22] INFO Database connection estabilished
+[16 Oct 2016 00:27:22] INFO transaction isolation: 4
+[16 Oct 2016 00:27:22] DEBUG ================================================================================
+[16 Oct 2016 00:27:22] DEBUG Executing SQL script file: C:\Users\Azqa\Documents\WebratioWorkspace\WSE_Group27-reza\WSE_Group27-reza\.Temp~\RollbackSQL.sql
+[16 Oct 2016 00:27:22] DEBUG Executing statement:  alter table `receivedcontribution`   drop foreign key `fk_receivedcontribution_contri`
+[16 Oct 2016 00:27:22] DEBUG Executing statement:  alter table `receivedcontribution`  drop column  `contributionid`
+[16 Oct 2016 00:27:22] DEBUG Executing statement:  drop table `receivedcontribution`
+[16 Oct 2016 00:27:22] DEBUG ================================================================================
+[16 Oct 2016 00:27:22] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[16 Oct 2016 00:27:22] INFO Database connection closed
+[16 Oct 2016 00:27:22] DEBUG Total time: 783 milliseconds

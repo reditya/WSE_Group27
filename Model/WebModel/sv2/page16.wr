@@ -1,0 +1,26 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1955" gr:y="1380" id="sv2#page16" name="Error page">
+  <ContentUnits>
+    <MultiMessageUnit id="sv2#page16#mssu8" name="Error" gr:x="0" gr:y="0">
+      <Message xml:space="preserve">Error sending message. 
+Either you have already contacted this supporter, or web ratio has gone mad.</Message>
+    </MultiMessageUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page16#mssu8"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

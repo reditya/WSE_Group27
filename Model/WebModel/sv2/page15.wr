@@ -1,0 +1,51 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1500" gr:y="1400" id="sv2#page15" name="Contact Supporter">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv2#page15#enu16" name="Write message" entity="ent1" linkOrder="sv2#page15#enu16#ln112">
+      <Field id="sv2#page15#enu16#fld30" name="Content" type="string" modifiable="true" attribute="ent1#att4"/>
+      <Link id="sv2#page15#enu16#ln112" name="Send" to="sv2#cru8" type="normal" validate="true">
+        <LinkParameter id="sv2#page15#enu16#ln112#par313" name="Content_message" source="sv2#page15#enu16#fld30" target="sv2#cru8.ent1#att4"/>
+        <LinkParameter id="sv2#page15#enu16#ln112#par314" name="Message Object_Message Object" source="entityBean" target="sv2#cru8.entityBeans"/>
+        <LinkParameter id="sv2#page15#enu16#ln112#par315" name="Key [message_campaignid]_message_campaignid" target="sv2#cru8.ent1#att32" sourceLinkParameter="sv2#page9#inu15#ln110#par322"/>
+        <LinkParameter id="sv2#page15#enu16#ln112#par316" name="Key [message_userid]_message_userid" source="key.ent1#att33" target="sv2#cru8.ent1#att33"/>
+        <LinkParameter id="sv2#page15#enu16#ln112#par318" name="Key [message_campaignid]_Campaign.campaignId(MessageToCampaign)" target="sv2#cru8.rel2#role3.ent3#att8" sourceLinkParameter="sv2#page9#inu15#ln110#par322"/>
+        <LinkParameter id="sv2#page15#enu16#ln112#par319" name="Key [message_userid]_User.userId(MessageToUser)" source="key.ent1#att33" target="sv2#cru8.rel1#role2.userOID"/>
+        <LinkParameter id="sv2#page15#enu16#ln112#par323" name="campaignId_PASSING" sourceLinkParameter="sv2#page9#inu15#ln110#par322" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page15#enu16">
+          <layout:Field field="sv2#page15#enu16#fld30"/>
+          <layout:Link link="sv2#page15#enu16#ln112"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

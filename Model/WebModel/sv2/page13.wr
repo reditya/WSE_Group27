@@ -1,0 +1,54 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="180" gr:y="625" id="sv2#page13" name="Create a Perk">
+  <ContentUnits>
+    <GetUnit id="sv2#page13#gtu7" name="GetCurrentUser" gr:x="255" gr:y="5" contextParameters="UserCtxParam">
+      <Link id="sv2#page13#gtu7#ln53" name="Flow13" to="sv2#page13#enu12" type="transport" validate="true">
+        <LinkParameter id="sv2#page13#gtu7#ln53#par140" name="UserCtxParam.userId_PASSING" source="sv2#page13#gtu7.UserCtxParam" passing="true"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit id="sv2#page13#enu12" name="Create a Perk" linkOrder="sv2#page13#enu12#ln54" gr:x="0" gr:y="0" entity="ent4" fieldOrder="sv2#page13#enu12#fld24 sv2#page13#enu12#fld25 sv2#page13#enu12#fld23" customDescriptor="false">
+      <Field id="sv2#page13#enu12#fld23" name="Description" type="string" modifiable="true" attribute="ent4#att17"/>
+      <Field id="sv2#page13#enu12#fld24" name="Title" type="string" modifiable="true" attribute="ent4#att16">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page13#enu12#fld24#mnd7" name="Mandatory"/>
+        </VRules>
+      </Field>
+      <Field id="sv2#page13#enu12#fld25" name="Minimum Amount" type="float" modifiable="true" attribute="ent4#att18">
+        <VRules>
+          <CompareValidationRule id="sv2#page13#enu12#fld25#cmp2" name="morethan0" predicate="gt" value="0"/>
+        </VRules>
+      </Field>
+      <Link id="sv2#page13#enu12#ln54" name="Create" to="sv2#cru3" type="normal" validate="true" gr:bendpoints="-157,-42,158,-22">
+        <LinkParameter id="sv2#page13#enu12#ln54#par141" name="campaignId_PASSING_Campaign.campaignId(ContributionProfileToCampaign)" sourceLinkParameter="sv2#page9#dau3#ln55#par154" target="sv2#cru3.rel7#role14.ent3#att8"/>
+        <LinkParameter id="sv2#page13#enu12#ln54#par142" name="ContributionProfile Object_ContributionProfile Object" source="entityBean" target="sv2#cru3.entityBeans"/>
+        <LinkParameter id="sv2#page13#enu12#ln54#par143" name="Description_contributionDescription" source="sv2#page13#enu12#fld23" target="sv2#cru3.ent4#att17"/>
+        <LinkParameter id="sv2#page13#enu12#ln54#par144" name="Key [contributionId]_contributionId" source="key.ent4#att15" target="sv2#cru3.ent4#att15"/>
+        <LinkParameter id="sv2#page13#enu12#ln54#par145" name="Title_contributionTitle" source="sv2#page13#enu12#fld24" target="sv2#cru3.ent4#att16"/>
+        <LinkParameter id="sv2#page13#enu12#ln54#par153" name="Minimum Amount_minimumAmount" source="sv2#page13#enu12#fld25" target="sv2#cru3.ent4#att18"/>
+        <LinkParameter id="sv2#page13#enu12#ln54#par155" name="campaignId_PASSING" sourceLinkParameter="sv2#page9#dau3#ln55#par154" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page13#enu12">
+          <layout:Link link="sv2#page13#enu12#ln54"/>
+          <layout:Field field="sv2#page13#enu12#fld24"/>
+          <layout:Field field="sv2#page13#enu12#fld25"/>
+          <layout:Field field="sv2#page13#enu12#fld23"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,27 @@
+[16 Oct 2016 05:46:56] DEBUG Executing SQL script
+[16 Oct 2016 05:46:56] INFO ================================================================================
+[16 Oct 2016 05:46:56] INFO onError= 'stop'
+[16 Oct 2016 05:46:56] INFO autoCommit= 'false'
+[16 Oct 2016 05:46:56] INFO username= 'ifml'
+[16 Oct 2016 05:46:56] INFO outputPath= 'C:\Users\Azqa\Documents\WebratioWorkspace\WSE_Group27-reza\WSE_Group27-reza\.Temp~\UpdateSQL.xml'
+[16 Oct 2016 05:46:56] INFO outputLogPath= 'C:\Users\Azqa\Documents\WebratioWorkspace\WSE_Group27-reza\WSE_Group27-reza\.Temp~\UpdateSQL.xml.log'
+[16 Oct 2016 05:46:56] INFO encoding= ''
+[16 Oct 2016 05:46:56] INFO driverClass= 'com.mysql.jdbc.Driver'
+[16 Oct 2016 05:46:56] INFO sqlScript= 'C:\Users\Azqa\Documents\WebratioWorkspace\WSE_Group27-reza\WSE_Group27-reza\.Temp~\UpdateSQL.sql'
+[16 Oct 2016 05:46:56] INFO eventSocketPort= '58993'
+[16 Oct 2016 05:46:56] INFO statementSeparator= ';'
+[16 Oct 2016 05:46:56] INFO derby.system.home= 'C:\Users\Azqa\Documents\WebratioWorkspace\.metadata\.plugins\com.webratio.commons.db\derby'
+[16 Oct 2016 05:46:56] INFO password= 'GoForWeb2016!'
+[16 Oct 2016 05:46:56] INFO url= 'jdbc:mysql://95.85.28.158:5656/ifml_reza'
+[16 Oct 2016 05:46:56] INFO ================================================================================
+[16 Oct 2016 05:46:56] INFO Connecting to the Database...
+[16 Oct 2016 05:46:57] INFO Database connection estabilished
+[16 Oct 2016 05:46:57] INFO transaction isolation: 4
+[16 Oct 2016 05:46:57] DEBUG ================================================================================
+[16 Oct 2016 05:46:57] DEBUG Executing SQL script file: C:\Users\Azqa\Documents\WebratioWorkspace\WSE_Group27-reza\WSE_Group27-reza\.Temp~\UpdateSQL.sql
+[16 Oct 2016 05:46:57] DEBUG Executing statement:  create view `user_reputation_score_view` as select AL1.`userid` as `userid`, avg(AL3.`vote_value`) as `der_attr` from  `user` AL1 left outer join `campaign` AL2 on AL1.`userid`=AL2.`user_userid` left outer join `vote` AL3 on AL2.`campaignid`=AL3.`vote_campaignid` group by AL1.`userid`
+[16 Oct 2016 05:46:57] DEBUG Executing statement:    create view `user_wisdom_score_view` as select AL1.`userid` as `userid`, avg(AL3.`der_attr`) as `der_attr` from  `user` AL1 left outer join `receivedcontribution` AL2 on AL1.`userid`=AL2.`userid` left outer join `campaign_quality_view` AL3 on AL2.`campaignid`=AL3.`campaignid` group by AL1.`userid`
+[16 Oct 2016 05:46:57] DEBUG ================================================================================
+[16 Oct 2016 05:46:57] DEBUG SQL SCRIPT SUCCESSFULLY EXECUTED
+[16 Oct 2016 05:46:57] INFO Database connection closed
+[16 Oct 2016 05:46:57] DEBUG Total time: 686 milliseconds

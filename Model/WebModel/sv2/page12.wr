@@ -1,0 +1,35 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1510" gr:y="-10" id="sv2#page12" name="Create Advert">
+  <ContentUnits>
+    <EntryUnit id="sv2#page12#enu9" name="Create Advert" linkOrder="sv2#page12#enu9#ln27" gr:x="0" gr:y="0" entity="ent5" fieldOrder="sv2#page12#enu9#fld12">
+      <Field id="sv2#page12#enu9#fld12" name="Description" type="string" modifiable="true" contentType="text/plain" attribute="ent5#att21"/>
+      <Link id="sv2#page12#enu9#ln27" name="Post now" to="sv2#cru7" type="normal" validate="true">
+        <LinkParameter id="sv2#page12#enu9#ln27#par78" name="Advertisement Object_Advertisement Object" source="entityBean" target="sv2#cru7.entityBeans"/>
+        <LinkParameter id="sv2#page12#enu9#ln27#par79" name="campaignId_PASSING_Campaign.campaignId(AdvertisementToCampaign)" sourceLinkParameter="sv2#page9#dau3#ln28#par98" target="sv2#cru7.rel5#role9.ent3#att8"/>
+        <LinkParameter id="sv2#page12#enu9#ln27#par94" name="Description_description" source="sv2#page12#enu9#fld12" target="sv2#cru7.ent5#att21"/>
+        <LinkParameter id="sv2#page12#enu9#ln27#par97" name="Key [advertisement_id]_advertisement_id" source="key.ent5#att20" target="sv2#cru7.ent5#att20"/>
+        <LinkParameter id="sv2#page12#enu9#ln27#par181" name="campaignId_PASSING" sourceLinkParameter="sv2#page9#dau3#ln28#par98" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page12#enu9">
+          <layout:Field field="sv2#page12#enu9#fld12"/>
+          <layout:Link link="sv2#page12#enu9#ln27"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
