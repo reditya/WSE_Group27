@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="65" gr:y="-65" id="sv3#page5" name="Support General View" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="55" gr:y="-95" id="sv3#page5" name="Support General View" landmark="true">
   <ContentUnits>
     <IndexUnit gr:x="470" gr:y="0" id="sv3#page5#inu1" name="Support a Campaign!" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu1#ln51">
       <Link id="sv3#page5#inu1#ln51" name="Flow51" to="sv3#page6#dau2" type="normal" validate="true">
@@ -12,22 +12,23 @@
     <GetUnit id="sv3#page5#gtu8" name="GetCurrentUser" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
       <Link id="sv3#page5#gtu8#ln63" name="Flow63" to="sv3#page5#seu20" type="transport" validate="true">
         <LinkParameter id="sv3#page5#gtu8#ln63#par178" name="UserCtxParam.userId_PASSING" source="sv3#page5#gtu8.UserCtxParam" passing="true"/>
+        <LinkParameter id="sv3#page5#gtu8#ln63#par103" name="UserCtxParam.userId_RoleCondition21 [userId]" source="sv3#page5#gtu8.UserCtxParam" target="sv3#page5#seu20#su11#rcond21.userOID"/>
       </Link>
     </GetUnit>
-    <SelectorUnit gr:x="210" gr:y="0" id="sv3#page5#seu20" name="Selector20" entity="ent11">
+    <SelectorUnit gr:x="210" gr:y="0" id="sv3#page5#seu20" name="Selector20" entity="ent11" distinctAttributes="rel6#role11.ent3#att8">
       <Link id="sv3#page5#seu20#ln64" name="Flow64" to="sv3#page5#inu1" type="transport" validate="true">
         <LinkParameter id="sv3#page5#seu20#ln64#par186" name="campaignId_RoleCondition7 [campaignId]" source="rel6#role11_ent3#att8Array" target="sv3#page5#inu1#su10#rcond7.ent11#att40"/>
         <LinkParameter id="sv3#page5#seu20#ln64#par201" name="campaignId_PASSING" source="ent11#att40Array" passing="true"/>
-        <LinkParameter id="sv3#page5#seu20#ln64#par202" name="ReceivedContributionToContributionProfile.contributionId_RoleCondition7 [contributionid]" source="rel10#role20_ent4#att15Array" target="sv3#page5#inu1#su10#rcond7.ent11#att42"/>
         <LinkParameter id="sv3#page5#seu20#ln64#par203" name="ReceivedContributionToUser.userId_RoleCondition7 [userid]" target="sv3#page5#inu1#su10#rcond7.ent11#att43" source="rel9#role18_userOIDArray"/>
       </Link>
-      <Selector id="sv3#page5#seu20#su11" defaultPolicy="fill" booleanOperator="and"/>
+      <Selector id="sv3#page5#seu20#su11" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page5#seu20#su11#rcond21" name="RoleCondition21" predicate="in" implied="false" role="rel9#role17"/>
+      </Selector>
       <Link id="sv3#page5#seu20#ln66" name="Flow64" to="sv3#page5#inu6" type="transport" validate="true">
-        <LinkParameter id="sv3#page5#seu20#ln66#par206" name="campaignId_RoleCondition7 [campaignId]" source="rel6#role11_ent3#att8Array" target="sv3#page5#inu6#su12#rcond9.ent11#att40"/>
         <LinkParameter id="sv3#page5#seu20#ln66#par207" name="campaignId_PASSING" source="ent11#att40Array" passing="true"/>
-        <LinkParameter id="sv3#page5#seu20#ln66#par208" name="ReceivedContributionToContributionProfile.contributionId_RoleCondition7 [contributionid]" source="rel10#role20_ent4#att15Array" target="sv3#page5#inu6#su12#rcond9.ent11#att42"/>
         <LinkParameter id="sv3#page5#seu20#ln66#par167" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv3#page5#gtu8#ln63#par178" passing="true"/>
-        <LinkParameter id="sv3#page5#seu20#ln66#par168" name="ReceivedContributionToUser.userId_RoleCondition7 [userid]" source="rel9#role18_userOIDArray" target="sv3#page5#inu6#su12#rcond9.ent11#att43"/>
+        <LinkParameter id="sv3#page5#seu20#ln66#par105" name="ReceivedContributionToCampaign.campaignId_RoleCondition7 [campaignId]" source="rel6#role11_ent3#att8Array" target="sv3#page5#inu6#su12#rcond9.ent11#att40"/>
+        <LinkParameter id="sv3#page5#seu20#ln66#par106" name="ReceivedContributionToUser.userId_RoleCondition7 [userid]" source="rel9#role18_userOIDArray" target="sv3#page5#inu6#su12#rcond9.ent11#att43"/>
       </Link>
     </SelectorUnit>
     <IndexUnit id="sv3#page5#inu6" name="Your Supported Campaign" gr:x="220" gr:y="145" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu6#ln72">
@@ -97,6 +98,34 @@
           <layout:Link link="sv3#page5#enu6#ln20"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

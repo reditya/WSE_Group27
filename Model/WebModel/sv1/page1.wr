@@ -34,7 +34,7 @@
         <LinkParameter id="sv1#page1#enu2#ln3#par32" name="tagId_PASSING_Tags.oid(UserToUserPrefence)" target="sv1#miu3.mov1#opm1#icu1#icp4" source="sv1#page1#enu2#msfld1"/>
         <LinkParameter id="sv1#page1#enu2#ln3#par33" name="User Object_User Object" source="entityBean" target="sv1#miu3.mov1#opm1#icu1#icp8"/>
         <LinkParameter id="sv1#page1#enu2#ln3#par34" name="Username_username" source="sv1#page1#enu2#fld3" target="sv1#miu3.mov1#opm1#icu1#icp6"/>
-        <LinkParameter id="sv1#page1#enu2#ln3#par49" name="2_Groups.oid(UserToGroup)" target="sv1#miu3.mov1#opm1#icu1#icp14" sourceLinkParameter="sv1#page1#seu5#ln7#par80"/>
+        <LinkParameter id="sv1#page1#enu2#ln3#par49" name="2_Groups.oid(UserToGroup)" target="sv1#miu3.mov1#opm1#icu1#icp14" source="sv1#page1#enu2#sfld1"/>
         <LinkParameter id="sv1#page1#enu2#ln3#par44" name="methodId_PASSING" sourceLinkParameter="sv1#page1#seu1#ln4#par43" passing="true"/>
         <LinkParameter id="sv1#page1#enu2#ln3#par45" name="Payment Methods_Methods.oid(UserToMethods)" source="sv1#page1#enu2#msfld2" target="sv1#miu3.mov1#opm1#icu1#icp2"/>
         <LinkParameter id="sv1#page1#enu2#ln3#par84" name="oid_PASSING" sourceLinkParameter="sv1#page1#seu5#ln7#par80" passing="true"/>
@@ -44,7 +44,7 @@
           <MandatoryValidationRule id="sv1#page1#enu2#msfld2#mnd1" name="Mandatory1"/>
         </VRules>
       </MultiSelectionField>
-      <SelectionField id="sv1#page1#enu2#sfld1" name="Group" type="string" role="User2Group">
+      <SelectionField id="sv1#page1#enu2#sfld1" name="Group" type="string" role="User2DefaultGroup">
         <VRules>
           <MandatoryValidationRule id="sv1#page1#enu2#sfld1#mnd3" name="Mandatory"/>
         </VRules>
@@ -57,8 +57,6 @@
         <LinkParameter id="sv1#page1#seu2#ln1#par4" name="tagId_Tags Preference [output]" source="ent6#att22Array" target="sv1#page1#enu2#msfld1_output"/>
         <LinkParameter id="sv1#page1#seu2#ln1#par5" name="keywords_PASSING" source="ent6#att23Array" passing="true"/>
         <LinkParameter id="sv1#page1#seu2#ln1#par6" name="tagId_PASSING" source="ent6#att22Array" passing="true"/>
-        <LinkParameter id="sv1#page1#seu2#ln1#par183" name="tagId_Payment Methods [label]" source="ent6#att23Array" target="sv1#page1#enu2#msfld2_label"/>
-        <LinkParameter id="sv1#page1#seu2#ln1#par184" name="keywords_Payment Methods [output]" source="ent6#att22Array" target="sv1#page1#enu2#msfld2_output"/>
       </Link>
     </SelectorUnit>
     <SelectorUnit gr:x="100" gr:y="135" id="sv1#page1#seu1" name="Payment Methods" entity="ent2">
@@ -116,9 +114,9 @@
                 <layout:Field field="sv1#page1#enu2#fld5"/>
                 <layout:Field field="sv1#page1#enu2#fld6"/>
                 <layout:Field field="sv1#page1#enu2#fld7"/>
-                <layout:Field field="sv1#page1#enu2#sfld1"/>
                 <layout:Field field="sv1#page1#enu2#msfld1"/>
                 <layout:Field field="sv1#page1#enu2#msfld2"/>
+                <layout:Field field="sv1#page1#enu2#sfld1"/>
               </layout:Unit>
             </layout:Cell>
             <layout:Cell/>

@@ -1,0 +1,5 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="0" gr:y="439" id="mov1#opm3" name="Action 3">
+  <OperationUnits>
+    <InputCollectorUnit gr:x="0" gr:y="150" id="mov1#opm3#icu3" name="Input Port"/>
+  </OperationUnits>
+</OperationModule>

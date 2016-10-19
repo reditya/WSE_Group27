@@ -19,7 +19,8 @@
         <LinkParameter id="mov1#opm1#icu1#oln2#par15" name="username_userName" source="mov1#opm1#icu1#icp6" target="mov1#opm1#cru1.userName"/>
         <LinkParameter id="mov1#opm1#icu1#oln2#par1" name="Tags.oid(UserToTags)_Tags.tagId(UserToTags)" source="mov1#opm1#icu1#icp4" target="mov1#opm1#cru1.rel15#role29.ent6#att22"/>
         <LinkParameter id="mov1#opm1#icu1#oln2#par58" name="Methods.oid(UserToMethods)_PaymentMethods.methodId(UserToPaymentMethods)" source="mov1#opm1#icu1#icp2" target="mov1#opm1#cru1.rel4#role7.ent2#att6"/>
-        <LinkParameter id="mov1#opm1#icu1#oln2#par86" name="Groups.oid(UserToGroup)_Group.oid(defaultGroup)" source="mov1#opm1#icu1#icp14" target="mov1#opm1#cru1.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="mov1#opm1#icu1#oln2#par109" name="Groups.oid(UserToGroup)_Group.oid(defaultGroup)" source="mov1#opm1#icu1#icp14" target="mov1#opm1#cru1.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="mov1#opm1#icu1#oln2#par110" name="Groups.oid(UserToGroup)_Group.oid(groups)" source="mov1#opm1#icu1#icp14" target="mov1#opm1#cru1.User2Group.groupOID"/>
       </OKLink>
       <InputCollectorParameter id="mov1#opm1#icu1#icp14" name="Groups.oid(UserToGroup)"/>
       <InputCollectorParameter id="mov1#opm1#icu1#icp2" name="Methods.oid(UserToMethods)"/>
