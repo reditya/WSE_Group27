@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="520" gr:y="895" id="sv3#page4" name="Inbox" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="300" gr:y="0" id="sv3#page4#inu4" name="Simple List4" entity="ent9" displayAttributes="ent9#att29 ent9#att30 rel12#role23.ent3#att9 rel12#role23.rel3#role6.User#att2">
+    <IndexUnit gr:x="300" gr:y="0" id="sv3#page4#inu4" name="Questions" entity="ent9" displayAttributes="ent9#att29 ent9#att30 rel12#role23.ent3#att9 rel12#role23.rel3#role6.User#att2">
       <Selector id="sv3#page4#inu4#su17" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page4#inu4#su17#rcond14" name="RoleCondition14" predicate="in" implied="false" role="rel11#role21"/>
       </Selector>

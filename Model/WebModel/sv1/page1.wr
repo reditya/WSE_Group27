@@ -13,6 +13,7 @@
       <Field id="sv1#page1#enu2#fld3" name="Username" type="string" modifiable="true" attribute="userName">
         <VRules>
           <MandatoryValidationRule id="sv1#page1#enu2#fld3#mnd4" name="Mandatory"/>
+          <CollectionValidationRule id="sv1#page1#enu2#fld3#clc1" name="Validate Unique Field" predicate="notIn" entity="User" attribute="userName" errorMessage="Sorry, this username has already been taken!"/>
         </VRules>
       </Field>
       <Field id="sv1#page1#enu2#fld4" name="Password" type="password" modifiable="true" attribute="password">
@@ -20,10 +21,26 @@
           <MandatoryValidationRule id="sv1#page1#enu2#fld4#mnd2" name="PasswordMandatory"/>
         </VRules>
       </Field>
-      <Field id="sv1#page1#enu2#fld5" name="Fullname" type="string" modifiable="true" attribute="User#att2"/>
-      <Field id="sv1#page1#enu2#fld6" name="Email" type="string" modifiable="true" attribute="email"/>
-      <Field id="sv1#page1#enu2#fld7" name="Birthdate" type="date" modifiable="true" attribute="User#att1"/>
-      <MultiSelectionField id="sv1#page1#enu2#msfld1" name="Tags Preference" type="string" role="rel15#role29"/>
+      <Field id="sv1#page1#enu2#fld5" name="Fullname" type="string" modifiable="true" attribute="User#att2">
+        <VRules>
+          <MandatoryValidationRule id="sv1#page1#enu2#fld5#mnd9" name="Mandatory9"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#page1#enu2#fld6" name="Email" type="string" modifiable="true" attribute="email">
+        <VRules>
+          <EMailValidationRule id="sv1#page1#enu2#fld6#email1" name="EMail1" errorMessage="The format of email is wrong!"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#page1#enu2#fld7" name="Birthdate" type="date" modifiable="true" attribute="User#att1">
+        <VRules>
+          <MandatoryValidationRule id="sv1#page1#enu2#fld7#mnd10" name="Mandatory10"/>
+        </VRules>
+      </Field>
+      <MultiSelectionField id="sv1#page1#enu2#msfld1" name="Tags Preference" type="string" role="rel15#role29">
+        <VRules>
+          <MandatoryValidationRule id="sv1#page1#enu2#msfld1#mnd8" name="Mandatory8"/>
+        </VRules>
+      </MultiSelectionField>
       <Link id="sv1#page1#enu2#ln3" name="Register" to="sv1#miu3" type="normal" validate="true">
         <LinkParameter id="sv1#page1#enu2#ln3#par7" name="tagId_PASSING" sourceLinkParameter="sv1#page1#seu2#ln1#par6" passing="true"/>
         <LinkParameter id="sv1#page1#enu2#ln3#par27" name="Birthdate_dateofbirth" source="sv1#page1#enu2#fld7" target="sv1#miu3.mov1#opm1#icu1#icp5"/>

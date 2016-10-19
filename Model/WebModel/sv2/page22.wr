@@ -1,0 +1,56 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page22" name="Answer Questions" layout:attributeLayout="Excel/Excel" layout:splitSubPages="false" gr:x="1565" gr:y="-210">
+  <ContentUnits>
+    <EntryUnit id="sv2#page22#enu7" name="Answer Question" gr:x="0" gr:y="130" fieldOrder="sv2#page22#enu7#fld8" entity="ent9" linkOrder="sv2#page22#enu7#ln64">
+      <Field id="sv2#page22#enu7#fld8" name="Answer String" type="string" modifiable="true"/>
+      <Link id="sv2#page22#enu7#ln64" name="Answer" to="sv2#mfu2" type="normal" validate="true">
+        <LinkParameter id="sv2#page22#enu7#ln64#par165" name="Answer String_answerString" source="sv2#page22#enu7#fld8" target="sv2#mfu2.ent9#att30"/>
+        <LinkParameter id="sv2#page22#enu7#ln64#par166" name="Key [questionId]_KeyCondition8 [questionId]" source="key.ent9#att28" target="sv2#mfu2#su25#kcond5.ent9#att28"/>
+      </Link>
+    </EntryUnit>
+    <DataUnit id="sv2#page22#dau7" name="Question text" customDescriptor="false" gr:x="15" gr:y="0" entity="ent9" displayAttributes="ent9#att29">
+      <Selector id="sv2#page22#dau7#su28" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#page22#dau7#su28#kcond7" name="KeyCondition9" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page22#dau7#ln66" name="Flow66" to="sv2#page22#enu7" automaticCoupling="true" type="transport" validate="true"/>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page22#enu7">
+          <layout:Field field="sv2#page22#enu7#fld8"/>
+          <layout:Link link="sv2#page22#enu7#ln64"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page22#dau7">
+          <layout:Attribute attribute="ent9#att29"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,13 +1,19 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1190" gr:y="360" id="sv3#page8" name="Page 8">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1190" gr:y="355" id="sv3#page8" name="Page 8">
   <ContentUnits>
-    <SelectorUnit id="sv3#page8#seu14" name="Select Profile" gr:x="225" gr:y="0" entity="ent11">
+    <SelectorUnit id="sv3#page8#seu14" name="Select Profile" gr:x="270" gr:y="0" entity="ent11">
       <Link id="sv3#page8#seu14#ln37" name="Flow34" to="sv3#page8#enu4" type="transport" validate="true">
         <LinkParameter id="sv3#page8#seu14#ln37#par118" name="ReceivedContributionToCampaign.campaignId_Key Condition [campaignId]" target="sv3#page8#enu4.ent11#att40" sourceLinkParameter="sv3#page6#inu5#ln40#par133"/>
-        <LinkParameter id="sv3#page8#seu14#ln37#par119" name="ReceivedContributionToContributionProfile.contributionId_Key Condition [contributionid]" target="sv3#page8#enu4.ent11#att42" sourceLinkParameter="sv3#page6#inu5#ln40#par132"/>
         <LinkParameter id="sv3#page8#seu14#ln37#par199" name="contributionId_PASSING" sourceLinkParameter="sv3#page6#inu5#ln40#par132" passing="true"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par193" name="minimumAmount_PASSING" sourceLinkParameter="sv3#page6#inu5#ln40#par192" passing="true"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par201" name="minimumAmount_PASSING_Min - Preselection" sourceLinkParameter="sv3#page6#inu5#ln40#par192" target="sv3#page8#enu4#sfld4_presel"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par202" name="minimumAmount_PASSING_Min [label]" sourceLinkParameter="sv3#page6#inu5#ln40#par192" target="sv3#page8#enu4#sfld4_label"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par203" name="minimumAmount_PASSING_Min [output]" sourceLinkParameter="sv3#page6#inu5#ln40#par192" target="sv3#page8#enu4#sfld4_output"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par139" name="maxIndividualBacking_PASSING_Max - Preselection" sourceLinkParameter="sv3#page6#inu5#ln40#par131" target="sv3#page8#enu4#sfld5_presel"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par157" name="maxIndividualBacking_PASSING_Max [label]" sourceLinkParameter="sv3#page6#inu5#ln40#par131" target="sv3#page8#enu4#sfld5_label"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par164" name="maxIndividualBacking_PASSING_Max [output]" sourceLinkParameter="sv3#page6#inu5#ln40#par131" target="sv3#page8#enu4#sfld5_output"/>
       </Link>
     </SelectorUnit>
-    <GetUnit id="sv3#page8#gtu5" name="GetCurrentUser" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+    <GetUnit id="sv3#page8#gtu5" name="GetCurrentUser" gr:x="0" gr:y="5" contextParameters="UserCtxParam">
       <Link id="sv3#page8#gtu5#ln38" name="Flow36" to="sv3#page8#enu4" type="transport" validate="true">
         <LinkParameter id="sv3#page8#gtu5#ln38#par121" name="UserCtxParam.userId_PASSING" source="sv3#page8#gtu5.UserCtxParam" passing="true"/>
         <LinkParameter id="sv3#page8#gtu5#ln38#par122" name="UserCtxParam.userId_Key Condition [userid]" source="sv3#page8#gtu5.UserCtxParam" target="sv3#page8#enu4.ent11#att43"/>
@@ -17,9 +23,12 @@
         <LinkParameter id="sv3#page8#gtu5#ln41#par99" name="UserCtxParam.userId_RoleCondition5 [userId]" source="sv3#page8#gtu5.UserCtxParam" target="sv3#page8#seu15#su8#rcond5.userOID"/>
       </Link>
     </GetUnit>
-    <EntryUnit id="sv3#page8#enu4" name="Create Contribution" linkOrder="sv3#page8#enu4#ln39" gr:x="250" gr:y="135" entity="ent11">
+    <EntryUnit id="sv3#page8#enu4" name="Create Contribution" linkOrder="sv3#page8#enu4#ln39" gr:x="250" gr:y="140" entity="ent11">
       <Field id="sv3#page8#enu4#fld9" name="Amount" type="float" modifiable="true" attribute="ent11#att41">
-        <VRules/>
+        <VRules>
+          <CompareValidationRule id="sv3#page8#enu4#fld9#cmp4" name="Min" predicate="gteq" valueField="sv3#page8#enu4#sfld4"/>
+          <CompareValidationRule id="sv3#page8#enu4#fld9#cmp3" name="Max" predicate="lteq" valueField="sv3#page8#enu4#sfld5"/>
+        </VRules>
       </Field>
       <Link id="sv3#page8#enu4#ln39" name="Submit" to="sv3#cru4" type="normal" validate="true">
         <LinkParameter id="sv3#page8#enu4#ln39#par123" name="Amount_PASSING" source="sv3#page8#enu4#fld9" passing="true"/>
@@ -32,8 +41,10 @@
         <LinkParameter id="sv3#page8#enu4#ln39#par125" name="contributionId_PASSING_ContributionProfile.contributionId(ReceivedContributionToContributionProfile)" sourceLinkParameter="sv3#page8#seu14#ln37#par199" target="sv3#cru4.rel10#role20.ent4#att15"/>
       </Link>
       <SelectionField id="sv3#page8#enu4#sfld2" name="Payment Method" type="string"/>
+      <SelectionField id="sv3#page8#enu4#sfld4" type="float" name="Minimum"/>
+      <SelectionField id="sv3#page8#enu4#sfld5" type="float" name="Maximum" splitOutput="false"/>
     </EntryUnit>
-    <SelectorUnit gr:x="10" gr:y="130" id="sv3#page8#seu15" name="Select Payment" entity="ent2">
+    <SelectorUnit gr:x="10" gr:y="135" id="sv3#page8#seu15" name="Select Payment" entity="ent2">
       <Link id="sv3#page8#seu15#ln42" name="Flow42" to="sv3#page8#enu4" type="transport" validate="true">
         <LinkParameter id="sv3#page8#seu15#ln42#par135" name="methodId_PASSING" source="ent2#att6Array" passing="true"/>
         <LinkParameter id="sv3#page8#seu15#ln42#par136" name="methodName_PASSING" source="ent2#att7Array" passing="true"/>
@@ -52,6 +63,8 @@
           <layout:Link link="sv3#page8#enu4#ln39"/>
           <layout:Field field="sv3#page8#enu4#fld9"/>
           <layout:Field field="sv3#page8#enu4#sfld2"/>
+          <layout:Field field="sv3#page8#enu4#sfld4"/>
+          <layout:Field field="sv3#page8#enu4#sfld5"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

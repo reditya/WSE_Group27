@@ -1,11 +1,12 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1730" gr:y="-80" id="sv3#page6" name="Campaign Detail View">
   <ContentUnits>
-    <DataUnit gr:x="5" gr:y="0" id="sv3#page6#dau2" name="Campaign Detail" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att5">
+    <DataUnit gr:x="5" gr:y="0" id="sv3#page6#dau2" name="Campaign Detail" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att5 rel3#role6.User#att26">
       <Selector id="sv3#page6#dau2#su3" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page6#dau2#su3#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv3#page6#dau2#ln32" name="Flow22" to="sv3#page6#seu11" type="transport" validate="true">
         <LinkParameter id="sv3#page6#dau2#ln32#par197" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
+        <LinkParameter id="sv3#page6#dau2#ln32#par119" name="maxIndividualBacking_PASSING" source="data.ent3#att36" passing="true"/>
       </Link>
       <Link id="sv3#page6#dau2#ln14" name="Flow14" to="sv3#page6#seu9" type="transport" validate="true">
         <LinkParameter id="sv3#page6#dau2#ln14#par62" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
@@ -15,6 +16,7 @@
       <Link id="sv3#page6#seu11#ln30" name="Flow23" to="sv3#page6#inu5" type="transport" validate="true">
         <LinkParameter id="sv3#page6#seu11#ln30#par88" name="ContributionProfileToCampaign.campaignId_PASSING" source="rel7#role14_ent3#att8Array" passing="true"/>
         <LinkParameter id="sv3#page6#seu11#ln30#par198" name="campaignId_PASSING_CampaignToContribution [campaignId]" sourceLinkParameter="sv3#page6#dau2#ln32#par197" target="sv3#page6#inu5#su7#rcond4.ent3#att8"/>
+        <LinkParameter id="sv3#page6#seu11#ln30#par129" name="maxIndividualBacking_PASSING" sourceLinkParameter="sv3#page6#dau2#ln32#par119" passing="true"/>
       </Link>
     </SelectorUnit>
     <IndexUnit id="sv3#page6#inu5" name="Contribution Profile" gr:x="420" gr:y="5" entity="ent4" displayAttributes="ent4#att16 ent4#att17 ent4#att18" linkOrder="sv3#page6#inu5#ln40">
@@ -24,6 +26,8 @@
       <Link id="sv3#page6#inu5#ln40" name="Contribute" to="sv3#page8#seu14" type="normal" validate="true">
         <LinkParameter id="sv3#page6#inu5#ln40#par132" name="contributionId_PASSING" source="data[].ent4#att15" passing="true"/>
         <LinkParameter id="sv3#page6#inu5#ln40#par133" name="ContributionProfileToCampaign.campaignId_PASSING" source="data[].rel7#role14_ent3#att8" passing="true"/>
+        <LinkParameter id="sv3#page6#inu5#ln40#par192" name="minimumAmount_PASSING" source="data[].ent4#att18" passing="true"/>
+        <LinkParameter id="sv3#page6#inu5#ln40#par131" name="maxIndividualBacking_PASSING" sourceLinkParameter="sv3#page6#seu11#ln30#par129" passing="true"/>
       </Link>
     </IndexUnit>
     <SelectorUnit gr:x="0" gr:y="135" id="sv3#page6#seu9" name="Select advertisement" entity="ent5">
@@ -47,6 +51,7 @@
           <layout:Attribute attribute="ent3#att12"/>
           <layout:Attribute attribute="ent3#att13"/>
           <layout:Attribute attribute="ent3#att5"/>
+          <layout:Attribute attribute="rel3#role6.User#att26"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -101,5 +106,4 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
-  <Variable id="sv3#page6#var2" name="isBacked" type="boolean" unitId="sv3#page6#inu5"/>
 </Page>

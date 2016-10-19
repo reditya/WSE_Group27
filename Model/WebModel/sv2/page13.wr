@@ -25,6 +25,7 @@
         <LinkParameter id="sv2#page13#enu12#ln54#par145" name="Title_contributionTitle" source="sv2#page13#enu12#fld24" target="sv2#cru3.ent4#att16"/>
         <LinkParameter id="sv2#page13#enu12#ln54#par153" name="Minimum Amount_minimumAmount" source="sv2#page13#enu12#fld25" target="sv2#cru3.ent4#att18"/>
         <LinkParameter id="sv2#page13#enu12#ln54#par155" name="campaignId_PASSING" sourceLinkParameter="sv2#page9#dau3#ln55#par154" passing="true"/>
+        <LinkParameter id="sv2#page13#enu12#ln54#par8" name="0_isHidden" sourceValue="0" target="sv2#cru3.ent4#att24"/>
       </Link>
     </EntryUnit>
   </ContentUnits>

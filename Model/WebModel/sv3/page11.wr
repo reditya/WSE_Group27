@@ -1,6 +1,6 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page11" name="Campaign Detail View" gr:x="-15" gr:y="240">
   <ContentUnits>
-    <DataUnit id="sv3#page11#dau4" name="Campaign Detail" gr:x="175" gr:y="35" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att5">
+    <DataUnit id="sv3#page11#dau4" name="Campaign Detail" gr:x="175" gr:y="35" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att5 ent3#att25">
       <Selector id="sv3#page11#dau4#su13" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page11#dau4#su13#kcond6" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>
@@ -27,7 +27,6 @@
       <Link id="sv3#page11#seu21#ln68" name="Flow23" to="sv3#page11#inu7" type="transport" validate="true">
         <LinkParameter id="sv3#page11#seu21#ln68#par211" name="ContributionProfileToCampaign.campaignId_PASSING" source="rel7#role14_ent3#att8Array" passing="true"/>
         <LinkParameter id="sv3#page11#seu21#ln68#par250" name="ContributionProfileToCampaign.campaignId_CampaignToContribution [campaignId]" target="sv3#page11#inu7#su14#rcond10.ent3#att8" sourceLinkParameter="sv3#page11#dau4#ln67#par254"/>
-        <LinkParameter id="sv3#page11#seu21#ln68#par403" name="false_NotHidden" sourceValue="false" target="sv3#page11#inu7#su14#acond15"/>
       </Link>
       <Link id="sv3#page11#seu21#ln81" name="Flow81" to="sv3#page11#seu22" type="transport" validate="true">
         <LinkParameter id="sv3#page11#seu21#ln81#par257" name="contributionId_PASSING" source="ent4#att15Array" passing="true"/>
@@ -122,13 +121,14 @@
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12">
+      <layout:Cell colspan="6">
         <layout:Unit unitId="sv3#page11#dau4">
           <layout:Attribute attribute="ent3#att9"/>
           <layout:Attribute attribute="ent3#att10"/>
           <layout:Attribute attribute="ent3#att12"/>
           <layout:Attribute attribute="ent3#att13"/>
           <layout:Attribute attribute="ent3#att5"/>
+          <layout:Attribute attribute="ent3#att25"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -136,7 +136,12 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#page11#enu3">
+          <layout:Link link="sv3#page11#enu3#ln12"/>
+          <layout:Field field="sv3#page11#enu3#sfld3"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -144,7 +149,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
+      <layout:Cell colspan="6">
         <layout:Unit unitId="sv3#page11#inu7">
           <layout:Attribute attribute="ent4#att16"/>
           <layout:Attribute attribute="ent4#att17"/>
@@ -156,53 +161,7 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page11#dau5">
-          <layout:Attribute attribute="ent11#att41"/>
-          <layout:Attribute attribute="rel10#role20.ent4#att16"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page11#enu3">
-          <layout:Link link="sv3#page11#enu3#ln12"/>
-          <layout:Field field="sv3#page11#enu3#sfld3"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell colspan="12">
+      <layout:Cell colspan="6">
         <layout:Unit unitId="sv3#page11#enu8">
           <layout:Field field="sv3#page11#enu8#fld10"/>
           <layout:Field field="sv3#page11#enu8#fld11"/>
@@ -214,7 +173,20 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#page11#dau5">
+          <layout:Attribute attribute="ent11#att41"/>
+          <layout:Attribute attribute="rel10#role20.ent4#att16"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -246,6 +218,34 @@
           <layout:Attribute attribute="ent5#att21"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
