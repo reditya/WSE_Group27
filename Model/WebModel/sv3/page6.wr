@@ -21,7 +21,7 @@
       <Selector id="sv3#page6#inu5#su7" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page6#inu5#su7#rcond4" name="CampaignToContribution" predicate="in" implied="false" role="rel7#role13"/>
       </Selector>
-      <Link id="sv3#page6#inu5#ln40" name="Flow33" to="sv3#page8#seu14" type="normal" validate="true">
+      <Link id="sv3#page6#inu5#ln40" name="Contribute" to="sv3#page8#seu14" type="normal" validate="true">
         <LinkParameter id="sv3#page6#inu5#ln40#par132" name="contributionId_PASSING" source="data[].ent4#att15" passing="true"/>
         <LinkParameter id="sv3#page6#inu5#ln40#par133" name="ContributionProfileToCampaign.campaignId_PASSING" source="data[].rel7#role14_ent3#att8" passing="true"/>
       </Link>

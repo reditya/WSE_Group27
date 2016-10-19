@@ -6,7 +6,7 @@
     <Attribute name="email" id="email" type="string" db:column="email"/>
     <Attribute id="User#att1" name="dateOfBirth" type="date" db:column="dateofbirth"/>
     <Attribute id="User#att2" name="fullName" type="string" db:column="fullname"/>
-    <Attribute id="User#att26" name="Reputation Score" type="float" derivationQuery="calculated::avg(Self.rel3#role5(as Var1).rel14#role28(as Var2).ent10#att11)" db:table="user_reputation_score_view" db:column="der_attr" storageType="file">
+    <Attribute id="User#att26" name="Reputation Score" type="float" derivationQuery="calculated::avg(Self.rel3#role5(as Var1).ent3#att25)" storageType="file" db:table="user_reputation_score_view" db:column="der_attr">
       <db:JoinColumn attribute="userOID" name="userid"/>
     </Attribute>
     <Attribute id="User#att34" name="Wisdom Score" type="float" derivationQuery="calculated::avg(Self.rel9#role17(as Var1).rel6#role11(as Var2).ent3#att25)" db:table="user_wisdom_score_view" db:column="der_attr" storageType="file">
@@ -68,7 +68,7 @@
     <Attribute id="ent3#att5" name="Popularity" type="float" derivationQuery="calculated::sum(Self.rel7#role13(as Var1).ent4#att3)" db:table="campaign_totalcampaigncontribu" db:column="der_attr" storageType="file">
       <db:JoinColumn attribute="ent3#att8" name="campaignid"/>
     </Attribute>
-    <Attribute id="ent3#att25" name="Quality" type="integer" derivationQuery="calculated::sum(Self.rel14#role28(as Var1).ent10#att11)" db:table="campaign_quality_view" db:column="der_attr" storageType="file">
+    <Attribute id="ent3#att25" name="Quality" type="float" derivationQuery="calculated::avg(Self.rel14#role28(as Var1).rel16#role31(as Var2).ent7#att35)" storageType="file" db:table="campaign_quality_view" db:column="der_attr">
       <db:JoinColumn attribute="ent3#att8" name="campaignid"/>
     </Attribute>
   </Entity>
@@ -170,7 +170,8 @@
       <db:JoinColumn attribute="ent3#att8" name="vote_campaignid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="crowdSourcingDB" type="MySQL" url="jdbc:mysql://82.196.7.146:5656/ifml" username="ifml" password="R29Gb3JXZWIyMDE2IQ==" cryptedPassword="true"/>
+  <db:Database id="db1" name="crowdSourcingDB" type="MySQL" url="jdbc:mysql://82.196.7.146:5656/ifml" username="ifml" password="R29Gb3JXZWIyMDE2IQ==" cryptedPassword="true">
+  </db:Database>
   <Relationship id="rel15" name="User_Tags" sourceEntity="User" targetEntity="ent6" gr:bendpoints="272,-216,-543,-101" db:database="db1" db:table="user_tags">
     <RelationshipRole1 id="rel15#role29" name="UserToTags" maxCard="N">
       <db:JoinColumn attribute="userOID" name="user_userid"/>
@@ -237,6 +238,19 @@
     </RelationshipRole1>
     <RelationshipRole2 id="rel6#role12" name="CampaignToReceivedContribution" maxCard="N">
       <db:JoinColumn attribute="ent3#att8" name="campaignid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Entity gr:x="1330" gr:y="350" id="ent7" name="VoteValue" duration="persistent" attributeOrder="ent7#att19 ent7#att35" db:database="db1" db:table="votevalue">
+    <Attribute id="ent7#att19" key="true" name="v_id" type="integer" db:column="v_id"/>
+    <Attribute id="ent7#att35" name="v_value" type="integer" db:column="v_value"/>
+  </Entity>
+  <Relationship id="rel16" name="Vote_VoteValue" sourceEntity="ent10" targetEntity="ent7" db:database="db1" db:table="vote">
+    <RelationshipRole1 id="rel16#role31" name="VoteToVoteValue" maxCard="1">
+      <db:JoinColumn attribute="ent10#att27" name="vote_userid"/>
+      <db:JoinColumn attribute="ent10#att31" name="vote_campaignid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel16#role32" name="VoteValueToVote" maxCard="N">
+      <db:JoinColumn attribute="ent7#att19" name="votevalue_v_id"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>

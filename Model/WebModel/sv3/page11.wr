@@ -75,9 +75,9 @@
         <LinkParameter id="sv3#page11#enu3#ln12#par72" name="Key [vote_userid]_vote_userid" source="key.ent10#att27" target="sv3#cru5.ent10#att27"/>
         <LinkParameter id="sv3#page11#enu3#ln12#par101" name="Key [vote_campaignid]_PASSING" source="key.ent10#att31" passing="true"/>
         <LinkParameter id="sv3#page11#enu3#ln12#par102" name="Key [vote_userid]_PASSING" source="key.ent10#att27" passing="true"/>
-        <LinkParameter id="sv3#page11#enu3#ln12#par8" name="Vote Score_vote_value" source="sv3#page11#enu3#fld8" target="sv3#cru5.ent10#att11"/>
+        <LinkParameter id="sv3#page11#enu3#ln12#par117" name="Vote Score_VoteValue.v_id(VoteToVoteValue)" source="sv3#page11#enu3#sfld3" target="sv3#cru5.rel16#role31.ent7#att19"/>
       </Link>
-      <Field id="sv3#page11#enu3#fld8" name="Vote Score" type="integer" modifiable="true"/>
+      <SelectionField id="sv3#page11#enu3#sfld3" type="integer" name="Vote Score"/>
     </EntryUnit>
     <EntryUnit gr:x="0" gr:y="50" id="sv3#page11#enu8" name="Ask Question" entity="ent9" linkOrder="sv3#page11#enu8#ln36">
       <Field id="sv3#page11#enu8#fld10" name="Question" type="string" modifiable="true" attribute="ent9#att29"/>
@@ -113,6 +113,12 @@
         <RelationshipRoleCondition id="sv3#page11#inu11#su20#rcond17" name="RoleCondition17" role="rel5#role10" predicate="in" implied="false"/>
       </Selector>
     </IndexUnit>
+    <SelectorUnit gr:x="90" gr:y="305" id="sv3#page11#seu20" name="Select Score" entity="ent7">
+      <Link id="sv3#page11#seu20#ln50" name="Flow50" to="sv3#page11#enu3" type="transport" validate="true">
+        <LinkParameter id="sv3#page11#seu20#ln50#par115" name="v_value_Vote Score [label]" source="ent7#att35Array" target="sv3#page11#enu3#sfld3_label"/>
+        <LinkParameter id="sv3#page11#seu20#ln50#par116" name="v_id_Vote Score [output]" source="ent7#att19Array" target="sv3#page11#enu3#sfld3_output"/>
+      </Link>
+    </SelectorUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -180,7 +186,7 @@
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv3#page11#enu3">
           <layout:Link link="sv3#page11#enu3#ln12"/>
-          <layout:Field field="sv3#page11#enu3#fld8"/>
+          <layout:Field field="sv3#page11#enu3#sfld3"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -240,6 +246,20 @@
           <layout:Attribute attribute="ent5#att21"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

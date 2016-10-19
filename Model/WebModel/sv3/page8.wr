@@ -21,16 +21,15 @@
       <Field id="sv3#page8#enu4#fld9" name="Amount" type="float" modifiable="true" attribute="ent11#att41">
         <VRules/>
       </Field>
-      <Link id="sv3#page8#enu4#ln39" name="Flow35" to="sv3#cru4" type="normal" validate="true">
+      <Link id="sv3#page8#enu4#ln39" name="Submit" to="sv3#cru4" type="normal" validate="true">
         <LinkParameter id="sv3#page8#enu4#ln39#par123" name="Amount_PASSING" source="sv3#page8#enu4#fld9" passing="true"/>
         <LinkParameter id="sv3#page8#enu4#ln39#par124" name="Key [campaignId]_PASSING" source="key.ent11#att40" passing="true"/>
-        <LinkParameter id="sv3#page8#enu4#ln39#par125" name="Key [contributionid]_PASSING" source="key.ent11#att42" passing="true"/>
         <LinkParameter id="sv3#page8#enu4#ln39#par126" name="Key [userid]_PASSING" source="key.ent11#att43" passing="true"/>
         <LinkParameter id="sv3#page8#enu4#ln39#par127" name="Amount_amount" source="sv3#page8#enu4#fld9" target="sv3#cru4.ent11#att41"/>
         <LinkParameter id="sv3#page8#enu4#ln39#par128" name="Key [campaignId]_campaignId" source="key.ent11#att40" target="sv3#cru4.ent11#att40"/>
-        <LinkParameter id="sv3#page8#enu4#ln39#par129" name="Key [contributionid]_contributionid" source="key.ent11#att42" target="sv3#cru4.ent11#att42"/>
         <LinkParameter id="sv3#page8#enu4#ln39#par130" name="Key [userid]_userid" source="key.ent11#att43" target="sv3#cru4.ent11#att43"/>
-        <LinkParameter id="sv3#page8#enu4#ln39#par139" name="methodId_PASSING_PaymentMethods.methodId(ReceivedContributionToPaymentMethods)" sourceLinkParameter="sv3#page8#seu15#ln42#par135" target="sv3#cru4.rel16#role32.ent2#att6"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par120" name="ReceivedContribution Object_ReceivedContribution Object" source="entityBean" target="sv3#cru4.entityBeans"/>
+        <LinkParameter id="sv3#page8#enu4#ln39#par125" name="contributionId_PASSING_ContributionProfile.contributionId(ReceivedContributionToContributionProfile)" sourceLinkParameter="sv3#page8#seu14#ln37#par199" target="sv3#cru4.rel10#role20.ent4#att15"/>
       </Link>
       <SelectionField id="sv3#page8#enu4#sfld2" name="Payment Method" type="string"/>
     </EntryUnit>

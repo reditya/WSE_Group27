@@ -1,13 +1,13 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1200" gr:y="700" id="sv3#page10" name="Thank you Page">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page21" name="Page 19" gr:x="330" gr:y="940">
   <ContentUnits>
-    <MultiMessageUnit gr:x="0" gr:y="0" id="sv3#page10#mssu2" name="Thank you">
-      <Message xml:space="preserve">Thank you for contributing to this campaign!</Message>
+    <MultiMessageUnit id="sv3#page21#mssu6" name="Error" gr:x="0" gr:y="0">
+      <Message xml:space="preserve">You have already voted for this campaign</Message>
     </MultiMessageUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page10#mssu2"/>
+        <layout:Unit unitId="sv3#page21#mssu6"/>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
