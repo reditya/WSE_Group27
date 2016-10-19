@@ -5,39 +5,23 @@
         <LinkParameter id="sv3#page5#inu1#ln51#par156" name="campaignId_KeyCondition2 [campaignId]" target="sv3#page6#dau2#su3#kcond2.ent3#att8" source="data[].ent3#att8"/>
         <LinkParameter id="sv3#page5#inu1#ln51#par195" name="campaignId_PASSING" source="data[].ent3#att8" passing="true"/>
       </Link>
-      <Selector id="sv3#page5#inu1#su10" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv3#page5#inu1#su10#rcond7" name="RoleCondition7" predicate="notIn" implied="false" role="rel6#role11"/>
+      <Selector id="sv3#page5#inu1#su10" defaultPolicy="fill" booleanOperator="or">
+        <RelationshipRoleCondition id="sv3#page5#inu1#su10#rcond7" name="RoleCondition7" predicate="notIn" implied="false" role="rel6#role12.rel6#role11"/>
+        <RelationshipRoleCondition id="sv3#page5#inu1#su10#rcond25" name="RoleCondition25" predicate="notIn" implied="false" role="rel9#role17.rel6#role11"/>
       </Selector>
     </IndexUnit>
     <GetUnit id="sv3#page5#gtu8" name="GetCurrentUser" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
-      <Link id="sv3#page5#gtu8#ln63" name="Flow63" to="sv3#page5#seu20" type="transport" validate="true">
-        <LinkParameter id="sv3#page5#gtu8#ln63#par178" name="UserCtxParam.userId_PASSING" source="sv3#page5#gtu8.UserCtxParam" passing="true"/>
-        <LinkParameter id="sv3#page5#gtu8#ln63#par103" name="UserCtxParam.userId_RoleCondition21 [userId]" source="sv3#page5#gtu8.UserCtxParam" target="sv3#page5#seu20#su11#rcond21.userOID"/>
+      <Link id="sv3#page5#gtu8#ln45" name="Flow45" to="sv3#page5#seu17" type="transport" validate="true">
+        <LinkParameter id="sv3#page5#gtu8#ln45#par86" name="UserCtxParam.userId_PASSING" source="sv3#page5#gtu8.UserCtxParam" passing="true"/>
       </Link>
     </GetUnit>
-    <SelectorUnit gr:x="210" gr:y="0" id="sv3#page5#seu20" name="Selector20" entity="ent11" distinctAttributes="rel6#role11.ent3#att8">
-      <Link id="sv3#page5#seu20#ln64" name="Flow64" to="sv3#page5#inu1" type="transport" validate="true">
-        <LinkParameter id="sv3#page5#seu20#ln64#par186" name="campaignId_RoleCondition7 [campaignId]" source="rel6#role11_ent3#att8Array" target="sv3#page5#inu1#su10#rcond7.ent11#att40"/>
-        <LinkParameter id="sv3#page5#seu20#ln64#par201" name="campaignId_PASSING" source="ent11#att40Array" passing="true"/>
-        <LinkParameter id="sv3#page5#seu20#ln64#par203" name="ReceivedContributionToUser.userId_RoleCondition7 [userid]" target="sv3#page5#inu1#su10#rcond7.ent11#att43" source="rel9#role18_userOIDArray"/>
-      </Link>
-      <Selector id="sv3#page5#seu20#su11" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv3#page5#seu20#su11#rcond21" name="RoleCondition21" predicate="in" implied="false" role="rel9#role17"/>
-      </Selector>
-      <Link id="sv3#page5#seu20#ln66" name="Flow64" to="sv3#page5#inu6" type="transport" validate="true">
-        <LinkParameter id="sv3#page5#seu20#ln66#par207" name="campaignId_PASSING" source="ent11#att40Array" passing="true"/>
-        <LinkParameter id="sv3#page5#seu20#ln66#par167" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv3#page5#gtu8#ln63#par178" passing="true"/>
-        <LinkParameter id="sv3#page5#seu20#ln66#par105" name="ReceivedContributionToCampaign.campaignId_RoleCondition7 [campaignId]" source="rel6#role11_ent3#att8Array" target="sv3#page5#inu6#su12#rcond9.ent11#att40"/>
-        <LinkParameter id="sv3#page5#seu20#ln66#par106" name="ReceivedContributionToUser.userId_RoleCondition7 [userid]" source="rel9#role18_userOIDArray" target="sv3#page5#inu6#su12#rcond9.ent11#att43"/>
-      </Link>
-    </SelectorUnit>
     <IndexUnit id="sv3#page5#inu6" name="Your Supported Campaign" gr:x="220" gr:y="145" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu6#ln72">
       <Selector id="sv3#page5#inu6#su12" defaultPolicy="fill" booleanOperator="and">
-        <RelationshipRoleCondition id="sv3#page5#inu6#su12#rcond9" name="RoleCondition7" predicate="in" implied="false" role="rel6#role11"/>
+        <RelationshipRoleCondition id="sv3#page5#inu6#su12#rcond9" name="RoleCondition7" predicate="in" implied="false" role="rel6#role12.rel6#role11"/>
+        <RelationshipRoleCondition id="sv3#page5#inu6#su12#rcond23" name="RoleCondition23" predicate="in" implied="false" role="rel9#role17.rel6#role11"/>
       </Selector>
-      <Link id="sv3#page5#inu6#ln72" name="Flow72" to="sv3#page11#dau4" type="normal" validate="true">
+      <Link id="sv3#page5#inu6#ln72" name="View" to="sv3#page11#dau4" type="normal" validate="true">
         <LinkParameter id="sv3#page5#inu6#ln72#par217" name="campaignId_KeyCondition2 [campaignId]" source="data[].ent3#att8" target="sv3#page11#dau4#su13#kcond6.ent3#att8"/>
-        <LinkParameter id="sv3#page5#inu6#ln72#par218" name="campaignId_PASSING" sourceLinkParameter="sv3#page5#seu20#ln66#par207" passing="true"/>
       </Link>
     </IndexUnit>
     <EntryUnit gr:x="550" gr:y="145" id="sv3#page5#enu6" name="Search" linkOrder="sv3#page5#enu6#ln20">
@@ -47,6 +31,22 @@
         <LinkParameter id="sv3#page5#enu6#ln20#par74" name="Search_PASSING" source="sv3#page5#enu6#fld13" passing="true"/>
       </Link>
     </EntryUnit>
+    <SelectorUnit gr:x="225" gr:y="0" id="sv3#page5#seu17" name="Select Campaigns" entity="ent3">
+      <Link id="sv3#page5#seu17#ln46" name="Flow46" to="sv3#page5#inu6" type="transport" validate="true">
+        <LinkParameter id="sv3#page5#seu17#ln46#par103" name="UserCtxParam.userId_PASSING_RoleCondition23 [userId]" sourceLinkParameter="sv3#page5#gtu8#ln45#par86" target="sv3#page5#inu6#su12#rcond23.userOID"/>
+        <LinkParameter id="sv3#page5#seu17#ln46#par104" name="campaignId_RoleCondition7 [campaignId]" source="ent3#att8Array" target="sv3#page5#inu6#su12#rcond9.ent3#att8"/>
+        <LinkParameter id="sv3#page5#seu17#ln46#par105" name="campaignId_PASSING" source="ent3#att8Array" passing="true"/>
+        <LinkParameter id="sv3#page5#seu17#ln46#par112" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv3#page5#gtu8#ln45#par86" passing="true"/>
+        <LinkParameter id="sv3#page5#seu17#ln46#par113" name="campaignId_current campaignId" source="ent3#att8Array" target="sv3#page5#inu6.current.ent3#att8"/>
+      </Link>
+      <Link id="sv3#page5#seu17#ln47" name="Support" to="sv3#page5#inu1" type="transport" validate="true">
+        <LinkParameter id="sv3#page5#seu17#ln47#par106" name="UserCtxParam.userId_PASSING_RoleCondition25 [userId]" sourceLinkParameter="sv3#page5#gtu8#ln45#par86" target="sv3#page5#inu1#su10#rcond25.userOID"/>
+        <LinkParameter id="sv3#page5#seu17#ln47#par107" name="campaignId_RoleCondition7 [campaignId]" source="ent3#att8Array" target="sv3#page5#inu1#su10#rcond7.ent3#att8"/>
+        <LinkParameter id="sv3#page5#seu17#ln47#par108" name="campaignId_PASSING" source="ent3#att8Array" passing="true"/>
+        <LinkParameter id="sv3#page5#seu17#ln47#par111" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv3#page5#gtu8#ln45#par86" passing="true"/>
+        <LinkParameter id="sv3#page5#seu17#ln47#par114" name="campaignId_current campaignId" source="ent3#att8Array" target="sv3#page5#inu1.current.ent3#att8"/>
+      </Link>
+    </SelectorUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>

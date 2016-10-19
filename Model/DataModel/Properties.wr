@@ -170,8 +170,7 @@
       <db:JoinColumn attribute="ent3#att8" name="vote_campaignid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="crowdSourcingDB" type="MySQL" url="jdbc:mysql://82.196.7.146:5656/ifml" username="ifml" password="R29Gb3JXZWIyMDE2IQ==" cryptedPassword="true">
-  </db:Database>
+  <db:Database id="db1" name="crowdSourcingDB" type="MySQL" url="jdbc:mysql://82.196.7.146:5656/ifml" username="ifml" password="R29Gb3JXZWIyMDE2IQ==" cryptedPassword="true"/>
   <Relationship id="rel15" name="User_Tags" sourceEntity="User" targetEntity="ent6" gr:bendpoints="272,-216,-543,-101" db:database="db1" db:table="user_tags">
     <RelationshipRole1 id="rel15#role29" name="UserToTags" maxCard="N">
       <db:JoinColumn attribute="userOID" name="user_userid"/>

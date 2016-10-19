@@ -69,7 +69,7 @@
       </Link>
     </GetUnit>
     <EntryUnit gr:x="220" gr:y="305" id="sv3#page11#enu3" name="Give Vote" entity="ent10" linkOrder="sv3#page11#enu3#ln12">
-      <Link id="sv3#page11#enu3#ln12" name="Flow12" to="sv3#cru5" type="normal" validate="true">
+      <Link id="sv3#page11#enu3#ln12" name="Vote!" to="sv3#cru5" type="normal" validate="true">
         <LinkParameter id="sv3#page11#enu3#ln12#par47" name="Vote Object_Vote Object" source="entityBean" target="sv3#cru5.entityBeans"/>
         <LinkParameter id="sv3#page11#enu3#ln12#par48" name="Key [vote_campaignid]_vote_campaignid" source="key.ent10#att31" target="sv3#cru5.ent10#att31"/>
         <LinkParameter id="sv3#page11#enu3#ln12#par72" name="Key [vote_userid]_vote_userid" source="key.ent10#att27" target="sv3#cru5.ent10#att27"/>
@@ -82,7 +82,7 @@
     <EntryUnit gr:x="0" gr:y="50" id="sv3#page11#enu8" name="Ask Question" entity="ent9" linkOrder="sv3#page11#enu8#ln36">
       <Field id="sv3#page11#enu8#fld10" name="Question" type="string" modifiable="true" attribute="ent9#att29"/>
       <Field id="sv3#page11#enu8#fld11" name="Private?" type="boolean" modifiable="true" attribute="ent9#att39"/>
-      <Link id="sv3#page11#enu8#ln36" name="Flow36" to="sv3#cru6" type="normal" validate="true">
+      <Link id="sv3#page11#enu8#ln36" name="Ask!" to="sv3#cru6" type="normal" validate="true">
         <LinkParameter id="sv3#page11#enu8#ln36#par148" name="campaignId_PASSING_Campaign.campaignId(QuestionsToCampaign)" sourceLinkParameter="sv3#page11#dau4#ln34#par146" target="sv3#cru6.rel12#role23.ent3#att8"/>
         <LinkParameter id="sv3#page11#enu8#ln36#par149" name="Key [questionId]_questionId" source="key.ent9#att28" target="sv3#cru6.ent9#att28"/>
         <LinkParameter id="sv3#page11#enu8#ln36#par150" name="Questions Object_Questions Object" source="entityBean" target="sv3#cru6.entityBeans"/>
