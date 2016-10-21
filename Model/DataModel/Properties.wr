@@ -58,7 +58,7 @@
     <Attribute id="ent2#att6" key="true" name="methodId" type="integer" db:column="methodid"/>
     <Attribute id="ent2#att7" name="methodName" type="string" db:column="methodname"/>
   </Entity>
-  <Entity gr:x="615" gr:y="530" id="ent3" name="Campaign" duration="persistent" attributeOrder="ent3#att8 ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14 ent3#att5 ent3#att25 ent3#att36" db:database="db1" db:table="campaign">
+  <Entity gr:x="615" gr:y="530" id="ent3" name="Campaign" duration="persistent" attributeOrder="ent3#att8 ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14 ent3#att5 ent3#att25 ent3#att36 ent3#att37" db:database="db1" db:table="campaign">
     <Attribute id="ent3#att8" key="true" name="campaignId" type="integer" db:column="campaignid"/>
     <Attribute id="ent3#att14" name="maxBackingLimit" type="float" derivationQuery="simpleCalculated::Self.ent3#att12 * 1.5"/>
     <Attribute id="ent3#att13" name="campaignExpirationDate" type="date" db:column="campaignexpirationdate"/>
@@ -74,6 +74,7 @@
     <Attribute id="ent3#att36" name="maxIndividualBacking" type="float" derivationQuery="calculated::max(Self.ent3#att12) * 1.5 - sum(Self.rel7#role13(as Var1).ent4#att3)" storageType="file" db:table="campaign_maxindividualbacking" db:column="der_attr">
       <db:JoinColumn attribute="ent3#att8" name="campaignid"/>
     </Attribute>
+    <Attribute id="ent3#att37" name="isConcluded" type="boolean" db:column="isconcluded"/>
   </Entity>
   <Entity gr:x="695" gr:y="830" id="ent4" name="ContributionProfile" duration="persistent" attributeOrder="ent4#att15 ent4#att16 ent4#att17 ent4#att18 ent4#att3 ent4#att24" db:database="db1" db:table="contributionprofile">
     <Attribute id="ent4#att15" key="true" name="contributionId" type="integer" db:column="contributionid"/>

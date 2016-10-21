@@ -55,28 +55,7 @@
       </Link>
     </IndexUnit>
   </ContentUnits>
-  <layout:Grid containerType="grid">
-    <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page17#inu12">
-          <layout:Attribute attribute="ent3#att9"/>
-          <layout:Attribute attribute="ent3#att10"/>
-          <layout:Attribute attribute="ent3#att13"/>
-          <layout:Link link="sv3#page17#inu12#ln61"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
+  <layout:Grid containerType="grid" layout:style="WebRatio">
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv3#page17#enu10">
@@ -98,7 +77,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
+      <layout:Cell colspan="6">
         <layout:Unit unitId="sv3#page17#inu20">
           <layout:Attribute attribute="ent3#att9"/>
           <layout:Attribute attribute="ent3#att10"/>
@@ -106,6 +85,41 @@
           <layout:Link link="sv3#page17#inu20#ln99"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="6">
+        <layout:Unit unitId="sv3#page17#inu12">
+          <layout:Attribute attribute="ent3#att9"/>
+          <layout:Attribute attribute="ent3#att10"/>
+          <layout:Attribute attribute="ent3#att13"/>
+          <layout:Link link="sv3#page17#inu12#ln61"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

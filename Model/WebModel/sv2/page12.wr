@@ -1,7 +1,11 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1735" gr:y="170" id="sv2#page12" name="Create Advert">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1755" gr:y="250" id="sv2#page12" name="Create Advert">
   <ContentUnits>
     <EntryUnit id="sv2#page12#enu9" name="Create Advert" linkOrder="sv2#page12#enu9#ln27" gr:x="0" gr:y="0" entity="ent5" fieldOrder="sv2#page12#enu9#fld12">
-      <Field id="sv2#page12#enu9#fld12" name="Description" type="string" modifiable="true" contentType="text/plain" attribute="ent5#att21"/>
+      <Field id="sv2#page12#enu9#fld12" name="Description" type="string" modifiable="true" contentType="text/plain" attribute="ent5#att21">
+        <VRules>
+          <MandatoryValidationRule id="sv2#page12#enu9#fld12#mnd16" name="Mandatory16"/>
+        </VRules>
+      </Field>
       <Link id="sv2#page12#enu9#ln27" name="Post now" to="sv2#cru7" type="normal" validate="true">
         <LinkParameter id="sv2#page12#enu9#ln27#par78" name="Advertisement Object_Advertisement Object" source="entityBean" target="sv2#cru7.entityBeans"/>
         <LinkParameter id="sv2#page12#enu9#ln27#par79" name="campaignId_PASSING_Campaign.campaignId(AdvertisementToCampaign)" sourceLinkParameter="sv2#page9#dau3#ln28#par98" target="sv2#cru7.rel5#role9.ent3#att8"/>

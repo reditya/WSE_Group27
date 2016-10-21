@@ -15,7 +15,11 @@
         <LinkParameter id="sv2#page14#enu13#ln82#par261" name="Key [questionId]_KeyCondition8 [questionId]" source="key.ent9#att28" target="sv2#mfu1#su24#kcond8.ent9#att28"/>
         <LinkParameter id="sv2#page14#enu13#ln82#par262" name="campaignId_PASSING" sourceLinkParameter="sv2#page14#dau9#ln95#par260" passing="true"/>
       </Link>
-      <Field id="sv2#page14#enu13#fld26" name="Answer String" type="string" modifiable="true"/>
+      <Field id="sv2#page14#enu13#fld26" name="Answer String" type="string" modifiable="true">
+        <VRules>
+          <ValueLengthValidationRule id="sv2#page14#enu13#fld26#vl3" name="Value Length3" predicate="min" value="5" errorMessage="Just say something more :)"/>
+        </VRules>
+      </Field>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

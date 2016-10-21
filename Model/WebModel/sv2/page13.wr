@@ -15,6 +15,8 @@
       <Field id="sv2#page13#enu12#fld25" name="Minimum Amount" type="float" modifiable="true" attribute="ent4#att18">
         <VRules>
           <CompareValidationRule id="sv2#page13#enu12#fld25#cmp2" name="morethan0" predicate="gt" value="0"/>
+          <CompareValidationRule id="sv2#page13#enu12#fld25#cmp5" name="Compare5" predicate="lteq" valueField="sv2#page13#enu12#fld17" errorMessage="Your minimum amount is more than the maximum backing limit allowed"/>
+          <MandatoryValidationRule id="sv2#page13#enu12#fld25#mnd18" name="Mandatory18"/>
         </VRules>
       </Field>
       <Link id="sv2#page13#enu12#ln54" name="Create" to="sv2#cru3" type="normal" validate="true" gr:bendpoints="-157,-42,158,-22">
@@ -27,6 +29,7 @@
         <LinkParameter id="sv2#page13#enu12#ln54#par155" name="campaignId_PASSING" sourceLinkParameter="sv2#page9#dau3#ln55#par154" passing="true"/>
         <LinkParameter id="sv2#page13#enu12#ln54#par8" name="0_isHidden" sourceValue="0" target="sv2#cru3.ent4#att24"/>
       </Link>
+      <Field id="sv2#page13#enu12#fld17" name="MaxBackLimit" type="string" modifiable="true" preloaded="true" hidden="true"/>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">

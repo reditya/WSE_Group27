@@ -6,19 +6,14 @@
       </Selector>
     </IndexUnit>
     <GetUnit id="sv3#page4#gtu1" name="GetCurrentUser" gr:x="0" gr:y="5" contextParameters="UserCtxParam">
-      <Link id="sv3#page4#gtu1#ln48" name="Flow48" to="sv3#page4#seu12" type="transport" validate="true">
-        <LinkParameter id="sv3#page4#gtu1#ln48#par158" name="UserCtxParam.userId_PASSING" source="sv3#page4#gtu1.UserCtxParam" passing="true"/>
-      </Link>
+      <Link id="sv3#page4#gtu1#ln20" name="Flow20" to="sv3#page4#inu19" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv3#page4#gtu1#ln43" name="Flow43" to="sv3#page4#inu4" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
-    <SelectorUnit gr:x="165" gr:y="0" id="sv3#page4#seu12" name="Selector12" entity="ent9">
-      <Link id="sv3#page4#seu12#ln49" name="Flow49" to="sv3#page4#inu4" type="transport" validate="true">
-        <LinkParameter id="sv3#page4#seu12#ln49#par159" name="questionId_current questionId" source="ent9#att28Array" target="sv3#page4#inu4.current.ent9#att28"/>
-        <LinkParameter id="sv3#page4#seu12#ln49#par160" name="QuestionsToCampaign.campaignId_PASSING" source="rel12#role23_ent3#att8Array" passing="true"/>
-        <LinkParameter id="sv3#page4#seu12#ln49#par161" name="QuestionsToUser.userId_PASSING" source="rel11#role22_userOIDArray" passing="true"/>
-        <LinkParameter id="sv3#page4#seu12#ln49#par162" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv3#page4#gtu1#ln48#par158" passing="true"/>
-        <LinkParameter id="sv3#page4#seu12#ln49#par163" name="UserCtxParam.userId_PASSING_RoleCondition14 [userId]" sourceLinkParameter="sv3#page4#gtu1#ln48#par158" target="sv3#page4#inu4#su17#rcond14.userOID"/>
-      </Link>
-    </SelectorUnit>
+    <IndexUnit gr:x="305" gr:y="105" id="sv3#page4#inu19" name="My Messages" entity="ent1" displayAttributes="rel2#role3.ent3#att9 rel2#role3.rel3#role6.userName ent1#att4">
+      <Selector id="sv3#page4#inu19#su23" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page4#inu19#su23#rcond16" name="UserToMessage" predicate="in" implied="false" role="rel1#role1"/>
+      </Selector>
+    </IndexUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -28,6 +23,26 @@
           <layout:Attribute attribute="ent9#att30"/>
           <layout:Attribute attribute="rel12#role23.ent3#att9"/>
           <layout:Attribute attribute="rel12#role23.rel3#role6.User#att2"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page4#inu19">
+          <layout:Attribute attribute="rel2#role3.ent3#att9"/>
+          <layout:Attribute attribute="rel2#role3.rel3#role6.userName"/>
+          <layout:Attribute attribute="ent1#att4"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

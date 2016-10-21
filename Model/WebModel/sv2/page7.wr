@@ -15,6 +15,7 @@
       <Field id="sv2#page7#enu5#fld21" name="Expiration Date" type="date" modifiable="true" attribute="ent3#att13">
         <VRules>
           <CompareValidationRule id="sv2#page7#enu5#fld21#cmp1" name="LaterThanToday" predicate="gteq" value="today()"/>
+          <MandatoryValidationRule id="sv2#page7#enu5#fld21#mnd15" name="Mandatory15"/>
         </VRules>
       </Field>
       <Link id="sv2#page7#enu5#ln11" name="Create" to="sv2#cru2" type="normal" validate="true">
@@ -27,6 +28,7 @@
         <LinkParameter id="sv2#page7#enu5#ln11#par75" name="UserCtxParam.userId_PASSING_User.userId(CampaignToUser)" sourceLinkParameter="sv2#page7#gtu2#ln10#par52" target="sv2#cru2.rel3#role6.userOID"/>
         <LinkParameter id="sv2#page7#enu5#ln11#par76" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv2#page7#gtu2#ln10#par52" passing="true"/>
         <LinkParameter id="sv2#page7#enu5#ln11#par87" name="tagId_PASSING_Tags.tagId(CampaignToTags)" target="sv2#cru2.rel8#role16.ent6#att22" source="sv2#page7#enu5#msfld3"/>
+        <LinkParameter id="sv2#page7#enu5#ln11#par161" name="false_isConcluded" sourceValue="false" target="sv2#cru2.ent3#att37"/>
       </Link>
       <MultiSelectionField id="sv2#page7#enu5#msfld3" role="rel8#role16" type="string" name="Tag"/>
     </EntryUnit>
@@ -50,14 +52,19 @@
       </Link>
       <Link id="sv2#page7#gtu2#ln130" name="Flow130" to="sv2#page7#dau10" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
-    <IndexUnit gr:x="605" gr:y="75" id="sv2#page7#inu2" name="Your Campaigns" entity="ent3" displayAttributes="ent3#att9 ent3#att12 ent3#att13" linkOrder="sv2#page7#inu2#ln17">
+    <IndexUnit gr:x="605" gr:y="75" id="sv2#page7#inu2" name="Your Campaigns" entity="ent3" displayAttributes="ent3#att9 ent3#att12 ent3#att13" linkOrder="sv2#page7#inu2#ln17 sv2#page7#inu2#ln75">
       <Link id="sv2#page7#inu2#ln17" name="See more" to="sv2#page9#dau3" type="normal" validate="true">
         <LinkParameter id="sv2#page7#inu2#ln17#par69" name="campaignId_KeyCondition3 [campaignId]" source="data[].ent3#att8" target="sv2#page9#dau3#su4#kcond3.ent3#att8"/>
       </Link>
-      <Selector id="sv2#page7#inu2#su5" defaultPolicy="fill" booleanOperator="and">
+      <Selector id="sv2#page7#inu2#su5" defaultPolicy="fill" booleanOperator="and" expression="( sv2#page7#inu2#su5#rcond1 AND sv2#page7#inu2#su5#acond5 ) AND sv2#page7#inu2#su5#acond11">
         <RelationshipRoleCondition id="sv2#page7#inu2#su5#rcond1" name="CampaignToUser" predicate="in" implied="false" role="rel3#role5"/>
         <AttributesCondition id="sv2#page7#inu2#su5#acond5" name="unexpired" predicate="gteq" booleanOperator="and" implied="false" attributes="ent3#att13"/>
+        <AttributesCondition id="sv2#page7#inu2#su5#acond11" name="notConcluded" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att37" value="false"/>
       </Selector>
+      <Link id="sv2#page7#inu2#ln75" name="Conclude" to="sv2#mfu4" type="normal" validate="true">
+        <LinkParameter id="sv2#page7#inu2#ln75#par162" name="true_isConcluded" sourceValue="true" target="sv2#mfu4.ent3#att37"/>
+        <LinkParameter id="sv2#page7#inu2#ln75#par163" name="campaignId_KeyCondition4 [campaignId]" source="data[].ent3#att8" target="sv2#mfu4#su30#kcond4.ent3#att8"/>
+      </Link>
     </IndexUnit>
     <SelectorUnit gr:x="360" gr:y="80" id="sv2#page7#seu8" name="Select Campaign" entity="ent3">
       <Link id="sv2#page7#seu8#ln26" name="Flow26" to="sv2#page7#inu2" type="transport" validate="true">
@@ -83,9 +90,10 @@
       </Link>
     </SelectorUnit>
     <IndexUnit gr:x="720" gr:y="325" id="sv2#page7#inu14" name="Archived Campaigns" entity="ent3" displayAttributes="ent3#att9 ent3#att12 ent3#att13 ent3#att5">
-      <Selector id="sv2#page7#inu14#su32" defaultPolicy="fill" booleanOperator="and">
+      <Selector id="sv2#page7#inu14#su32" defaultPolicy="fill" booleanOperator="and" expression="( sv2#page7#inu14#su32#rcond19 AND sv2#page7#inu14#su32#acond6 ) OR sv2#page7#inu14#su32#acond9">
         <AttributesCondition id="sv2#page7#inu14#su32#acond6" name="expired" predicate="lt" booleanOperator="or" implied="false" attributes="ent3#att13"/>
         <RelationshipRoleCondition id="sv2#page7#inu14#su32#rcond19" name="CampaignToUser" predicate="in" implied="false" role="rel3#role5"/>
+        <AttributesCondition id="sv2#page7#inu14#su32#acond9" name="concluded" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att37" value="true"/>
       </Selector>
     </IndexUnit>
     <DataUnit gr:x="0" gr:y="0" id="sv2#page7#dau10" name="Campaigner details" entity="User" displayAttributes="userName password email User#att1 User#att2 User#att26">
@@ -144,10 +152,11 @@
     <layout:Row>
       <layout:Cell colspan="6">
         <layout:Unit unitId="sv2#page7#inu2">
-          <layout:Link link="sv2#page7#inu2#ln17"/>
           <layout:Attribute attribute="ent3#att9"/>
           <layout:Attribute attribute="ent3#att12"/>
           <layout:Attribute attribute="ent3#att13"/>
+          <layout:Link link="sv2#page7#inu2#ln17"/>
+          <layout:Link link="sv2#page7#inu2#ln75"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

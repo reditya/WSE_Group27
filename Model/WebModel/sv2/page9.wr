@@ -16,6 +16,7 @@
       <Link id="sv2#page9#dau3#ln55" name="Create a perk" to="sv2#page13#enu12" type="normal" validate="true">
         <LinkParameter id="sv2#page9#dau3#ln55#par154" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
         <LinkParameter id="sv2#page9#dau3#ln55#par402" name="maxBackingLimit_PASSING" source="data.ent3#att14" passing="true"/>
+        <LinkParameter id="sv2#page9#dau3#ln55#par83" name="maxBackingLimit_MaxBackLimit" source="data.ent3#att14" target="sv2#page13#enu12#fld17_slot"/>
       </Link>
       <Link id="sv2#page9#dau3#ln58" name="Flow58" to="sv2#page9#seu3" type="transport" validate="true">
         <LinkParameter id="sv2#page9#dau3#ln58#par176" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>

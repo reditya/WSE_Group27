@@ -22,6 +22,7 @@
     <IndexUnit id="sv3#page6#inu5" name="Contribution Profile" gr:x="420" gr:y="5" entity="ent4" displayAttributes="ent4#att16 ent4#att17 ent4#att18" linkOrder="sv3#page6#inu5#ln40">
       <Selector id="sv3#page6#inu5#su7" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page6#inu5#su7#rcond4" name="CampaignToContribution" predicate="in" implied="false" role="rel7#role13"/>
+        <AttributesCondition id="sv3#page6#inu5#su7#acond8" name="AttCondition8" predicate="eq" booleanOperator="or" implied="false" attributes="ent4#att24" value="false"/>
       </Selector>
       <Link id="sv3#page6#inu5#ln40" name="Contribute" to="sv3#page8#seu14" type="normal" validate="true">
         <LinkParameter id="sv3#page6#inu5#ln40#par132" name="contributionId_PASSING" source="data[].ent4#att15" passing="true"/>

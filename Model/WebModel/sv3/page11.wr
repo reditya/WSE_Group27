@@ -76,10 +76,18 @@
         <LinkParameter id="sv3#page11#enu3#ln12#par102" name="Key [vote_userid]_PASSING" source="key.ent10#att27" passing="true"/>
         <LinkParameter id="sv3#page11#enu3#ln12#par117" name="Vote Score_VoteValue.v_id(VoteToVoteValue)" source="sv3#page11#enu3#sfld3" target="sv3#cru5.rel16#role31.ent7#att19"/>
       </Link>
-      <SelectionField id="sv3#page11#enu3#sfld3" type="integer" name="Vote Score"/>
+      <SelectionField id="sv3#page11#enu3#sfld3" type="integer" name="Vote Score">
+        <VRules>
+          <MandatoryValidationRule id="sv3#page11#enu3#sfld3#mnd13" name="Mandatory13"/>
+        </VRules>
+      </SelectionField>
     </EntryUnit>
     <EntryUnit gr:x="0" gr:y="50" id="sv3#page11#enu8" name="Ask Question" entity="ent9" linkOrder="sv3#page11#enu8#ln36">
-      <Field id="sv3#page11#enu8#fld10" name="Question" type="string" modifiable="true" attribute="ent9#att29"/>
+      <Field id="sv3#page11#enu8#fld10" name="Question" type="string" modifiable="true" attribute="ent9#att29">
+        <VRules>
+          <ValueLengthValidationRule id="sv3#page11#enu8#fld10#vl1" name="Value Length1" predicate="min" value="5" errorMessage="Stop spamming, ask :)"/>
+        </VRules>
+      </Field>
       <Field id="sv3#page11#enu8#fld11" name="Private?" type="boolean" modifiable="true" attribute="ent9#att39"/>
       <Link id="sv3#page11#enu8#ln36" name="Ask!" to="sv3#cru6" type="normal" validate="true">
         <LinkParameter id="sv3#page11#enu8#ln36#par148" name="campaignId_PASSING_Campaign.campaignId(QuestionsToCampaign)" sourceLinkParameter="sv3#page11#dau4#ln34#par146" target="sv3#cru6.rel12#role23.ent3#att8"/>

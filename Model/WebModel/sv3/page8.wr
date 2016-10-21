@@ -5,12 +5,8 @@
         <LinkParameter id="sv3#page8#seu14#ln37#par118" name="ReceivedContributionToCampaign.campaignId_Key Condition [campaignId]" target="sv3#page8#enu4.ent11#att40" sourceLinkParameter="sv3#page6#inu5#ln40#par133"/>
         <LinkParameter id="sv3#page8#seu14#ln37#par199" name="contributionId_PASSING" sourceLinkParameter="sv3#page6#inu5#ln40#par132" passing="true"/>
         <LinkParameter id="sv3#page8#seu14#ln37#par193" name="minimumAmount_PASSING" sourceLinkParameter="sv3#page6#inu5#ln40#par192" passing="true"/>
-        <LinkParameter id="sv3#page8#seu14#ln37#par201" name="minimumAmount_PASSING_Min - Preselection" sourceLinkParameter="sv3#page6#inu5#ln40#par192" target="sv3#page8#enu4#sfld4_presel"/>
-        <LinkParameter id="sv3#page8#seu14#ln37#par202" name="minimumAmount_PASSING_Min [label]" sourceLinkParameter="sv3#page6#inu5#ln40#par192" target="sv3#page8#enu4#sfld4_label"/>
-        <LinkParameter id="sv3#page8#seu14#ln37#par203" name="minimumAmount_PASSING_Min [output]" sourceLinkParameter="sv3#page6#inu5#ln40#par192" target="sv3#page8#enu4#sfld4_output"/>
-        <LinkParameter id="sv3#page8#seu14#ln37#par139" name="maxIndividualBacking_PASSING_Max - Preselection" sourceLinkParameter="sv3#page6#inu5#ln40#par131" target="sv3#page8#enu4#sfld5_presel"/>
-        <LinkParameter id="sv3#page8#seu14#ln37#par157" name="maxIndividualBacking_PASSING_Max [label]" sourceLinkParameter="sv3#page6#inu5#ln40#par131" target="sv3#page8#enu4#sfld5_label"/>
-        <LinkParameter id="sv3#page8#seu14#ln37#par164" name="maxIndividualBacking_PASSING_Max [output]" sourceLinkParameter="sv3#page6#inu5#ln40#par131" target="sv3#page8#enu4#sfld5_output"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par73" name="maxIndividualBacking_PASSING_Maximum" sourceLinkParameter="sv3#page6#inu5#ln40#par131" target="sv3#page8#enu4#fld14_slot"/>
+        <LinkParameter id="sv3#page8#seu14#ln37#par74" name="minimumAmount_PASSING_Minimum" sourceLinkParameter="sv3#page6#inu5#ln40#par192" target="sv3#page8#enu4#fld16_slot"/>
       </Link>
     </SelectorUnit>
     <GetUnit id="sv3#page8#gtu5" name="GetCurrentUser" gr:x="0" gr:y="5" contextParameters="UserCtxParam">
@@ -26,8 +22,9 @@
     <EntryUnit id="sv3#page8#enu4" name="Create Contribution" linkOrder="sv3#page8#enu4#ln39" gr:x="250" gr:y="140" entity="ent11">
       <Field id="sv3#page8#enu4#fld9" name="Amount" type="float" modifiable="true" attribute="ent11#att41">
         <VRules>
-          <CompareValidationRule id="sv3#page8#enu4#fld9#cmp4" name="Min" predicate="gteq" valueField="sv3#page8#enu4#sfld4"/>
-          <CompareValidationRule id="sv3#page8#enu4#fld9#cmp3" name="Max" predicate="lteq" valueField="sv3#page8#enu4#sfld5"/>
+          <CompareValidationRule id="sv3#page8#enu4#fld9#cmp4" name="Min" predicate="gteq" valueField="sv3#page8#enu4#fld16" errorMessage="You can't contribute less than the minimum amount"/>
+          <CompareValidationRule id="sv3#page8#enu4#fld9#cmp3" name="Max" predicate="lteq" valueField="sv3#page8#enu4#fld14" errorMessage="Your contribution is over the maximum backing limit allowed. Contribute less :)"/>
+          <MandatoryValidationRule id="sv3#page8#enu4#fld9#mnd12" name="Mandatory12"/>
         </VRules>
       </Field>
       <Link id="sv3#page8#enu4#ln39" name="Submit" to="sv3#cru4" type="normal" validate="true">
@@ -40,9 +37,13 @@
         <LinkParameter id="sv3#page8#enu4#ln39#par120" name="ReceivedContribution Object_ReceivedContribution Object" source="entityBean" target="sv3#cru4.entityBeans"/>
         <LinkParameter id="sv3#page8#enu4#ln39#par125" name="contributionId_PASSING_ContributionProfile.contributionId(ReceivedContributionToContributionProfile)" sourceLinkParameter="sv3#page8#seu14#ln37#par199" target="sv3#cru4.rel10#role20.ent4#att15"/>
       </Link>
-      <SelectionField id="sv3#page8#enu4#sfld2" name="Payment Method" type="string"/>
-      <SelectionField id="sv3#page8#enu4#sfld4" type="float" name="Minimum"/>
-      <SelectionField id="sv3#page8#enu4#sfld5" type="float" name="Maximum" splitOutput="false"/>
+      <SelectionField id="sv3#page8#enu4#sfld2" name="Payment Method" type="string">
+        <VRules>
+          <MandatoryValidationRule id="sv3#page8#enu4#sfld2#mnd11" name="Mandatory11"/>
+        </VRules>
+      </SelectionField>
+      <Field id="sv3#page8#enu4#fld14" type="float" modifiable="true" name="Maximum" hidden="true" preloaded="true"/>
+      <Field id="sv3#page8#enu4#fld16" type="float" modifiable="true" name="Minimum" hidden="true" preloaded="true"/>
     </EntryUnit>
     <SelectorUnit gr:x="10" gr:y="135" id="sv3#page8#seu15" name="Select Payment" entity="ent2">
       <Link id="sv3#page8#seu15#ln42" name="Flow42" to="sv3#page8#enu4" type="transport" validate="true">
@@ -63,8 +64,6 @@
           <layout:Link link="sv3#page8#enu4#ln39"/>
           <layout:Field field="sv3#page8#enu4#fld9"/>
           <layout:Field field="sv3#page8#enu4#sfld2"/>
-          <layout:Field field="sv3#page8#enu4#sfld4"/>
-          <layout:Field field="sv3#page8#enu4#sfld5"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
