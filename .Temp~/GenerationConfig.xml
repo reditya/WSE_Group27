@@ -6,14 +6,14 @@
     <Property name="applicationServer">Tomcat</Property>
     <Property name="cloudDeploy">false</Property>
     <Property name="commonsLibDir">/Users/laurensvandenbercken/Downloads/WebRatio_Platform_University_Student_Edition_7.2.14.x64bit.MacOSX/WebRatio/plugins/com.webratio.commons.libs_7.2.14.201608091213/lib</Property>
-    <Property name="dbConfigPath">/var/folders/6z/7dcdbn957pb48d79v43x2d5h0000gn/T/WRDBConfig1574653406376238497.xml</Property>
+    <Property name="dbConfigPath">/var/folders/6z/7dcdbn957pb48d79v43x2d5h0000gn/T/WRDBConfig2074027001165192341.xml</Property>
     <Property name="defaultEncoding"></Property>
     <Property name="deployCorePluginDir">/Users/laurensvandenbercken/Downloads/WebRatio_Platform_University_Student_Edition_7.2.14.x64bit.MacOSX/WebRatio/configuration/org.eclipse.osgi/bundles/49/1/.cp</Property>
     <Property name="derbySystemHome">/Users/laurensvandenbercken/Documents/workspace_webratio/.metadata/.plugins/com.webratio.commons.db/derby</Property>
     <Property name="enterpriseProjectDir"></Property>
-    <Property name="eventSocketPort">49303</Property>
+    <Property name="eventSocketPort">50622</Property>
     <Property name="excludedProjects" type="list"></Property>
-    <Property name="generationTime">201610161749</Property>
+    <Property name="generationTime">201610210954</Property>
     <Property name="helpersPluginDir">/Users/laurensvandenbercken/Downloads/WebRatio_Platform_University_Student_Edition_7.2.14.x64bit.MacOSX/WebRatio/plugins/com.webratio.generator.helpers_7.2.14.201608091213</Property>
     <Property name="i18nBundleKeysFile" type="file"></Property>
     <Property name="i18nExtraBundleFile" type="file"></Property>
@@ -24,14 +24,14 @@
     <Property name="phases">All</Property>
     <Property name="projectDir">/Users/laurensvandenbercken/Documents/workspace_webratio/WSE_Group27</Property>
     <Property name="projectName">WSE_Group27</Property>
-    <Property name="projectPath">/var/folders/6z/7dcdbn957pb48d79v43x2d5h0000gn/T/Project5759563455003940737.wr</Property>
+    <Property name="projectPath">/var/folders/6z/7dcdbn957pb48d79v43x2d5h0000gn/T/Project954496495909513548.wr</Property>
     <Property name="projectType">WEBPROJECT</Property>
     <Property name="rootModuleName"></Property>
     <Property name="uiPluginDir">/Users/laurensvandenbercken/Downloads/WebRatio_Platform_University_Student_Edition_7.2.14.x64bit.MacOSX/WebRatio/plugins/com.webratio.ide.ui_7.2.14.201608091213</Property>
     <Property name="webappPluginDir">/Users/laurensvandenbercken/Downloads/WebRatio_Platform_University_Student_Edition_7.2.14.x64bit.MacOSX/WebRatio/plugins/com.webratio.generator.webapp_7.2.14.201608091213</Property>
     <Property name="wrBuildId">201608091213</Property>
     <Property name="wrGenerateOldValidationRules">false</Property>
-    <Property name="wrModelStatistics">pages=18|units=96</Property>
+    <Property name="wrModelStatistics">pages=22|units=111</Property>
     <Property name="wrVersion">7.2.14</Property>
   </Properties>
   <Plugins>

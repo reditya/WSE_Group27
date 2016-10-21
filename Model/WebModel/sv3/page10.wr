@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1200" gr:y="700" id="sv3#page10" name="Thank you Page">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1200" gr:y="700" id="sv3#page10" name="Thank you">
   <ContentUnits>
     <MultiMessageUnit gr:x="0" gr:y="0" id="sv3#page10#mssu2" name="Thank you">
       <Message xml:space="preserve">Thank you for contributing to this campaign!</Message>

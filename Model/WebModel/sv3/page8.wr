@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1190" gr:y="355" id="sv3#page8" name="Page 8">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1190" gr:y="355" id="sv3#page8" name="Contribute">
   <ContentUnits>
     <SelectorUnit id="sv3#page8#seu14" name="Select Profile" gr:x="270" gr:y="0" entity="ent11">
       <Link id="sv3#page8#seu14#ln37" name="Flow34" to="sv3#page8#enu4" type="transport" validate="true">

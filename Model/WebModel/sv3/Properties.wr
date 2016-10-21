@@ -11,5 +11,21 @@
     <CreateUnit gr:x="30" gr:y="815" id="sv3#cru6" name="Question" entity="ent9">
       <OKLink id="sv3#cru6#oln10" name="OKFlow10" to="sv3#page23" automaticCoupling="true"/>
     </CreateUnit>
+    <ParameterCollectorUnit gr:x="820" gr:y="80" id="sv3#pcu1" name="Search Collector" linkOrder="sv3#pcu1#ln107">
+      <Link id="sv3#pcu1#ln90" name="Flow90" to="sv3#page17#inu20" type="transport" validate="true">
+        <LinkParameter id="sv3#pcu1#ln90#par223" name="Keyword_Keywords" source="sv3#pcu1#pcp1" target="sv3#page17#inu20#su11#acond7"/>
+        <LinkParameter id="sv3#pcu1#ln90#par224" name="Tags_Tags [tagId]" source="sv3#pcu1#pcp2" target="sv3#page17#inu20#su11#rcond31.ent6#att22"/>
+      </Link>
+      <CollectorParameter id="sv3#pcu1#pcp1" name="Keyword"/>
+      <CollectorParameter id="sv3#pcu1#pcp2" name="Tags"/>
+      <Link id="sv3#pcu1#ln93" name="Flow93" to="sv3#page17#inu12" type="transport" validate="true" gr:bendpoints="142,-170,-448,-140">
+        <LinkParameter id="sv3#pcu1#ln93#par225" name="Keyword_Keywords" source="sv3#pcu1#pcp1" target="sv3#page17#inu12#su21#acond3"/>
+        <LinkParameter id="sv3#pcu1#ln93#par226" name="Tags_Tags [tagId]" source="sv3#pcu1#pcp2" target="sv3#page17#inu12#su21#rcond22.ent6#att22"/>
+      </Link>
+      <OKLink id="sv3#pcu1#oln12" name="OKFlow12" to="sv3#page17" automaticCoupling="true"/>
+      <Link id="sv3#pcu1#ln107" name="Flow107" to="sv3#page17#enu10" type="transport" validate="true" gr:bendpoints="170,100,-155,-60">
+        <LinkParameter id="sv3#pcu1#ln107#par231" name="Keyword_Keyword" source="sv3#pcu1#pcp1" target="sv3#page17#enu10#fld15_slot"/>
+      </Link>
+    </ParameterCollectorUnit>
   </OperationUnits>
 </SiteView>
