@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1020" gr:y="-5" id="sv3#page17" name="Search results">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1005" gr:y="-85" id="sv3#page17" name="Search Results">
   <ContentUnits>
-    <IndexUnit gr:x="315" gr:y="0" id="sv3#page17#inu12" name="Not supported" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page17#inu12#ln61">
+    <IndexUnit gr:x="505" gr:y="0" id="sv3#page17#inu12" name="Support a Campaign!" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page17#inu12#ln61">
       <SortAttribute attribute="ent3#att9" order="ascending"/>
       <Selector id="sv3#page17#inu12#su21" defaultPolicy="fill" booleanOperator="and" expression="IFNULLTRUE(sv3#page17#inu12#su21#acond3) AND IFNULLTRUE(sv3#page17#inu12#su21#rcond22) AND ( sv3#page17#inu12#su21#rcond30 OR sv3#page17#inu12#su21#rcond29 )">
         <AttributesCondition id="sv3#page17#inu12#su21#acond3" name="Keywords" predicate="contains" booleanOperator="or" implied="true" attributes="ent3#att10 ent3#att9" ignoreCase="true"/>
@@ -12,7 +12,7 @@
         <LinkParameter id="sv3#page17#inu12#ln61#par186" name="campaignId_KeyCondition2 [campaignId]" source="data[].ent3#att8" target="sv3#page6#dau2#su3#kcond2.ent3#att8"/>
       </Link>
     </IndexUnit>
-    <EntryUnit id="sv3#page17#enu10" name="Search" gr:x="140" gr:y="220" linkOrder="sv3#page17#enu10#ln97">
+    <EntryUnit id="sv3#page17#enu10" name="Search" gr:x="175" gr:y="190" linkOrder="sv3#page17#enu10#ln97">
       <Field id="sv3#page17#enu10#fld15" name="Keyword" type="string" modifiable="true" preloaded="true"/>
       <MultiSelectionField id="sv3#page17#enu10#msfld5" name="Tags" type="string"/>
       <Link id="sv3#page17#enu10#ln97" name="Search" to="sv3#pcu1" type="normal" validate="true">
@@ -20,13 +20,13 @@
         <LinkParameter id="sv3#page17#enu10#ln97#par228" name="Tags_Tags" source="sv3#page17#enu10#msfld5" target="sv3#pcu1#pcp2"/>
       </Link>
     </EntryUnit>
-    <SelectorUnit gr:x="0" gr:y="220" id="sv3#page17#seu26" name="Tags" entity="ent6">
+    <SelectorUnit gr:x="60" gr:y="255" id="sv3#page17#seu26" name="Tags" entity="ent6">
       <Link id="sv3#page17#seu26#ln33" name="Flow33" to="sv3#page17#enu10" type="transport" validate="true">
         <LinkParameter id="sv3#page17#seu26#ln33#par170" name="keywords_Tags [label]" source="ent6#att23Array" target="sv3#page17#enu10#msfld5_label"/>
         <LinkParameter id="sv3#page17#seu26#ln33#par174" name="tagId_Tags [output]" source="ent6#att22Array" target="sv3#page17#enu10#msfld5_output"/>
       </Link>
     </SelectorUnit>
-    <GetUnit gr:x="415" gr:y="195" id="sv3#page17#gtu4" name="GetCurrentUser" contextParameters="UserCtxParam">
+    <GetUnit gr:x="490" gr:y="235" id="sv3#page17#gtu4" name="GetCurrentUser" contextParameters="UserCtxParam">
       <Link id="sv3#page17#gtu4#ln44" name="Flow44" to="sv3#page17#inu12" type="transport" validate="true">
         <LinkParameter id="sv3#page17#gtu4#ln44#par184" name="UserCtxParam.userId_UserNotInReceived [userId]" source="sv3#page17#gtu4.UserCtxParam" target="sv3#page17#inu12#su21#rcond30.userOID"/>
       </Link>
@@ -34,7 +34,7 @@
         <LinkParameter id="sv3#page17#gtu4#ln87#par216" name="UserCtxParam.userId_UserInReceived [userId]" source="sv3#page17#gtu4.UserCtxParam" target="sv3#page17#inu20#su11#rcond33.userOID"/>
       </Link>
     </GetUnit>
-    <SelectorUnit gr:x="260" gr:y="205" id="sv3#page17#seu28" name="Campaigns" entity="ent3">
+    <SelectorUnit gr:x="265" gr:y="230" id="sv3#page17#seu28" name="Campaigns" entity="ent3">
       <Link id="sv3#page17#seu28#ln57" name="Flow57" to="sv3#page17#inu12" type="transport" validate="true">
         <LinkParameter id="sv3#page17#seu28#ln57#par183" name="campaignId_CampaignNotInReceived [campaignId]" source="ent3#att8Array" target="sv3#page17#inu12#su21#rcond29.ent3#att8"/>
       </Link>
@@ -42,7 +42,7 @@
         <LinkParameter id="sv3#page17#seu28#ln86#par215" name="campaignId_CampaignInReceived [campaignId]" source="ent3#att8Array" target="sv3#page17#inu20#su11#rcond32.ent3#att8"/>
       </Link>
     </SelectorUnit>
-    <IndexUnit id="sv3#page17#inu20" name="Supported" gr:x="15" gr:y="10" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page17#inu20#ln99">
+    <IndexUnit id="sv3#page17#inu20" name="Campaigns You Support" gr:x="0" gr:y="5" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page17#inu20#ln99">
       <SortAttribute attribute="ent3#att9" order="ascending"/>
       <Selector id="sv3#page17#inu20#su11" defaultPolicy="fill" booleanOperator="and">
         <AttributesCondition id="sv3#page17#inu20#su11#acond7" name="Keywords" predicate="contains" booleanOperator="or" implied="true" attributes="ent3#att10 ent3#att9" ignoreCase="true"/>
@@ -55,9 +55,9 @@
       </Link>
     </IndexUnit>
   </ContentUnits>
-  <layout:Grid containerType="grid" layout:style="WebRatio">
+  <layout:Grid containerType="grid" layout:style="FertileEnvironment">
     <layout:Row>
-      <layout:Cell colspan="12">
+      <layout:Cell colspan="6">
         <layout:Unit unitId="sv3#page17#enu10">
           <layout:Field field="sv3#page17#enu10#fld15"/>
           <layout:Field field="sv3#page17#enu10#msfld5"/>
@@ -69,7 +69,7 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell colspan="6"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

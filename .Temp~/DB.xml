@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <DBMetaData driverMajorVersion="5" driverMinorVersion="1" driverVersion="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )" productVersion="5.7.15-0ubuntu0.16.04.1" identifierQuoteString="`" transactionLevel="Repeatable read" driverName="MySQL Connector Java" productName="MySQL">
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="advertisement" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="advertisement" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="advertisement_id" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="description" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="campaign_campaignid" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="campaign_campaignid" foreignColumnName="campaignid" name="fk_advertisement_campaign" foreignTableName="campaign" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="campaign" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="campaign" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="campaignid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="91" indexed="unknown" autoIncrement="false" type="DATE" size="10" decimalDigits="0" name="campaignexpirationdate" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="campaigngoal" primaryKey="false" notNull="false"/>
@@ -14,61 +15,75 @@
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="campaigntitle" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="user_userid" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="-7" indexed="unknown" autoIncrement="false" type="BIT" size="1" decimalDigits="0" name="isconcluded" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="user_userid" foreignColumnName="userid" name="fk_campaign_user" foreignTableName="user" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="contributionprofile" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="contributionprofile" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="contributionid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="minimumamount" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="contributiondescription" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="contributiontitle" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="-7" indexed="unknown" autoIncrement="false" type="BIT" size="1" decimalDigits="0" name="ishidden" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="campaign_campaignid" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="campaign_campaignid" foreignColumnName="campaignid" name="fk_contributionprofile_campaig" foreignTableName="campaign" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="group" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="group" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="groupname" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="module_oid" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="module_oid" foreignColumnName="oid" name="fk_group_module" foreignTableName="module" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="group_module" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="group_module" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="group_oid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="module_oid" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="group_oid" foreignColumnName="oid" name="fk_group_module_group" foreignTableName="group" foreignSchemaName=""/>
+    <ForeignKey localColumnName="module_oid" foreignColumnName="oid" name="fk_group_module_module" foreignTableName="module" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="message" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="message" type="TABLE" refreshed="true">
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="message" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="message_campaignid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="message_userid" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="message_campaignid" foreignColumnName="campaignid" name="fk_message_campaign" foreignTableName="campaign" foreignSchemaName=""/>
+    <ForeignKey localColumnName="message_userid" foreignColumnName="userid" name="fk_message_user" foreignTableName="user" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="module" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="module" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="oid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="moduleid" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="modulename" primaryKey="false" notNull="false"/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="paymentmethods" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="paymentmethods" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="methodid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="methodname" primaryKey="false" notNull="false"/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="questions" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="questions" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="questionid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="answerstring" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="questionstring" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="-7" indexed="unknown" autoIncrement="false" type="BIT" size="1" decimalDigits="0" name="isprivate" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="q_userid" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="q_campaignid" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="q_campaignid" foreignColumnName="campaignid" name="fk_questions_campaign" foreignTableName="campaign" foreignSchemaName=""/>
+    <ForeignKey localColumnName="q_userid" foreignColumnName="userid" name="fk_questions_user" foreignTableName="user" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="receivedcontribution" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="receivedcontribution" type="TABLE" refreshed="true">
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="amount" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="campaignid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="userid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="contributionid" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="campaignid" foreignColumnName="campaignid" name="fk_receivedcontribution_campai" foreignTableName="campaign" foreignSchemaName=""/>
+    <ForeignKey localColumnName="contributionid" foreignColumnName="contributionid" name="fk_receivedcontribution_contri" foreignTableName="contributionprofile" foreignSchemaName=""/>
+    <ForeignKey localColumnName="userid" foreignColumnName="userid" name="fk_receivedcontribution_user" foreignTableName="user" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="tags" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="tags" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="tagid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="keywords" primaryKey="false" notNull="false"/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="tags_campaign" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="tags_campaign" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="tags_tagid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="campaign_campaignid" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="campaign_campaignid" foreignColumnName="campaignid" name="fk_tags_campaign_campaign" foreignTableName="campaign" foreignSchemaName=""/>
+    <ForeignKey localColumnName="tags_tagid" foreignColumnName="tagid" name="fk_tags_campaign_tags" foreignTableName="tags" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="user" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="user" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="userid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="username" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="password" primaryKey="false" notNull="false"/>
@@ -76,57 +91,66 @@
     <Column sqlTypeId="91" indexed="unknown" autoIncrement="false" type="DATE" size="10" decimalDigits="0" name="dateofbirth" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="12" indexed="unknown" autoIncrement="false" type="VARCHAR" size="255" decimalDigits="0" name="fullname" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="group_oid" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="group_oid" foreignColumnName="oid" name="fk_user_group" foreignTableName="group" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="user_group" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="user_group" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="user_userid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="group_oid" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="group_oid" foreignColumnName="oid" name="fk_user_group_group" foreignTableName="group" foreignSchemaName=""/>
+    <ForeignKey localColumnName="user_userid" foreignColumnName="userid" name="fk_user_group_user" foreignTableName="user" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="user_paymentmethods" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="user_paymentmethods" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="user_userid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="paymentmethods_methodid" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="paymentmethods_methodid" foreignColumnName="methodid" name="fk_user_paymentmethods_payment" foreignTableName="paymentmethods" foreignSchemaName=""/>
+    <ForeignKey localColumnName="user_userid" foreignColumnName="userid" name="fk_user_paymentmethods_user" foreignTableName="user" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="user_tags" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="user_tags" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="user_userid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="tags_tagid" primaryKey="true" notNull="true"/>
+    <ForeignKey localColumnName="tags_tagid" foreignColumnName="tagid" name="fk_user_tags_tags" foreignTableName="tags" foreignSchemaName=""/>
+    <ForeignKey localColumnName="user_userid" foreignColumnName="userid" name="fk_user_tags_user" foreignTableName="user" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="vote" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="vote" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="vote_userid" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="vote_campaignid" primaryKey="true" notNull="true"/>
-    <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="vote_value" primaryKey="false" notNull="false"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="votevalue_v_id" primaryKey="false" notNull="false"/>
+    <ForeignKey localColumnName="vote_campaignid" foreignColumnName="campaignid" name="fk_vote_campaign" foreignTableName="campaign" foreignSchemaName=""/>
+    <ForeignKey localColumnName="vote_userid" foreignColumnName="userid" name="fk_vote_user" foreignTableName="user" foreignSchemaName=""/>
+    <ForeignKey localColumnName="votevalue_v_id" foreignColumnName="v_id" name="fk_vote_votevalue" foreignTableName="votevalue" foreignSchemaName=""/>
   </Table>
-  <Table type="TABLE" schema="" ignoreIndexes="false" name="votevalue" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="votevalue" type="TABLE" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="v_id" primaryKey="true" notNull="true"/>
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="v_value" primaryKey="false" notNull="false"/>
   </Table>
-  <Table type="VIEW" schema="" ignoreIndexes="false" name="campaign_maxindividualbacking" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="campaign_maxindividualbacking" type="VIEW" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="campaignid" primaryKey="false" notNull="true"/>
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="der_attr" primaryKey="false" notNull="false"/>
     <SQLDefinition>select `AL1`.`campaignid` AS `campaignid`,((max(`AL1`.`campaigngoal`) * 1.5) - sum(`AL3`.`der_attr`)) AS `der_attr` from ((`campaign` `AL1` left join `contributionprofile` `AL2` on((`AL1`.`campaignid` = `AL2`.`campaign_campaignid`))) left join `contributionprofile_totalcontr` `AL3` on((`AL2`.`contributionid` = `AL3`.`contributionid`))) group by `AL1`.`campaignid`</SQLDefinition>
   </Table>
-  <Table type="VIEW" schema="" ignoreIndexes="false" name="campaign_quality_view" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="campaign_quality_view" type="VIEW" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="campaignid" primaryKey="false" notNull="true"/>
-    <Column sqlTypeId="2" indexed="unknown" autoIncrement="false" type="NUMERIC" size="65" decimalDigits="4" name="der_attr" primaryKey="false" webMLType="decimal" notNull="false"/>
+    <Column sqlTypeId="2" indexed="unknown" autoIncrement="false" type="NUMERIC" size="65" decimalDigits="4" webMLType="decimal" name="der_attr" primaryKey="false" notNull="false"/>
     <SQLDefinition>select `AL1`.`campaignid` AS `campaignid`,avg(`AL3`.`v_value`) AS `der_attr` from ((`campaign` `AL1` left join `vote` `AL2` on((`AL1`.`campaignid` = `AL2`.`vote_campaignid`))) left join `votevalue` `AL3` on((`AL2`.`votevalue_v_id` = `AL3`.`v_id`))) group by `AL1`.`campaignid`</SQLDefinition>
   </Table>
-  <Table type="VIEW" schema="" ignoreIndexes="false" name="campaign_totalcampaigncontribu" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="campaign_totalcampaigncontribu" type="VIEW" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="campaignid" primaryKey="false" notNull="true"/>
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="der_attr" primaryKey="false" notNull="false"/>
     <SQLDefinition>select `AL1`.`campaignid` AS `campaignid`,sum(`AL3`.`der_attr`) AS `der_attr` from ((`campaign` `AL1` left join `contributionprofile` `AL2` on((`AL1`.`campaignid` = `AL2`.`campaign_campaignid`))) left join `contributionprofile_totalcontr` `AL3` on((`AL2`.`contributionid` = `AL3`.`contributionid`))) group by `AL1`.`campaignid`</SQLDefinition>
   </Table>
-  <Table type="VIEW" schema="" ignoreIndexes="false" name="contributionprofile_totalcontr" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="contributionprofile_totalcontr" type="VIEW" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="contributionid" primaryKey="false" notNull="true"/>
     <Column sqlTypeId="8" indexed="unknown" autoIncrement="false" type="DOUBLE" size="22" decimalDigits="0" name="der_attr" primaryKey="false" notNull="false"/>
     <SQLDefinition>select `AL1`.`contributionid` AS `contributionid`,sum(`AL2`.`amount`) AS `der_attr` from (`contributionprofile` `AL1` left join `receivedcontribution` `AL2` on((`AL1`.`contributionid` = `AL2`.`contributionid`))) group by `AL1`.`contributionid`</SQLDefinition>
   </Table>
-  <Table type="VIEW" schema="" ignoreIndexes="false" name="user_reputation_score_view" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="user_reputation_score_view" type="VIEW" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="userid" primaryKey="false" notNull="true"/>
-    <Column sqlTypeId="2" indexed="unknown" autoIncrement="false" type="NUMERIC" size="65" decimalDigits="8" name="der_attr" primaryKey="false" webMLType="decimal" notNull="false"/>
+    <Column sqlTypeId="2" indexed="unknown" autoIncrement="false" type="NUMERIC" size="65" decimalDigits="8" webMLType="decimal" name="der_attr" primaryKey="false" notNull="false"/>
     <SQLDefinition>select `AL1`.`userid` AS `userid`,avg(`AL3`.`der_attr`) AS `der_attr` from ((`user` `AL1` left join `campaign` `AL2` on((`AL1`.`userid` = `AL2`.`user_userid`))) left join `campaign_quality_view` `AL3` on((`AL2`.`campaignid` = `AL3`.`campaignid`))) group by `AL1`.`userid`</SQLDefinition>
   </Table>
-  <Table type="VIEW" schema="" ignoreIndexes="false" name="user_wisdom_score_view" refreshed="true">
+  <Table schema="" ignoreIndexes="false" name="user_wisdom_score_view" type="VIEW" refreshed="true">
     <Column sqlTypeId="4" indexed="unknown" autoIncrement="false" type="INT" size="10" decimalDigits="0" name="userid" primaryKey="false" notNull="true"/>
-    <Column sqlTypeId="2" indexed="unknown" autoIncrement="false" type="NUMERIC" size="65" decimalDigits="8" name="der_attr" primaryKey="false" webMLType="decimal" notNull="false"/>
+    <Column sqlTypeId="2" indexed="unknown" autoIncrement="false" type="NUMERIC" size="65" decimalDigits="8" webMLType="decimal" name="der_attr" primaryKey="false" notNull="false"/>
     <SQLDefinition>select `AL1`.`userid` AS `userid`,avg(`AL3`.`der_attr`) AS `der_attr` from ((`user` `AL1` left join `receivedcontribution` `AL2` on((`AL1`.`userid` = `AL2`.`userid`))) left join `campaign_quality_view` `AL3` on((`AL2`.`campaignid` = `AL3`.`campaignid`))) group by `AL1`.`userid`</SQLDefinition>
   </Table>
 </DBMetaData>

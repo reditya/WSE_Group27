@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page21" name="Vote Error" gr:x="330" gr:y="940">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page21" name="Vote Error" gr:x="405" gr:y="1150">
   <ContentUnits>
     <MultiMessageUnit id="sv3#page21#mssu6" name="Error" gr:x="0" gr:y="0">
       <Message xml:space="preserve">You have already voted for this campaign</Message>

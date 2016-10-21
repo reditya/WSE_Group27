@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Homepage" homePage="sv1#page1">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1" name="Homepage" homePage="sv1#page1" layout:pageLayout="FertileEnvironment/Login">
   <OperationUnits>
     <ModuleInstanceUnit gr:x="680" gr:y="95" id="sv1#miu3" moduleId="mov1#opm1">
       <OKLink id="sv1#miu3#oln4" name="OKFlow4" to="sv1#page2#dau1">

@@ -1,7 +1,7 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1500" gr:y="1400" id="sv2#page15" name="Contact Supporter">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1405" gr:y="1435" id="sv2#page15" name="Contact Supporter">
   <ContentUnits>
     <EntryUnit gr:x="0" gr:y="0" id="sv2#page15#enu16" name="Write message" entity="ent1" linkOrder="sv2#page15#enu16#ln112">
-      <Field id="sv2#page15#enu16#fld30" name="Content" type="string" modifiable="true" attribute="ent1#att4">
+      <Field id="sv2#page15#enu16#fld30" name="Message" type="string" modifiable="true" attribute="ent1#att4">
         <VRules>
           <MandatoryValidationRule id="sv2#page15#enu16#fld30#mnd17" name="Mandatory17"/>
         </VRules>

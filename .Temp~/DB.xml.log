@@ -1,210 +1,258 @@
-[21 Oct 2016 13:23:52] Building database metadata model
-[21 Oct 2016 13:23:52] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@1e9e5c73, includeTables=true, username=ifml, outputLogPath=/Users/laurensvandenbercken/Documents/workspace_webratio/WSE_Group27/.Temp~/DB.xml.log, readIndexes=null, driverClass=com.mysql.jdbc.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.MySQLMetaDataProvider, outputPath=/Users/laurensvandenbercken/Documents/workspace_webratio/WSE_Group27/.Temp~/DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=/Users/laurensvandenbercken/Documents/workspace_webratio/.metadata/.plugins/com.webratio.commons.db/derby, url=jdbc:mysql://82.196.7.146:5656/ifml, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=false, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=49672}
-[21 Oct 2016 13:23:52] URL: jdbc:mysql://82.196.7.146:5656/ifml
-[21 Oct 2016 13:23:52] Product name: MySQL
-[21 Oct 2016 13:23:52] Product version: 5.7.15-0ubuntu0.16.04.1
-[21 Oct 2016 13:23:52] Driver name: MySQL Connector Java
-[21 Oct 2016 13:23:52] Driver version: mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )
-[21 Oct 2016 13:23:52] Driver major version: 5
-[21 Oct 2016 13:23:52] Driver minor version: 1
-[21 Oct 2016 13:23:52] Identifier quote string: 1
-[21 Oct 2016 13:23:52] Retrieving schemas
-[21 Oct 2016 13:23:52] Retrieving [TABLE, VIEW, SYNONYM] for schema ''
-[21 Oct 2016 13:23:52]   Found 'advertisement' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'campaign' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'contributionprofile' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'group' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'group_module' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'message' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'module' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'paymentmethods' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'questions' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'receivedcontribution' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'tags' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'tags_campaign' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'user' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'user_group' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'user_paymentmethods' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'user_tags' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'vote' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'votevalue' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found 'campaign_maxindividualbacking' [type = VIEW]
-[21 Oct 2016 13:23:52]   Found 'campaign_quality_view' [type = VIEW]
-[21 Oct 2016 13:23:52]   Found 'campaign_totalcampaigncontribu' [type = VIEW]
-[21 Oct 2016 13:23:52]   Found 'contributionprofile_totalcontr' [type = VIEW]
-[21 Oct 2016 13:23:52]   Found 'user_reputation_score_view' [type = VIEW]
-[21 Oct 2016 13:23:52]   Found 'user_wisdom_score_view' [type = VIEW]
-[21 Oct 2016 13:23:52] Retrieving columns for 'advertisement' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found column: advertisement_id [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: description [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: campaign_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52] Retrieving primary keys for 'advertisement' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found primary key column: advertisement_id
-[21 Oct 2016 13:23:52] Retrieving columns for 'campaign' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: campaignexpirationdate [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: campaigngoal [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: campaigndescription [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: campaigntitle [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: user_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: isconcluded [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
-[21 Oct 2016 13:23:52] Retrieving primary keys for 'campaign' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found primary key column: campaignid
-[21 Oct 2016 13:23:52] Retrieving columns for 'contributionprofile' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found column: contributionid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: minimumamount [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: contributiondescription [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: contributiontitle [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: ishidden [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: campaign_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52] Retrieving primary keys for 'contributionprofile' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found primary key column: contributionid
-[21 Oct 2016 13:23:52] Retrieving columns for 'group' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: groupname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52] Retrieving primary keys for 'group' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found primary key column: oid
-[21 Oct 2016 13:23:52] Retrieving columns for 'group_module' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52] Retrieving primary keys for 'group_module' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found primary key column: group_oid
-[21 Oct 2016 13:23:52]   Found primary key column: module_oid
-[21 Oct 2016 13:23:52] Retrieving columns for 'message' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found column: message [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: message_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52]   Found column: message_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:52] Retrieving primary keys for 'message' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found primary key column: message_campaignid
-[21 Oct 2016 13:23:52]   Found primary key column: message_userid
-[21 Oct 2016 13:23:52] Retrieving columns for 'module' [type = TABLE]
-[21 Oct 2016 13:23:52]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: moduleid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: modulename [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'module' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: oid
-[21 Oct 2016 13:23:53] Retrieving columns for 'paymentmethods' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: methodid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: methodname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'paymentmethods' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: methodid
-[21 Oct 2016 13:23:53] Retrieving columns for 'questions' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: questionid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: answerstring [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: questionstring [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: isprivate [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: q_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: q_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'questions' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: questionid
-[21 Oct 2016 13:23:53] Retrieving columns for 'receivedcontribution' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: amount [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: contributionid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'receivedcontribution' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: campaignid
-[21 Oct 2016 13:23:53]   Found primary key column: userid
-[21 Oct 2016 13:23:53] Retrieving columns for 'tags' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: tagid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: keywords [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'tags' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: tagid
-[21 Oct 2016 13:23:53] Retrieving columns for 'tags_campaign' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: tags_tagid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: campaign_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'tags_campaign' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: tags_tagid
-[21 Oct 2016 13:23:53]   Found primary key column: campaign_campaignid
-[21 Oct 2016 13:23:53] Retrieving columns for 'user' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: username [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: password [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: email [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: dateofbirth [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: fullname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'user' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: userid
-[21 Oct 2016 13:23:53] Retrieving columns for 'user_group' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: user_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'user_group' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: user_userid
-[21 Oct 2016 13:23:53]   Found primary key column: group_oid
-[21 Oct 2016 13:23:53] Retrieving columns for 'user_paymentmethods' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: user_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: paymentmethods_methodid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'user_paymentmethods' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: user_userid
-[21 Oct 2016 13:23:53]   Found primary key column: paymentmethods_methodid
-[21 Oct 2016 13:23:53] Retrieving columns for 'user_tags' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: user_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: tags_tagid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'user_tags' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: user_userid
-[21 Oct 2016 13:23:53]   Found primary key column: tags_tagid
-[21 Oct 2016 13:23:53] Retrieving columns for 'vote' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: vote_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: vote_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: vote_value [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: votevalue_v_id [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'vote' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: vote_userid
-[21 Oct 2016 13:23:53]   Found primary key column: vote_campaignid
-[21 Oct 2016 13:23:53] Retrieving columns for 'votevalue' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found column: v_id [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: v_value [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'votevalue' [type = TABLE]
-[21 Oct 2016 13:23:53]   Found primary key column: v_id
-[21 Oct 2016 13:23:53] Retrieving columns for 'campaign_maxindividualbacking' [type = VIEW]
-[21 Oct 2016 13:23:53]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: der_attr [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'campaign_maxindividualbacking' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving columns for 'campaign_quality_view' [type = VIEW]
-[21 Oct 2016 13:23:53]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: der_attr [type = NUMERIC][SQL/XOPEN type = 2][size = 65][dec. digits = 4]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'campaign_quality_view' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving columns for 'campaign_totalcampaigncontribu' [type = VIEW]
-[21 Oct 2016 13:23:53]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: der_attr [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'campaign_totalcampaigncontribu' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving columns for 'contributionprofile_totalcontr' [type = VIEW]
-[21 Oct 2016 13:23:53]   Found column: contributionid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: der_attr [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'contributionprofile_totalcontr' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving columns for 'user_reputation_score_view' [type = VIEW]
-[21 Oct 2016 13:23:53]   Found column: userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: der_attr [type = NUMERIC][SQL/XOPEN type = 2][size = 65][dec. digits = 8]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'user_reputation_score_view' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving columns for 'user_wisdom_score_view' [type = VIEW]
-[21 Oct 2016 13:23:53]   Found column: userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
-[21 Oct 2016 13:23:53]   Found column: der_attr [type = NUMERIC][SQL/XOPEN type = 2][size = 65][dec. digits = 8]
-[21 Oct 2016 13:23:53] Retrieving primary keys for 'user_wisdom_score_view' [type = VIEW]
-[21 Oct 2016 13:23:53] Database metadata retrieved (665 ms)
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'advertisement' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'campaign' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'contributionprofile' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'group' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'group_module' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'message' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'module' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'paymentmethods' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'questions' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'receivedcontribution' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'tags' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'tags_campaign' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'user' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'user_group' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'user_paymentmethods' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'user_tags' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'vote' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'votevalue' [type = TABLE]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'campaign_maxindividualbacking' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'campaign_quality_view' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'campaign_totalcampaigncontribu' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'contributionprofile_totalcontr' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'user_reputation_score_view' [type = VIEW]
-[21 Oct 2016 13:23:53] Retrieving auto-increment columns for 'user_wisdom_score_view' [type = VIEW]
-[21 Oct 2016 13:23:53] Database connection closed
+[21 Oct 2016 20:25:08] Building database metadata model
+[21 Oct 2016 20:25:08] Properties: {partialRefresh=false, processColumnsUsingSelect=, includePrimaryKeys=true, eventSocketClient=com.webratio.commons.net.EventSocketClient@6f8bf360, includeTables=true, username=ifml, outputLogPath=C:\Users\Azqa\Documents\WebratioWorkspace\LATEST\WSE_Group27\.Temp~\DB.xml.log, readIndexes=null, driverClass=com.mysql.jdbc.Driver, includeSynonyms=true, metaDataProviderClass=com.webratio.commons.db.metadata.MySQLMetaDataProvider, outputPath=C:\Users\Azqa\Documents\WebratioWorkspace\LATEST\WSE_Group27\.Temp~\DB.xml, schemaRegex=null, readProcedures=null, includeViews=true, derby.system.home=C:\Users\Azqa\Documents\WebratioWorkspace\.metadata\.plugins\com.webratio.commons.db\derby, url=jdbc:mysql://82.196.7.146:5656/ifml, tableRegex=null, readSQLDefinitions=true, includeForeignKeys=true, retrieveAllNames=false, tablesToRefresh=, eventSocketPort=59262}
+[21 Oct 2016 20:25:08] URL: jdbc:mysql://82.196.7.146:5656/ifml
+[21 Oct 2016 20:25:08] Product name: MySQL
+[21 Oct 2016 20:25:08] Product version: 5.7.15-0ubuntu0.16.04.1
+[21 Oct 2016 20:25:08] Driver name: MySQL Connector Java
+[21 Oct 2016 20:25:08] Driver version: mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )
+[21 Oct 2016 20:25:08] Driver major version: 5
+[21 Oct 2016 20:25:08] Driver minor version: 1
+[21 Oct 2016 20:25:08] Identifier quote string: 1
+[21 Oct 2016 20:25:08] Retrieving schemas
+[21 Oct 2016 20:25:08] Retrieving [TABLE, VIEW, SYNONYM] for schema ''
+[21 Oct 2016 20:25:08]   Found 'advertisement' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'campaign' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'contributionprofile' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'group' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'group_module' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'message' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'module' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'questions' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'receivedcontribution' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'tags' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'tags_campaign' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'user' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'user_group' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'user_paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'user_tags' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'vote' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'votevalue' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found 'campaign_maxindividualbacking' [type = VIEW]
+[21 Oct 2016 20:25:08]   Found 'campaign_quality_view' [type = VIEW]
+[21 Oct 2016 20:25:08]   Found 'campaign_totalcampaigncontribu' [type = VIEW]
+[21 Oct 2016 20:25:08]   Found 'contributionprofile_totalcontr' [type = VIEW]
+[21 Oct 2016 20:25:08]   Found 'user_reputation_score_view' [type = VIEW]
+[21 Oct 2016 20:25:08]   Found 'user_wisdom_score_view' [type = VIEW]
+[21 Oct 2016 20:25:08] Retrieving columns for 'advertisement' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found column: advertisement_id [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: description [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: campaign_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:08] Retrieving primary keys for 'advertisement' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found primary key column: advertisement_id
+[21 Oct 2016 20:25:08] Retrieving columns for 'campaign' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: campaignexpirationdate [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: campaigngoal [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: campaigndescription [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: campaigntitle [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: user_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: isconcluded [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[21 Oct 2016 20:25:08] Retrieving primary keys for 'campaign' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found primary key column: campaignid
+[21 Oct 2016 20:25:08] Retrieving columns for 'contributionprofile' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found column: contributionid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: minimumamount [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: contributiondescription [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: contributiontitle [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: ishidden [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[21 Oct 2016 20:25:08]   Found column: campaign_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:08] Retrieving primary keys for 'contributionprofile' [type = TABLE]
+[21 Oct 2016 20:25:08]   Found primary key column: contributionid
+[21 Oct 2016 20:25:08] Retrieving columns for 'group' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: groupname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'group' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: oid
+[21 Oct 2016 20:25:09] Retrieving columns for 'group_module' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: module_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'group_module' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: group_oid
+[21 Oct 2016 20:25:09]   Found primary key column: module_oid
+[21 Oct 2016 20:25:09] Retrieving columns for 'message' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: message [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: message_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: message_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'message' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: message_campaignid
+[21 Oct 2016 20:25:09]   Found primary key column: message_userid
+[21 Oct 2016 20:25:09] Retrieving columns for 'module' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: moduleid [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: modulename [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'module' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: oid
+[21 Oct 2016 20:25:09] Retrieving columns for 'paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: methodid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: methodname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: methodid
+[21 Oct 2016 20:25:09] Retrieving columns for 'questions' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: questionid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: answerstring [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: questionstring [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: isprivate [type = BIT][SQL/XOPEN type = -7][size = 1][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: q_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: q_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'questions' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: questionid
+[21 Oct 2016 20:25:09] Retrieving columns for 'receivedcontribution' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: amount [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: contributionid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'receivedcontribution' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: campaignid
+[21 Oct 2016 20:25:09]   Found primary key column: userid
+[21 Oct 2016 20:25:09] Retrieving columns for 'tags' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: tagid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: keywords [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'tags' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: tagid
+[21 Oct 2016 20:25:09] Retrieving columns for 'tags_campaign' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: tags_tagid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: campaign_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'tags_campaign' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: tags_tagid
+[21 Oct 2016 20:25:09]   Found primary key column: campaign_campaignid
+[21 Oct 2016 20:25:09] Retrieving columns for 'user' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: username [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: password [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: email [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: dateofbirth [type = DATE][SQL/XOPEN type = 91][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: fullname [type = VARCHAR][SQL/XOPEN type = 12][size = 255][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'user' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: userid
+[21 Oct 2016 20:25:09] Retrieving columns for 'user_group' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: user_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: group_oid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'user_group' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: user_userid
+[21 Oct 2016 20:25:09]   Found primary key column: group_oid
+[21 Oct 2016 20:25:09] Retrieving columns for 'user_paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: user_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: paymentmethods_methodid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'user_paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: user_userid
+[21 Oct 2016 20:25:09]   Found primary key column: paymentmethods_methodid
+[21 Oct 2016 20:25:09] Retrieving columns for 'user_tags' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: user_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: tags_tagid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'user_tags' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: user_userid
+[21 Oct 2016 20:25:09]   Found primary key column: tags_tagid
+[21 Oct 2016 20:25:09] Retrieving columns for 'vote' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: vote_userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: vote_campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: votevalue_v_id [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'vote' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: vote_userid
+[21 Oct 2016 20:25:09]   Found primary key column: vote_campaignid
+[21 Oct 2016 20:25:09] Retrieving columns for 'votevalue' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found column: v_id [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: v_value [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'votevalue' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found primary key column: v_id
+[21 Oct 2016 20:25:09] Retrieving columns for 'campaign_maxindividualbacking' [type = VIEW]
+[21 Oct 2016 20:25:09]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: der_attr [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'campaign_maxindividualbacking' [type = VIEW]
+[21 Oct 2016 20:25:09] Retrieving columns for 'campaign_quality_view' [type = VIEW]
+[21 Oct 2016 20:25:09]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: der_attr [type = NUMERIC][SQL/XOPEN type = 2][size = 65][dec. digits = 4]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'campaign_quality_view' [type = VIEW]
+[21 Oct 2016 20:25:09] Retrieving columns for 'campaign_totalcampaigncontribu' [type = VIEW]
+[21 Oct 2016 20:25:09]   Found column: campaignid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: der_attr [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'campaign_totalcampaigncontribu' [type = VIEW]
+[21 Oct 2016 20:25:09] Retrieving columns for 'contributionprofile_totalcontr' [type = VIEW]
+[21 Oct 2016 20:25:09]   Found column: contributionid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: der_attr [type = DOUBLE][SQL/XOPEN type = 8][size = 22][dec. digits = 0]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'contributionprofile_totalcontr' [type = VIEW]
+[21 Oct 2016 20:25:09] Retrieving columns for 'user_reputation_score_view' [type = VIEW]
+[21 Oct 2016 20:25:09]   Found column: userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: der_attr [type = NUMERIC][SQL/XOPEN type = 2][size = 65][dec. digits = 8]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'user_reputation_score_view' [type = VIEW]
+[21 Oct 2016 20:25:09] Retrieving columns for 'user_wisdom_score_view' [type = VIEW]
+[21 Oct 2016 20:25:09]   Found column: userid [type = INT][SQL/XOPEN type = 4][size = 10][dec. digits = 0]
+[21 Oct 2016 20:25:09]   Found column: der_attr [type = NUMERIC][SQL/XOPEN type = 2][size = 65][dec. digits = 8]
+[21 Oct 2016 20:25:09] Retrieving primary keys for 'user_wisdom_score_view' [type = VIEW]
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'advertisement' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column campaign_campaignid references campaign(campaignid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'campaign' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column user_userid references user(userid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'contributionprofile' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column campaign_campaignid references campaign(campaignid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'group' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column module_oid references module(oid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'group_module' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column group_oid references group(oid)
+[21 Oct 2016 20:25:09]   Found foreign key: column module_oid references module(oid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'message' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column message_campaignid references campaign(campaignid)
+[21 Oct 2016 20:25:09]   Found foreign key: column message_userid references user(userid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'module' [type = TABLE]
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'questions' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column q_campaignid references campaign(campaignid)
+[21 Oct 2016 20:25:09]   Found foreign key: column q_userid references user(userid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'receivedcontribution' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column campaignid references campaign(campaignid)
+[21 Oct 2016 20:25:09]   Found foreign key: column contributionid references contributionprofile(contributionid)
+[21 Oct 2016 20:25:09]   Found foreign key: column userid references user(userid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'tags' [type = TABLE]
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'tags_campaign' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column campaign_campaignid references campaign(campaignid)
+[21 Oct 2016 20:25:09]   Found foreign key: column tags_tagid references tags(tagid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'user' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column group_oid references group(oid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'user_group' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column group_oid references group(oid)
+[21 Oct 2016 20:25:09]   Found foreign key: column user_userid references user(userid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'user_paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:09]   Found foreign key: column paymentmethods_methodid references paymentmethods(methodid)
+[21 Oct 2016 20:25:09]   Found foreign key: column user_userid references user(userid)
+[21 Oct 2016 20:25:09] Retrieving foreign keys for 'user_tags' [type = TABLE]
+[21 Oct 2016 20:25:10]   Found foreign key: column tags_tagid references tags(tagid)
+[21 Oct 2016 20:25:10]   Found foreign key: column user_userid references user(userid)
+[21 Oct 2016 20:25:10] Retrieving foreign keys for 'vote' [type = TABLE]
+[21 Oct 2016 20:25:10]   Found foreign key: column vote_campaignid references campaign(campaignid)
+[21 Oct 2016 20:25:10]   Found foreign key: column vote_userid references user(userid)
+[21 Oct 2016 20:25:10]   Found foreign key: column votevalue_v_id references votevalue(v_id)
+[21 Oct 2016 20:25:10] Retrieving foreign keys for 'votevalue' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving foreign keys for 'campaign_maxindividualbacking' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving foreign keys for 'campaign_quality_view' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving foreign keys for 'campaign_totalcampaigncontribu' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving foreign keys for 'contributionprofile_totalcontr' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving foreign keys for 'user_reputation_score_view' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving foreign keys for 'user_wisdom_score_view' [type = VIEW]
+[21 Oct 2016 20:25:10] Database metadata retrieved (1430 ms)
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'advertisement' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'campaign' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'contributionprofile' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'group' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'group_module' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'message' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'module' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'questions' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'receivedcontribution' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'tags' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'tags_campaign' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'user' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'user_group' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'user_paymentmethods' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'user_tags' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'vote' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'votevalue' [type = TABLE]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'campaign_maxindividualbacking' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'campaign_quality_view' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'campaign_totalcampaigncontribu' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'contributionprofile_totalcontr' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'user_reputation_score_view' [type = VIEW]
+[21 Oct 2016 20:25:10] Retrieving auto-increment columns for 'user_wisdom_score_view' [type = VIEW]
+[21 Oct 2016 20:25:10] Database connection closed

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1755" gr:y="820" id="sv2#page14" name="Answer Questions" layout:splitSubPages="false" layout:attributeLayout="Excel/Excel">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1755" gr:y="820" id="sv2#page14" name="Answer Questions" layout:splitSubPages="false">
   <ContentUnits>
     <DataUnit gr:x="10" gr:y="0" id="sv2#page14#dau9" name="Question text" entity="ent9" customDescriptor="false" displayAttributes="ent9#att29">
       <Selector id="sv2#page14#dau9#su27" defaultPolicy="fill" booleanOperator="and">
@@ -9,13 +9,13 @@
         <LinkParameter id="sv2#page14#dau9#ln95#par260" name="campaignId_PASSING" sourceLinkParameter="sv2#page9#inu13#ln92#par243" passing="true"/>
       </Link>
     </DataUnit>
-    <EntryUnit gr:x="0" gr:y="175" id="sv2#page14#enu13" name="Answer Question" linkOrder="sv2#page14#enu13#ln82" fieldOrder="sv2#page14#enu13#fld26" entity="ent9">
+    <EntryUnit gr:x="0" gr:y="175" id="sv2#page14#enu13" name="Write an Answer" linkOrder="sv2#page14#enu13#ln82" fieldOrder="sv2#page14#enu13#fld26" entity="ent9">
       <Link id="sv2#page14#enu13#ln82" name="Answer!" to="sv2#mfu1" type="normal" validate="true">
         <LinkParameter id="sv2#page14#enu13#ln82#par219" name="Answer String_answerString" source="sv2#page14#enu13#fld26" target="sv2#mfu1.ent9#att30"/>
         <LinkParameter id="sv2#page14#enu13#ln82#par261" name="Key [questionId]_KeyCondition8 [questionId]" source="key.ent9#att28" target="sv2#mfu1#su24#kcond8.ent9#att28"/>
         <LinkParameter id="sv2#page14#enu13#ln82#par262" name="campaignId_PASSING" sourceLinkParameter="sv2#page14#dau9#ln95#par260" passing="true"/>
       </Link>
-      <Field id="sv2#page14#enu13#fld26" name="Answer String" type="string" modifiable="true">
+      <Field id="sv2#page14#enu13#fld26" name="Answer" type="string" modifiable="true">
         <VRules>
           <ValueLengthValidationRule id="sv2#page14#enu13#fld26#vl3" name="Value Length3" predicate="min" value="5" errorMessage="Just say something more :)"/>
         </VRules>
@@ -23,6 +23,24 @@
     </EntryUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page14#dau9">
+          <layout:Attribute attribute="ent9#att29"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv2#page14#enu13">
@@ -43,11 +61,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page14#dau9">
-          <layout:Attribute attribute="ent9#att29"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

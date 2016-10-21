@@ -9,7 +9,7 @@
         <LinkParameter id="sv1#page1#enu1#ln5#par35" name="Key [userId]_PASSING" source="key.userOID" passing="true"/>
       </Link>
     </EntryUnit>
-    <EntryUnit gr:x="235" gr:y="0" id="sv1#page1#enu2" name="New here?" entity="User" linkOrder="sv1#page1#enu2#ln3">
+    <EntryUnit gr:x="235" gr:y="0" id="sv1#page1#enu2" name="New here?" entity="User" linkOrder="sv1#page1#enu2#ln3" fieldOrder="sv1#page1#enu2#fld3 sv1#page1#enu2#fld4 sv1#page1#enu2#fld5 sv1#page1#enu2#fld6 sv1#page1#enu2#fld7 sv1#page1#enu2#msfld1 sv1#page1#enu2#msfld2 sv1#page1#enu2#sfld1">
       <Field id="sv1#page1#enu2#fld3" name="Username" type="string" modifiable="true" attribute="userName">
         <VRules>
           <MandatoryValidationRule id="sv1#page1#enu2#fld3#mnd4" name="Mandatory"/>
@@ -21,7 +21,7 @@
           <MandatoryValidationRule id="sv1#page1#enu2#fld4#mnd2" name="PasswordMandatory"/>
         </VRules>
       </Field>
-      <Field id="sv1#page1#enu2#fld5" name="Fullname" type="string" modifiable="true" attribute="User#att2">
+      <Field id="sv1#page1#enu2#fld5" name="Full Name" type="string" modifiable="true" attribute="User#att2">
         <VRules>
           <MandatoryValidationRule id="sv1#page1#enu2#fld5#mnd9" name="Mandatory9"/>
         </VRules>
@@ -31,7 +31,7 @@
           <EMailValidationRule id="sv1#page1#enu2#fld6#email1" name="EMail1" errorMessage="The format of email is wrong!"/>
         </VRules>
       </Field>
-      <Field id="sv1#page1#enu2#fld7" name="Birthdate" type="date" modifiable="true" attribute="User#att1">
+      <Field id="sv1#page1#enu2#fld7" name="Birth Date" type="date" modifiable="true" attribute="User#att1">
         <VRules>
           <MandatoryValidationRule id="sv1#page1#enu2#fld7#mnd10" name="Mandatory10"/>
         </VRules>
@@ -61,7 +61,7 @@
           <MandatoryValidationRule id="sv1#page1#enu2#msfld2#mnd1" name="Mandatory1"/>
         </VRules>
       </MultiSelectionField>
-      <SelectionField id="sv1#page1#enu2#sfld1" name="Group" type="string" role="User2DefaultGroup">
+      <SelectionField id="sv1#page1#enu2#sfld1" name="Role" type="string" role="User2DefaultGroup">
         <VRules>
           <MandatoryValidationRule id="sv1#page1#enu2#sfld1#mnd3" name="Mandatory"/>
         </VRules>
@@ -93,7 +93,7 @@
       </Link>
     </SelectorUnit>
   </ContentUnits>
-  <layout:Grid containerType="grid" layout:style="WebRatio">
+  <layout:Grid containerType="grid" layout:style="FertileEnvironment">
     <layout:Row>
       <layout:Cell colspan="12"/>
       <layout:Cell/>
@@ -115,7 +115,7 @@
             <layout:Cell colspan="5" layout:cellLayout="WRDefault/Frame" label="Sign in">
               <layout:Grid containerType="grid" label="Sign in">
                 <layout:Row>
-                  <layout:Cell colspan="12">
+                  <layout:Cell colspan="8">
                     <layout:Field unitId="sv1#page1#enu1" mode="full" field="sv1#page1#enu1#fld1"/>
                   </layout:Cell>
                   <layout:Cell/>
@@ -125,13 +125,13 @@
                   <layout:Cell/>
                   <layout:Cell/>
                   <layout:Cell/>
-                  <layout:Cell/>
+                  <layout:Cell colspan="4"/>
                   <layout:Cell/>
                   <layout:Cell/>
                   <layout:Cell/>
                 </layout:Row>
                 <layout:Row>
-                  <layout:Cell colspan="12">
+                  <layout:Cell colspan="8">
                     <layout:Field unitId="sv1#page1#enu1" mode="full" field="sv1#page1#enu1#fld2"/>
                   </layout:Cell>
                   <layout:Cell/>
@@ -141,7 +141,7 @@
                   <layout:Cell/>
                   <layout:Cell/>
                   <layout:Cell/>
-                  <layout:Cell/>
+                  <layout:Cell colspan="4"/>
                   <layout:Cell/>
                   <layout:Cell/>
                   <layout:Cell/>
@@ -248,7 +248,7 @@
                   <layout:Cell/>
                   <layout:Cell/>
                   <layout:Cell colspan="6">
-                    <layout:Field unitId="sv1#page1#enu2" mode="full" field="sv1#page1#enu2#msfld2"/>
+                    <layout:Field unitId="sv1#page1#enu2" mode="full" field="sv1#page1#enu2#msfld2" layout:fieldLayout="WRDefault/EntryUnit"/>
                   </layout:Cell>
                   <layout:Cell/>
                   <layout:Cell/>
@@ -257,18 +257,18 @@
                   <layout:Cell/>
                 </layout:Row>
                 <layout:Row>
-                  <layout:Cell colspan="9"/>
+                  <layout:Cell colspan="4"/>
                   <layout:Cell/>
                   <layout:Cell/>
                   <layout:Cell/>
-                  <layout:Cell/>
-                  <layout:Cell/>
-                  <layout:Cell/>
-                  <layout:Cell/>
-                  <layout:Cell/>
-                  <layout:Cell colspan="3">
+                  <layout:Cell colspan="4">
                     <layout:Link unitId="sv1#page1#enu2" link="sv1#page1#enu2#ln3"/>
                   </layout:Cell>
+                  <layout:Cell/>
+                  <layout:Cell/>
+                  <layout:Cell/>
+                  <layout:Cell colspan="4"/>
+                  <layout:Cell/>
                   <layout:Cell/>
                   <layout:Cell/>
                 </layout:Row>

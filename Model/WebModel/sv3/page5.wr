@@ -1,22 +1,24 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="55" gr:y="-95" id="sv3#page5" name="Support General View" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-100" gr:y="-95" id="sv3#page5" name="Supporter Dashboard" landmark="true">
   <ContentUnits>
-    <IndexUnit gr:x="470" gr:y="0" id="sv3#page5#inu1" name="Featured Campaigns" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu1#ln51">
+    <IndexUnit gr:x="625" gr:y="0" id="sv3#page5#inu1" name="You Might Like..." entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu1#ln51">
       <Link id="sv3#page5#inu1#ln51" name="Support!" to="sv3#page6#dau2" type="normal" validate="true">
         <LinkParameter id="sv3#page5#inu1#ln51#par156" name="campaignId_KeyCondition2 [campaignId]" target="sv3#page6#dau2#su3#kcond2.ent3#att8" source="data[].ent3#att8"/>
         <LinkParameter id="sv3#page5#inu1#ln51#par195" name="campaignId_PASSING" source="data[].ent3#att8" passing="true"/>
       </Link>
-      <Selector id="sv3#page5#inu1#su10" defaultPolicy="fill" booleanOperator="or" expression="( sv3#page5#inu1#su10#rcond25 OR sv3#page5#inu1#su10#rcond7 ) AND sv3#page5#inu1#su10#rcond34">
+      <Selector id="sv3#page5#inu1#su10" defaultPolicy="fill" booleanOperator="or" expression="( sv3#page5#inu1#su10#rcond25 OR sv3#page5#inu1#su10#rcond7 ) AND sv3#page5#inu1#su10#rcond34 AND sv3#page5#inu1#su10#acond16 AND sv3#page5#inu1#su10#acond20">
         <RelationshipRoleCondition id="sv3#page5#inu1#su10#rcond7" name="RoleCondition7" predicate="notIn" implied="false" role="rel6#role12.rel6#role11"/>
         <RelationshipRoleCondition id="sv3#page5#inu1#su10#rcond25" name="RoleCondition25" predicate="notIn" implied="false" role="rel9#role17.rel6#role11"/>
         <RelationshipRoleCondition id="sv3#page5#inu1#su10#rcond34" name="RoleCondition34" predicate="in" implied="false" role="rel15#role29.rel8#role15"/>
+        <AttributesCondition id="sv3#page5#inu1#su10#acond16" name="NotConcluded" predicate="eq" booleanOperator="and" implied="false" attributes="ent3#att37" value="false"/>
+        <AttributesCondition id="sv3#page5#inu1#su10#acond20" name="NotExpired" predicate="gteq" booleanOperator="or" implied="false" attributes="ent3#att13"/>
       </Selector>
     </IndexUnit>
-    <GetUnit id="sv3#page5#gtu8" name="GetCurrentUser" gr:x="0" gr:y="0" contextParameters="UserCtxParam">
+    <GetUnit id="sv3#page5#gtu8" name="GetCurrentUser" gr:x="155" gr:y="0" contextParameters="UserCtxParam">
       <Link id="sv3#page5#gtu8#ln45" name="Flow45" to="sv3#page5#seu17" type="transport" validate="true">
         <LinkParameter id="sv3#page5#gtu8#ln45#par86" name="UserCtxParam.userId_PASSING" source="sv3#page5#gtu8.UserCtxParam" passing="true"/>
       </Link>
     </GetUnit>
-    <IndexUnit id="sv3#page5#inu6" name="Your Supported Campaign" gr:x="220" gr:y="145" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu6#ln72">
+    <IndexUnit id="sv3#page5#inu6" name="Campaigns You Support" gr:x="400" gr:y="270" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu6#ln72">
       <Selector id="sv3#page5#inu6#su12" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page5#inu6#su12#rcond9" name="RoleCondition7" predicate="in" implied="false" role="rel6#role12.rel6#role11"/>
         <RelationshipRoleCondition id="sv3#page5#inu6#su12#rcond23" name="RoleCondition23" predicate="in" implied="false" role="rel9#role17.rel6#role11"/>
@@ -25,7 +27,7 @@
         <LinkParameter id="sv3#page5#inu6#ln72#par217" name="campaignId_KeyCondition2 [campaignId]" source="data[].ent3#att8" target="sv3#page11#dau4#su13#kcond6.ent3#att8"/>
       </Link>
     </IndexUnit>
-    <EntryUnit gr:x="550" gr:y="145" id="sv3#page5#enu6" name="Search" linkOrder="sv3#page5#enu6#ln89">
+    <EntryUnit gr:x="865" gr:y="335" id="sv3#page5#enu6" name="Search" linkOrder="sv3#page5#enu6#ln89">
       <Field id="sv3#page5#enu6#fld13" name="Keyword" type="string" modifiable="true"/>
       <MultiSelectionField id="sv3#page5#enu6#msfld4" name="Tags" type="string"/>
       <Link id="sv3#page5#enu6#ln89" name="Search" to="sv3#pcu1" type="normal" validate="true">
@@ -33,7 +35,7 @@
         <LinkParameter id="sv3#page5#enu6#ln89#par222" name="Tags_Tags" source="sv3#page5#enu6#msfld4" target="sv3#pcu1#pcp2"/>
       </Link>
     </EntryUnit>
-    <SelectorUnit gr:x="225" gr:y="0" id="sv3#page5#seu17" name="Select Campaigns" entity="ent3">
+    <SelectorUnit gr:x="380" gr:y="0" id="sv3#page5#seu17" name="Select Campaigns" entity="ent3">
       <Link id="sv3#page5#seu17#ln46" name="Flow46" to="sv3#page5#inu6" type="transport" validate="true">
         <LinkParameter id="sv3#page5#seu17#ln46#par103" name="UserCtxParam.userId_PASSING_RoleCondition23 [userId]" sourceLinkParameter="sv3#page5#gtu8#ln45#par86" target="sv3#page5#inu6#su12#rcond23.userOID"/>
         <LinkParameter id="sv3#page5#seu17#ln46#par104" name="campaignId_RoleCondition7 [campaignId]" source="ent3#att8Array" target="sv3#page5#inu6#su12#rcond9.ent3#att8"/>
@@ -48,32 +50,41 @@
         <LinkParameter id="sv3#page5#seu17#ln47#par111" name="UserCtxParam.userId_PASSING" sourceLinkParameter="sv3#page5#gtu8#ln45#par86" passing="true"/>
         <LinkParameter id="sv3#page5#seu17#ln47#par114" name="campaignId_current campaignId" source="ent3#att8Array" target="sv3#page5#inu1.current.ent3#att8"/>
         <LinkParameter id="sv3#page5#seu17#ln47#par139" name="UserCtxParam.userId_PASSING_RoleCondition34 [userId]" sourceLinkParameter="sv3#page5#gtu8#ln45#par86" target="sv3#page5#inu1#su10#rcond34.userOID"/>
+        <LinkParameter id="sv3#page5#seu17#ln47#par200" name="Current/Input Date_PASSING_NotExpired" sourceLinkParameter="sv3#page5#tmu1#ln49#par196" target="sv3#page5#inu1#su10#acond20"/>
       </Link>
       <Link id="sv3#page5#seu17#ln65" name="Flow65" to="sv3#page5#inu22" type="transport" validate="true">
         <LinkParameter id="sv3#page5#seu17#ln65#par157" name="UserCtxParam.userId_PASSING_RoleCondition25 [userId]" sourceLinkParameter="sv3#page5#gtu8#ln45#par86" target="sv3#page5#inu22#su29#rcond36.userOID"/>
         <LinkParameter id="sv3#page5#seu17#ln65#par158" name="campaignId_RoleCondition7 [campaignId]" source="ent3#att8Array" target="sv3#page5#inu22#su29#rcond35.ent3#att8"/>
+        <LinkParameter id="sv3#page5#seu17#ln65#par201" name="Current/Input Date_PASSING_NotExpired" sourceLinkParameter="sv3#page5#tmu1#ln49#par196" target="sv3#page5#inu22#su29#acond21"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="435" gr:y="135" id="sv3#page5#seu16" name="Tags" entity="ent6">
+    <SelectorUnit gr:x="725" gr:y="310" id="sv3#page5#seu16" name="Tags" entity="ent6">
       <Link id="sv3#page5#seu16#ln18" name="Flow18" to="sv3#page5#enu6" type="transport" validate="true">
         <LinkParameter id="sv3#page5#seu16#ln18#par167" name="keywords_Tags [label]" source="ent6#att23Array" target="sv3#page5#enu6#msfld4_label"/>
         <LinkParameter id="sv3#page5#seu16#ln18#par168" name="tagId_Tags [output]" source="ent6#att22Array" target="sv3#page5#enu6#msfld4_output"/>
       </Link>
     </SelectorUnit>
-    <IndexUnit id="sv3#page5#inu22" name="Support a campaign" gr:x="0" gr:y="135" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu22#ln69">
-      <Selector id="sv3#page5#inu22#su29" defaultPolicy="fill" booleanOperator="or">
+    <IndexUnit id="sv3#page5#inu22" name="Browse and Support" gr:x="0" gr:y="245" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att13" linkOrder="sv3#page5#inu22#ln69">
+      <Selector id="sv3#page5#inu22#su29" defaultPolicy="fill" booleanOperator="or" expression="( sv3#page5#inu22#su29#rcond36 OR sv3#page5#inu22#su29#rcond35 ) AND sv3#page5#inu22#su29#acond21 AND sv3#page5#inu22#su29#acond17">
         <RelationshipRoleCondition id="sv3#page5#inu22#su29#rcond35" name="RoleCondition7" predicate="notIn" implied="false" role="rel6#role12.rel6#role11"/>
         <RelationshipRoleCondition id="sv3#page5#inu22#su29#rcond36" name="RoleCondition25" predicate="notIn" implied="false" role="rel9#role17.rel6#role11"/>
+        <AttributesCondition id="sv3#page5#inu22#su29#acond17" name="NotConcluded" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att37" value="false"/>
+        <AttributesCondition id="sv3#page5#inu22#su29#acond21" name="NotExpired" predicate="gteq" booleanOperator="or" implied="false" attributes="ent3#att13"/>
       </Selector>
-      <Link id="sv3#page5#inu22#ln69" name="Support" to="sv3#page6#dau2" type="normal" validate="true">
+      <Link id="sv3#page5#inu22#ln69" name="Support!" to="sv3#page6#dau2" type="normal" validate="true">
         <LinkParameter id="sv3#page5#inu22#ln69#par159" name="campaignId_KeyCondition2 [campaignId]" source="data[].ent3#att8" target="sv3#page6#dau2#su3#kcond2.ent3#att8"/>
         <LinkParameter id="sv3#page5#inu22#ln69#par160" name="campaignId_PASSING" source="data[].ent3#att8" passing="true"/>
       </Link>
     </IndexUnit>
+    <TimeUnit gr:x="40" gr:y="95" id="sv3#page5#tmu1" name="Today">
+      <Link id="sv3#page5#tmu1#ln49" name="Flow49" to="sv3#page5#seu17" type="transport" validate="true">
+        <LinkParameter id="sv3#page5#tmu1#ln49#par196" name="Current/Input Date_PASSING" source="currentDate" passing="true"/>
+      </Link>
+    </TimeUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
-      <layout:Cell colspan="12">
+      <layout:Cell colspan="6">
         <layout:Unit unitId="sv3#page5#enu6">
           <layout:Field field="sv3#page5#enu6#fld13"/>
           <layout:Field field="sv3#page5#enu6#msfld4"/>
@@ -85,7 +96,7 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell/>
+      <layout:Cell colspan="6"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -95,10 +106,10 @@
     <layout:Row>
       <layout:Cell colspan="6">
         <layout:Unit unitId="sv3#page5#inu6">
+          <layout:Link link="sv3#page5#inu6#ln72"/>
           <layout:Attribute attribute="ent3#att9"/>
           <layout:Attribute attribute="ent3#att10"/>
           <layout:Attribute attribute="ent3#att13"/>
-          <layout:Link link="sv3#page5#inu6#ln72"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

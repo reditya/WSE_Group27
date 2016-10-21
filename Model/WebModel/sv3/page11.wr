@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page11" name="Campaign Details" gr:x="-15" gr:y="240">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv3#page11" name="Campaign Details" gr:x="-45" gr:y="465" layout:fieldDisableConditionVariable="sv3#page11#var1" layout:linkDisableConditionVariable="sv3#page11#var1">
   <ContentUnits>
-    <DataUnit id="sv3#page11#dau4" name="Campaign Detail" gr:x="175" gr:y="35" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att5 ent3#att25">
+    <DataUnit id="sv3#page11#dau4" name="Campaign Detail" gr:x="180" gr:y="35" entity="ent3" displayAttributes="ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att5 ent3#att25 ent3#att37">
       <Selector id="sv3#page11#dau4#su13" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page11#dau4#su13#kcond6" name="KeyCondition2" predicate="in" implied="false"/>
       </Selector>
@@ -12,6 +12,7 @@
       </Link>
       <Link id="sv3#page11#dau4#ln31" name="Flow31" to="sv3#page11#enu3" type="transport" validate="true">
         <LinkParameter id="sv3#page11#dau4#ln31#par100" name="campaignId_Key Condition [vote_campaignid]" target="sv3#page11#enu3.ent10#att31" source="data.ent3#att8"/>
+        <LinkParameter id="sv3#page11#dau4#ln31#par175" name="isConcluded_canVote" source="data.ent3#att37" targetVariable="sv3#page11#var1"/>
       </Link>
       <Link id="sv3#page11#dau4#ln34" name="Flow34" to="sv3#page11#enu8" type="transport" validate="true">
         <LinkParameter id="sv3#page11#dau4#ln34#par146" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
@@ -23,7 +24,7 @@
         <LinkParameter id="sv3#page11#dau4#ln16#par65" name="campaignId_PASSING" source="data.ent3#att8" passing="true"/>
       </Link>
     </DataUnit>
-    <SelectorUnit id="sv3#page11#seu21" name="Select Contribution" gr:x="600" gr:y="140" entity="ent4">
+    <SelectorUnit id="sv3#page11#seu21" name="Select Contribution" gr:x="605" gr:y="140" entity="ent4">
       <Link id="sv3#page11#seu21#ln68" name="Flow23" to="sv3#page11#inu7" type="transport" validate="true">
         <LinkParameter id="sv3#page11#seu21#ln68#par211" name="ContributionProfileToCampaign.campaignId_PASSING" source="rel7#role14_ent3#att8Array" passing="true"/>
         <LinkParameter id="sv3#page11#seu21#ln68#par250" name="ContributionProfileToCampaign.campaignId_CampaignToContribution [campaignId]" target="sv3#page11#inu7#su14#rcond10.ent3#att8" sourceLinkParameter="sv3#page11#dau4#ln67#par254"/>
@@ -32,13 +33,13 @@
         <LinkParameter id="sv3#page11#seu21#ln81#par257" name="contributionId_PASSING" source="ent4#att15Array" passing="true"/>
       </Link>
     </SelectorUnit>
-    <IndexUnit id="sv3#page11#inu7" name="Contribution Profile" gr:x="620" gr:y="380" entity="ent4" displayAttributes="ent4#att16 ent4#att17 ent4#att18">
+    <IndexUnit id="sv3#page11#inu7" name="Perks" gr:x="735" gr:y="305" entity="ent4" displayAttributes="ent4#att16 ent4#att17 ent4#att18">
       <Selector id="sv3#page11#inu7#su14" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page11#inu7#su14#rcond10" name="CampaignToContribution" predicate="in" implied="false" role="rel7#role13"/>
         <AttributesCondition id="sv3#page11#inu7#su14#acond15" name="NotHidden" predicate="eq" booleanOperator="and" implied="false" attributes="ent4#att24" value="false"/>
       </Selector>
     </IndexUnit>
-    <SelectorUnit gr:x="395" gr:y="265" id="sv3#page11#seu22" name="Select Received" entity="ent11">
+    <SelectorUnit gr:x="360" gr:y="230" id="sv3#page11#seu22" name="Select Received" entity="ent11">
       <Link id="sv3#page11#seu22#ln74" name="Flow74" to="sv3#page11#dau5" type="transport" validate="true">
         <LinkParameter id="sv3#page11#seu22#ln74#par244" name="ReceivedContributionToCampaign.campaignId_PASSING" source="rel6#role11_ent3#att8Array" passing="true"/>
         <LinkParameter id="sv3#page11#seu22#ln74#par245" name="ReceivedContributionToContributionProfile.contributionId_PASSING" source="rel10#role20_ent4#att15Array" passing="true"/>
@@ -48,14 +49,14 @@
         <LinkParameter id="sv3#page11#seu22#ln74#par258" name="contributionId_PASSING_RoleCondition11 [contributionId]" sourceLinkParameter="sv3#page11#seu21#ln81#par257" target="sv3#page11#dau5#su15#rcond11.ent4#att15"/>
       </Link>
     </SelectorUnit>
-    <DataUnit gr:x="300" gr:y="390" id="sv3#page11#dau5" name="Your Contribution" entity="ent11" displayAttributes="ent11#att41 rel10#role20.ent4#att16">
+    <DataUnit gr:x="405" gr:y="395" id="sv3#page11#dau5" name="Your Contribution" entity="ent11" displayAttributes="ent11#att41 rel10#role20.ent4#att16">
       <Selector id="sv3#page11#dau5#su15" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page11#dau5#su15#rcond11" name="RoleCondition11" predicate="in" implied="false" role="rel10#role19"/>
         <RelationshipRoleCondition id="sv3#page11#dau5#su15#rcond12" name="RoleCondition12" predicate="in" implied="false" role="rel6#role12"/>
         <RelationshipRoleCondition id="sv3#page11#dau5#su15#rcond13" name="RoleCondition13" predicate="in" implied="false" role="rel9#role17"/>
       </Selector>
     </DataUnit>
-    <GetUnit id="sv3#page11#gtu9" name="GetCurrentUser" gr:x="85" gr:y="185" contextParameters="UserCtxParam">
+    <GetUnit id="sv3#page11#gtu9" name="GetCurrentUser" gr:x="90" gr:y="185" contextParameters="UserCtxParam">
       <Link id="sv3#page11#gtu9#ln77" name="Flow77" to="sv3#page11#seu22" type="transport" validate="true">
         <LinkParameter id="sv3#page11#gtu9#ln77#par230" name="UserCtxParam.userId_PASSING" source="sv3#page11#gtu9.UserCtxParam" passing="true"/>
       </Link>
@@ -67,7 +68,7 @@
         <LinkParameter id="sv3#page11#gtu9#ln35#par147" name="UserCtxParam.userId_PASSING" source="sv3#page11#gtu9.UserCtxParam" passing="true"/>
       </Link>
     </GetUnit>
-    <EntryUnit gr:x="220" gr:y="305" id="sv3#page11#enu3" name="Give Vote" entity="ent10" linkOrder="sv3#page11#enu3#ln12">
+    <EntryUnit gr:x="240" gr:y="330" id="sv3#page11#enu3" name="Give Vote" entity="ent10" linkOrder="sv3#page11#enu3#ln12" gr:showAllParts="false" fieldOrder="sv3#page11#enu3#sfld3">
       <Link id="sv3#page11#enu3#ln12" name="Vote!" to="sv3#cru5" type="normal" validate="true">
         <LinkParameter id="sv3#page11#enu3#ln12#par47" name="Vote Object_Vote Object" source="entityBean" target="sv3#cru5.entityBeans"/>
         <LinkParameter id="sv3#page11#enu3#ln12#par48" name="Key [vote_campaignid]_vote_campaignid" source="key.ent10#att31" target="sv3#cru5.ent10#att31"/>
@@ -75,14 +76,15 @@
         <LinkParameter id="sv3#page11#enu3#ln12#par101" name="Key [vote_campaignid]_PASSING" source="key.ent10#att31" passing="true"/>
         <LinkParameter id="sv3#page11#enu3#ln12#par102" name="Key [vote_userid]_PASSING" source="key.ent10#att27" passing="true"/>
         <LinkParameter id="sv3#page11#enu3#ln12#par117" name="Vote Score_VoteValue.v_id(VoteToVoteValue)" source="sv3#page11#enu3#sfld3" target="sv3#cru5.rel16#role31.ent7#att19"/>
+        <LinkParameter id="sv3#page11#enu3#ln12#par90" name="Vote Score_vote_value" source="sv3#page11#enu3#sfld3" target="sv3#cru5.ent10#att11"/>
       </Link>
-      <SelectionField id="sv3#page11#enu3#sfld3" type="integer" name="Vote Score">
+      <SelectionField id="sv3#page11#enu3#sfld3" type="integer" name="Score">
         <VRules>
           <MandatoryValidationRule id="sv3#page11#enu3#sfld3#mnd13" name="Mandatory13"/>
         </VRules>
       </SelectionField>
     </EntryUnit>
-    <EntryUnit gr:x="0" gr:y="50" id="sv3#page11#enu8" name="Ask Question" entity="ent9" linkOrder="sv3#page11#enu8#ln36">
+    <EntryUnit gr:x="5" gr:y="50" id="sv3#page11#enu8" name="Ask a Question" entity="ent9" linkOrder="sv3#page11#enu8#ln36">
       <Field id="sv3#page11#enu8#fld10" name="Question" type="string" modifiable="true" attribute="ent9#att29">
         <VRules>
           <ValueLengthValidationRule id="sv3#page11#enu8#fld10#vl1" name="Value Length1" predicate="min" value="5" errorMessage="Stop spamming, ask :)"/>
@@ -97,30 +99,30 @@
         <LinkParameter id="sv3#page11#enu8#ln36#par152" name="UserCtxParam.userId_PASSING_User.userId(QuestionsToUser)" sourceLinkParameter="sv3#page11#gtu9#ln35#par147" target="sv3#cru6.rel11#role22.userOID"/>
       </Link>
     </EntryUnit>
-    <SelectorUnit gr:x="395" gr:y="20" id="sv3#page11#seu10" name="Select Question" entity="ent9">
+    <SelectorUnit gr:x="400" gr:y="20" id="sv3#page11#seu10" name="Select Question" entity="ent9">
       <Link id="sv3#page11#seu10#ln13" name="Flow13" to="sv3#page11#inu9" type="transport" validate="true">
         <LinkParameter id="sv3#page11#seu10#ln13#par46" name="campaignId_PASSING_CampaignToQuestion [campaignId]" sourceLinkParameter="sv3#page11#dau4#ln2#par37" target="sv3#page11#inu9#su19#rcond15.ent3#att8"/>
         <LinkParameter id="sv3#page11#seu10#ln13#par60" name="QuestionsToCampaign.campaignId_PASSING" source="rel12#role23_ent3#att8Array" passing="true"/>
       </Link>
     </SelectorUnit>
-    <IndexUnit gr:x="610" gr:y="0" id="sv3#page11#inu9" name="Public Questions" entity="ent9" displayAttributes="ent9#att29 ent9#att30">
+    <IndexUnit gr:x="615" gr:y="0" id="sv3#page11#inu9" name="Supporter Questions" entity="ent9" displayAttributes="ent9#att29 ent9#att30">
       <Selector id="sv3#page11#inu9#su19" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page11#inu9#su19#rcond15" name="CampaignToQuestion" predicate="in" implied="false" role="rel12#role24"/>
         <AttributesCondition id="sv3#page11#inu9#su19#acond2" name="isPrivate" predicate="eq" booleanOperator="or" implied="false" attributes="ent9#att39" value="false"/>
       </Selector>
     </IndexUnit>
-    <SelectorUnit gr:x="790" gr:y="20" id="sv3#page11#seu13" name="Select advertisement" entity="ent5">
+    <SelectorUnit gr:x="875" gr:y="10" id="sv3#page11#seu13" name="Select advertisement" entity="ent5">
       <Link id="sv3#page11#seu13#ln19" name="Flow19" to="sv3#page11#inu11" type="transport" validate="true">
         <LinkParameter id="sv3#page11#seu13#ln19#par68" name="campaignId_PASSING_RoleCondition17 [campaignId]" sourceLinkParameter="sv3#page11#dau4#ln16#par65" target="sv3#page11#inu11#su20#rcond17.ent3#att8"/>
         <LinkParameter id="sv3#page11#seu13#ln19#par70" name="AdvertisementToCampaign.campaignId_PASSING" source="rel5#role9_ent3#att8Array" passing="true"/>
       </Link>
     </SelectorUnit>
-    <IndexUnit gr:x="820" gr:y="145" id="sv3#page11#inu11" name="Advertisements" entity="ent5" displayAttributes="ent5#att21">
+    <IndexUnit gr:x="825" gr:y="145" id="sv3#page11#inu11" name="Advertisements" entity="ent5" displayAttributes="ent5#att21">
       <Selector id="sv3#page11#inu11#su20" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page11#inu11#su20#rcond17" name="RoleCondition17" role="rel5#role10" predicate="in" implied="false"/>
       </Selector>
     </IndexUnit>
-    <SelectorUnit gr:x="90" gr:y="305" id="sv3#page11#seu20" name="Select Score" entity="ent7">
+    <SelectorUnit gr:x="0" gr:y="315" id="sv3#page11#seu20" name="Select Score" entity="ent7">
       <Link id="sv3#page11#seu20#ln50" name="Flow50" to="sv3#page11#enu3" type="transport" validate="true">
         <LinkParameter id="sv3#page11#seu20#ln50#par115" name="v_value_Vote Score [label]" source="ent7#att35Array" target="sv3#page11#enu3#sfld3_label"/>
         <LinkParameter id="sv3#page11#seu20#ln50#par116" name="v_id_Vote Score [output]" source="ent7#att19Array" target="sv3#page11#enu3#sfld3_output"/>
@@ -137,6 +139,7 @@
           <layout:Attribute attribute="ent3#att13"/>
           <layout:Attribute attribute="ent3#att5"/>
           <layout:Attribute attribute="ent3#att25"/>
+          <layout:Attribute attribute="ent3#att37"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -183,7 +186,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="6">
+      <layout:Cell colspan="12">
         <layout:Unit unitId="sv3#page11#dau5">
           <layout:Attribute attribute="ent11#att41"/>
           <layout:Attribute attribute="rel10#role20.ent4#att16"/>
@@ -194,7 +197,25 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="6"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page11#inu11">
+          <layout:Attribute attribute="ent5#att21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -221,11 +242,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page11#inu11">
-          <layout:Attribute attribute="ent5#att21"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -281,4 +298,5 @@
       <layout:Cell/>
     </layout:Row>
   </layout:Grid>
+  <Variable id="sv3#page11#var1" name="canVote" type="boolean"/>
 </Page>

@@ -1,21 +1,21 @@
 <DataModel xmlns:db="http://www.webratio.com/2006/WebML/Database" xmlns:gr="http://www.webratio.com/2006/WebML/Graph">
   <Entity id="User" name="User" duration="persistent" gr:x="0" gr:y="365" gr:hideAttributes="false" attributeOrder="userOID userName password email User#att1 User#att2 User#att26 User#att34" db:database="db1" db:table="user">
     <Attribute name="userId" id="userOID" type="integer" key="true" db:column="userid"/>
-    <Attribute name="userName" id="userName" type="string" db:column="username"/>
-    <Attribute name="password" id="password" type="password" db:column="password"/>
-    <Attribute name="email" id="email" type="string" db:column="email"/>
-    <Attribute id="User#att1" name="dateOfBirth" type="date" db:column="dateofbirth"/>
-    <Attribute id="User#att2" name="fullName" type="string" db:column="fullname"/>
-    <Attribute id="User#att26" name="Reputation Score" type="float" derivationQuery="calculated::avg(Self.rel3#role5(as Var1).ent3#att25)" storageType="file" db:table="user_reputation_score_view" db:column="der_attr">
+    <Attribute name="User Name" id="userName" type="string" db:column="username" key="false"/>
+    <Attribute name="Password" id="password" type="password" db:column="password" key="false"/>
+    <Attribute name="Email" id="email" type="string" db:column="email" key="false"/>
+    <Attribute id="User#att1" name="Date of Birth" type="date" db:column="dateofbirth" key="false"/>
+    <Attribute id="User#att2" name="Full Name" type="string" db:column="fullname" key="false"/>
+    <Attribute id="User#att26" name="Reputation Score" type="float" derivationQuery="calculated::avg(Self.rel3#role5(as Var1).ent3#att25)" storageType="file" db:table="user_reputation_score_view" db:column="der_attr" key="false">
       <db:JoinColumn attribute="userOID" name="userid"/>
     </Attribute>
-    <Attribute id="User#att34" name="Wisdom Score" type="float" derivationQuery="calculated::avg(Self.rel9#role17(as Var1).rel6#role11(as Var2).ent3#att25)" db:table="user_wisdom_score_view" db:column="der_attr" storageType="file">
+    <Attribute id="User#att34" name="Wisdom Score" type="float" derivationQuery="calculated::avg(Self.rel9#role17(as Var1).rel6#role11(as Var2).ent3#att25)" db:table="user_wisdom_score_view" db:column="der_attr" storageType="file" key="false">
       <db:JoinColumn attribute="userOID" name="userid"/>
     </Attribute>
   </Entity>
   <Entity id="Group" name="Group" duration="persistent" gr:x="280" gr:y="375" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
     <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
-    <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
+    <Attribute name="Role" id="groupName" type="string" db:column="groupname"/>
   </Entity>
   <Entity id="Module" name="Module" duration="persistent" gr:x="530" gr:y="350" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
     <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
@@ -56,53 +56,52 @@
   </Relationship>
   <Entity gr:x="5" gr:y="720" id="ent2" name="PaymentMethods" duration="persistent" attributeOrder="ent2#att6 ent2#att7" db:database="db1" db:table="paymentmethods">
     <Attribute id="ent2#att6" key="true" name="methodId" type="integer" db:column="methodid"/>
-    <Attribute id="ent2#att7" name="methodName" type="string" db:column="methodname"/>
+    <Attribute id="ent2#att7" name="Method" type="string" db:column="methodname"/>
   </Entity>
   <Entity gr:x="615" gr:y="530" id="ent3" name="Campaign" duration="persistent" attributeOrder="ent3#att8 ent3#att9 ent3#att10 ent3#att12 ent3#att13 ent3#att14 ent3#att5 ent3#att25 ent3#att36 ent3#att37" db:database="db1" db:table="campaign">
     <Attribute id="ent3#att8" key="true" name="campaignId" type="integer" db:column="campaignid"/>
-    <Attribute id="ent3#att14" name="maxBackingLimit" type="float" derivationQuery="simpleCalculated::Self.ent3#att12 * 1.5"/>
-    <Attribute id="ent3#att13" name="campaignExpirationDate" type="date" db:column="campaignexpirationdate"/>
-    <Attribute id="ent3#att12" name="campaignGoal" type="float" db:column="campaigngoal"/>
-    <Attribute id="ent3#att10" name="campaignDescription" type="string" db:column="campaigndescription"/>
-    <Attribute id="ent3#att9" name="campaignTitle" type="string" db:column="campaigntitle"/>
-    <Attribute id="ent3#att5" name="Popularity" type="float" derivationQuery="calculated::sum(Self.rel7#role13(as Var1).ent4#att3)" db:table="campaign_totalcampaigncontribu" db:column="der_attr" storageType="file">
+    <Attribute id="ent3#att14" name="Max Backing Limit" type="float" derivationQuery="simpleCalculated::Self.ent3#att12 * 1.5" key="false"/>
+    <Attribute id="ent3#att13" name="Expiration Date" type="date" db:column="campaignexpirationdate" key="false"/>
+    <Attribute id="ent3#att12" name="Goal" type="float" db:column="campaigngoal" key="false"/>
+    <Attribute id="ent3#att10" name="Description" type="string" db:column="campaigndescription" key="false"/>
+    <Attribute id="ent3#att9" name="Title" type="string" db:column="campaigntitle" key="false"/>
+    <Attribute id="ent3#att5" name="Popularity" type="float" derivationQuery="calculated::sum(Self.rel7#role13(as Var1).ent4#att3)" db:table="campaign_totalcampaigncontribu" db:column="der_attr" storageType="file" key="false">
       <db:JoinColumn attribute="ent3#att8" name="campaignid"/>
     </Attribute>
-    <Attribute id="ent3#att25" name="Quality" type="float" derivationQuery="calculated::avg(Self.rel14#role28(as Var1).rel16#role31(as Var2).ent7#att35)" storageType="file" db:table="campaign_quality_view" db:column="der_attr">
+    <Attribute id="ent3#att25" name="Quality" type="float" derivationQuery="calculated::avg(Self.rel14#role28(as Var1).rel16#role31(as Var2).ent7#att35)" storageType="file" db:table="campaign_quality_view" db:column="der_attr" key="false">
       <db:JoinColumn attribute="ent3#att8" name="campaignid"/>
     </Attribute>
-    <Attribute id="ent3#att36" name="maxIndividualBacking" type="float" derivationQuery="calculated::max(Self.ent3#att12) * 1.5 - sum(Self.rel7#role13(as Var1).ent4#att3)" storageType="file" db:table="campaign_maxindividualbacking" db:column="der_attr">
+    <Attribute id="ent3#att36" name="maxIndividualBacking" type="float" derivationQuery="calculated::max(Self.ent3#att12) * 1.5 - sum(Self.rel7#role13(as Var1).ent4#att3)" storageType="file" db:table="campaign_maxindividualbacking" db:column="der_attr" key="false">
       <db:JoinColumn attribute="ent3#att8" name="campaignid"/>
     </Attribute>
-    <Attribute id="ent3#att37" name="isConcluded" type="boolean" db:column="isconcluded"/>
+    <Attribute id="ent3#att37" name="isConcluded" type="boolean" db:column="isconcluded" key="false"/>
   </Entity>
-  <Entity gr:x="695" gr:y="830" id="ent4" name="ContributionProfile" duration="persistent" attributeOrder="ent4#att15 ent4#att16 ent4#att17 ent4#att18 ent4#att3 ent4#att24" db:database="db1" db:table="contributionprofile">
+  <Entity gr:x="975" gr:y="855" id="ent4" name="ContributionProfile" duration="persistent" attributeOrder="ent4#att15 ent4#att16 ent4#att17 ent4#att18 ent4#att3 ent4#att24" db:database="db1" db:table="contributionprofile">
     <Attribute id="ent4#att15" key="true" name="contributionId" type="integer" db:column="contributionid"/>
-    <Attribute id="ent4#att18" name="minimumAmount" type="float" db:column="minimumamount"/>
-    <Attribute id="ent4#att17" name="contributionDescription" type="string" db:column="contributiondescription"/>
-    <Attribute id="ent4#att16" name="contributionTitle" type="string" db:column="contributiontitle"/>
-    <Attribute id="ent4#att3" name="totalContribution" type="float" derivationQuery="calculated::sum(Self.rel10#role19(as Var1).ent11#att41)" db:table="contributionprofile_totalcontr" db:column="der_attr" storageType="file">
+    <Attribute id="ent4#att18" name="Minimum Amount" type="float" db:column="minimumamount" key="false"/>
+    <Attribute id="ent4#att17" name="Description" type="string" db:column="contributiondescription" key="false"/>
+    <Attribute id="ent4#att16" name="Title" type="string" db:column="contributiontitle" key="false"/>
+    <Attribute id="ent4#att3" name="totalContribution" type="float" derivationQuery="calculated::sum(Self.rel10#role19(as Var1).ent11#att41)" db:table="contributionprofile_totalcontr" db:column="der_attr" storageType="file" key="false">
       <db:JoinColumn attribute="ent4#att15" name="contributionid"/>
     </Attribute>
-    <Attribute id="ent4#att24" name="isHidden" type="boolean" db:column="ishidden"/>
+    <Attribute id="ent4#att24" name="isHidden" type="boolean" db:column="ishidden" key="false"/>
   </Entity>
   <Entity gr:x="830" gr:y="290" id="ent6" name="Tags" duration="persistent" attributeOrder="ent6#att22 ent6#att23" db:database="db1" db:table="tags">
     <Attribute id="ent6#att22" key="true" name="tagId" type="integer" db:column="tagid"/>
-    <Attribute id="ent6#att23" name="keywords" type="string" db:column="keywords"/>
+    <Attribute id="ent6#att23" name="Keywords" type="string" db:column="keywords"/>
   </Entity>
   <Entity gr:x="1040" gr:y="135" id="ent9" name="Questions" duration="persistent" attributeOrder="ent9#att28 ent9#att29 ent9#att30 ent9#att39" db:database="db1" db:table="questions">
     <Attribute id="ent9#att28" key="true" name="questionId" type="integer" db:column="questionid"/>
-    <Attribute id="ent9#att30" name="answerString" type="string" db:column="answerstring"/>
-    <Attribute id="ent9#att29" name="questionString" type="string" db:column="questionstring"/>
+    <Attribute id="ent9#att30" name="Answer" type="string" db:column="answerstring"/>
+    <Attribute id="ent9#att29" name="Question" type="string" db:column="questionstring"/>
     <Attribute id="ent9#att39" name="isPrivate" type="boolean" db:column="isprivate"/>
   </Entity>
-  <Entity gr:x="1285" gr:y="200" id="ent10" name="Vote" duration="persistent" attributeOrder="ent10#att27 ent10#att31 ent10#att11" db:database="db1" db:table="vote">
+  <Entity gr:x="1285" gr:y="200" id="ent10" name="Vote" duration="persistent" attributeOrder="ent10#att27 ent10#att31" db:database="db1" db:table="vote">
     <Attribute id="ent10#att27" name="vote_userid" type="integer" key="true" db:column="vote_userid"/>
     <Attribute id="ent10#att31" name="vote_campaignid" type="integer" key="true" db:column="vote_campaignid"/>
-    <Attribute id="ent10#att11" name="vote_value" type="integer" db:column="vote_value"/>
   </Entity>
   <Entity gr:x="330" gr:y="855" id="ent11" name="ReceivedContribution" duration="persistent" attributeOrder="ent11#att40 ent11#att41 ent11#att43" db:database="db1" db:table="receivedcontribution">
-    <Attribute id="ent11#att41" name="amount" type="float" db:column="amount"/>
+    <Attribute id="ent11#att41" name="Amount" type="float" db:column="amount"/>
     <Attribute id="ent11#att40" name="campaignId" key="true" type="integer" db:column="campaignid"/>
     <Attribute id="ent11#att43" name="userid" type="integer" key="true" db:column="userid"/>
   </Entity>
@@ -201,7 +200,7 @@
     </RelationshipRole2>
   </Relationship>
   <Entity gr:x="250" gr:y="655" id="ent1" name="Message" duration="persistent" attributeOrder="ent1#att4 ent1#att32 ent1#att33" db:database="db1" db:table="message">
-    <Attribute id="ent1#att4" name="message" type="string" db:column="message"/>
+    <Attribute id="ent1#att4" name="Message" type="string" db:column="message"/>
     <Attribute id="ent1#att32" name="message_campaignid" type="integer" key="true" db:column="message_campaignid"/>
     <Attribute id="ent1#att33" name="message_userid" type="integer" key="true" db:column="message_userid"/>
   </Entity>
@@ -225,7 +224,7 @@
   </Relationship>
   <Entity gr:x="280" gr:y="490" id="ent5" name="Advertisement" duration="persistent" attributeOrder="ent5#att20 ent5#att21" db:database="db1" db:table="advertisement">
     <Attribute id="ent5#att20" key="true" name="advertisement_id" type="integer" db:column="advertisement_id"/>
-    <Attribute id="ent5#att21" name="description" type="string" db:column="description"/>
+    <Attribute id="ent5#att21" name="Description" type="string" db:column="description" key="false"/>
   </Entity>
   <Relationship id="rel5" name="Advertisement_Campaign" sourceEntity="ent5" targetEntity="ent3" db:database="db1" db:table="advertisement">
     <RelationshipRole1 id="rel5#role9" name="AdvertisementToCampaign" maxCard="1">
@@ -244,9 +243,9 @@
       <db:JoinColumn attribute="ent3#att8" name="campaignid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="1330" gr:y="350" id="ent7" name="VoteValue" duration="persistent" attributeOrder="ent7#att19 ent7#att35" db:database="db1" db:table="votevalue">
+  <Entity gr:x="1340" gr:y="460" id="ent7" name="VoteValue" duration="persistent" attributeOrder="ent7#att19 ent7#att35" db:database="db1" db:table="votevalue">
     <Attribute id="ent7#att19" key="true" name="v_id" type="integer" db:column="v_id"/>
-    <Attribute id="ent7#att35" name="v_value" type="integer" db:column="v_value"/>
+    <Attribute id="ent7#att35" name="Value" type="integer" db:column="v_value"/>
   </Entity>
   <Relationship id="rel16" name="Vote_VoteValue" sourceEntity="ent10" targetEntity="ent7" db:database="db1" db:table="vote">
     <RelationshipRole1 id="rel16#role31" name="VoteToVoteValue" maxCard="1">

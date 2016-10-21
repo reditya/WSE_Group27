@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page7" name="Manage Campaign View" landmark="true" protected="false" gr:x="-55" gr:y="-200" ajaxEnabled="false" linkOrder="sv2#page7#ln9" layout:style="WebRatio">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page7" name="Campaigner Dashboard" landmark="true" protected="false" gr:x="-55" gr:y="-200" ajaxEnabled="false" layout:style="FertileEnvironment">
   <ContentUnits>
-    <EntryUnit id="sv2#page7#enu5" name="Create a Campaign" gr:x="210" gr:y="300" entity="ent3" linkOrder="sv2#page7#enu5#ln11">
+    <EntryUnit id="sv2#page7#enu5" name="Create a Campaign" gr:x="270" gr:y="320" entity="ent3" linkOrder="sv2#page7#enu5#ln11" gr:showAllParts="false">
       <Field id="sv2#page7#enu5#fld18" name="Title" type="string" modifiable="true" attribute="ent3#att9">
         <VRules>
           <MandatoryValidationRule id="sv2#page7#enu5#fld18#mnd5" name="Mandatory"/>
@@ -81,7 +81,7 @@
         <LinkParameter id="sv2#page7#tmu2#ln102#par275" name="Current/Input Date_PASSING" source="currentDate" passing="true"/>
       </Link>
     </TimeUnit>
-    <SelectorUnit gr:x="440" gr:y="320" id="sv2#page7#seu19" name="Select Expired Campaigns" entity="ent3">
+    <SelectorUnit gr:x="525" gr:y="310" id="sv2#page7#seu19" name="Select Expired Campaigns" entity="ent3">
       <Link id="sv2#page7#seu19#ln101" name="Flow101" to="sv2#page7#inu14" type="transport" validate="true">
         <LinkParameter id="sv2#page7#seu19#ln101#par276" name="campaignId_current campaignId" source="ent3#att8Array" target="sv2#page7#inu14.current.ent3#att8"/>
         <LinkParameter id="sv2#page7#seu19#ln101#par277" name="Current/Input Date_PASSING_expired" sourceLinkParameter="sv2#page7#tmu2#ln102#par275" target="sv2#page7#inu14#su32#acond6"/>
@@ -89,14 +89,14 @@
         <LinkParameter id="sv2#page7#seu19#ln101#par281" name="UserCtxParam.userId_PASSING_CampaignToUser [userId]" sourceLinkParameter="sv2#page7#gtu2#ln100#par280" target="sv2#page7#inu14#su32#rcond19.userOID"/>
       </Link>
     </SelectorUnit>
-    <IndexUnit gr:x="720" gr:y="325" id="sv2#page7#inu14" name="Archived Campaigns" entity="ent3" displayAttributes="ent3#att9 ent3#att12 ent3#att13 ent3#att5">
-      <Selector id="sv2#page7#inu14#su32" defaultPolicy="fill" booleanOperator="and" expression="( sv2#page7#inu14#su32#rcond19 AND sv2#page7#inu14#su32#acond6 ) OR sv2#page7#inu14#su32#acond9">
+    <IndexUnit gr:x="820" gr:y="285" id="sv2#page7#inu14" name="Archived Campaigns" entity="ent3" displayAttributes="ent3#att9 ent3#att12 ent3#att13 ent3#att5">
+      <Selector id="sv2#page7#inu14#su32" defaultPolicy="fill" booleanOperator="and" expression="sv2#page7#inu14#su32#rcond19 AND ( sv2#page7#inu14#su32#acond6 OR sv2#page7#inu14#su32#acond9 )">
         <AttributesCondition id="sv2#page7#inu14#su32#acond6" name="expired" predicate="lt" booleanOperator="or" implied="false" attributes="ent3#att13"/>
         <RelationshipRoleCondition id="sv2#page7#inu14#su32#rcond19" name="CampaignToUser" predicate="in" implied="false" role="rel3#role5"/>
         <AttributesCondition id="sv2#page7#inu14#su32#acond9" name="concluded" predicate="eq" booleanOperator="or" implied="false" attributes="ent3#att37" value="true"/>
       </Selector>
     </IndexUnit>
-    <DataUnit gr:x="0" gr:y="0" id="sv2#page7#dau10" name="Campaigner details" entity="User" displayAttributes="userName password email User#att1 User#att2 User#att26">
+    <DataUnit gr:x="0" gr:y="0" id="sv2#page7#dau10" name="Your Details" entity="User" displayAttributes="userName password email User#att1 User#att2 User#att26">
       <Selector id="sv2#page7#dau10#su40" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv2#page7#dau10#su40#kcond15" name="KeyCondition15" predicate="in" implied="false"/>
       </Selector>
@@ -119,30 +119,16 @@
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
-      <layout:Cell colspan="6">
+      <layout:Cell colspan="6" label="Create Campaign">
         <layout:Unit unitId="sv2#page7#enu5">
-          <layout:Link link="sv2#page7#enu5#ln11"/>
           <layout:Field field="sv2#page7#enu5#fld18"/>
           <layout:Field field="sv2#page7#enu5#fld19"/>
           <layout:Field field="sv2#page7#enu5#fld20"/>
           <layout:Field field="sv2#page7#enu5#fld21"/>
           <layout:Field field="sv2#page7#enu5#msfld3"/>
+          <layout:Link link="sv2#page7#enu5#ln11"/>
         </layout:Unit>
       </layout:Cell>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell colspan="12"/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -220,6 +206,19 @@
       <layout:Cell/>
       <layout:Cell/>
     </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
   </layout:Grid>
-  <Link id="sv2#page7#ln9" name="Logout" to="sv2#miu2" type="normal" validate="true" automaticCoupling="true"/>
 </Page>

@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="520" gr:y="895" id="sv3#page4" name="Inbox" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="625" gr:y="990" id="sv3#page4" name="Inbox" landmark="true">
   <ContentUnits>
     <IndexUnit gr:x="300" gr:y="0" id="sv3#page4#inu4" name="Questions" entity="ent9" displayAttributes="ent9#att29 ent9#att30 rel12#role23.ent3#att9 rel12#role23.rel3#role6.User#att2">
       <Selector id="sv3#page4#inu4#su17" defaultPolicy="fill" booleanOperator="and">
@@ -9,7 +9,7 @@
       <Link id="sv3#page4#gtu1#ln20" name="Flow20" to="sv3#page4#inu19" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv3#page4#gtu1#ln43" name="Flow43" to="sv3#page4#inu4" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
-    <IndexUnit gr:x="305" gr:y="105" id="sv3#page4#inu19" name="My Messages" entity="ent1" displayAttributes="rel2#role3.ent3#att9 rel2#role3.rel3#role6.userName ent1#att4">
+    <IndexUnit gr:x="305" gr:y="140" id="sv3#page4#inu19" name="My Messages" entity="ent1" displayAttributes="rel2#role3.ent3#att9 rel2#role3.rel3#role6.userName ent1#att4">
       <Selector id="sv3#page4#inu19#su23" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page4#inu19#su23#rcond16" name="UserToMessage" predicate="in" implied="false" role="rel1#role1"/>
       </Selector>

@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Warnings></Warnings>
+<Warnings> 
+  <Warning xpath="id('sv2#page7#seu19#ln101#par278')" rootXPath="id('sv2')" key="UNUSED_PASSING_PARAMETER" label="campaignId_PASSING"> 
+    <Message>The passing parameter 'campaignId_PASSING' is declared but never used</Message>  
+    <Resolution class="com.webratio.ide.ui.resources.RemoveElementResolutionGenerator">Remove the invalid link parameter 'sv2#page7#seu19#ln101#par278'</Resolution> 
+  </Warning> 
+</Warnings>
